@@ -1,0 +1,3 @@
+Mandriva Linux 2007 Packages
+
+See http://qa.mandriva.com/wiki/
