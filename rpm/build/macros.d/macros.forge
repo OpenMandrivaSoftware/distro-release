@@ -1,0 +1,70 @@
+# Computes forge-related variables for use in the rest of the spec file
+# Control variables, flags and arguments:
+#   %{forgeurl<number>}  the project url on the target forge
+#   %{tag<number>}       the packaged tag, OR
+#   %{commit<number>}    the packaged commit, OR
+#   %{version<number>}   the packaged version
+#                          – %{version}/%{version0} are set via:
+#                              Version:
+#                          – because git is lacking a built-in version
+#                            reference, %{version<number>} will be translated
+#                            into %{tag<number>} using unreliable heuristics;
+#                            set %{tag<number>} directly if those fail
+#   %{date<number>}      the packaged timestamp
+#   …                    %forgemeta will compute a huge number of variables:
+#                          — the packager can override it by setting some of
+#                            those before the %forgemeta call
+#                          – use the -i flag to list those variables
+#   -z <number>          only process the zth block of definitions
+#                        "" for the no-suffix block
+#   -i                   list the resulting variable values
+#   -s                   silently ignore problems in %{forgeurl<number>}
+#   -v                   be verbose
+#   -a                   process all sources in one go, instead of using
+#                        separate -z calls
+%forgemeta(z:isva) %{lua:
+local      fedora = require "fedora.common"
+local       forge = require "fedora.srpm.forge"
+local     verbose =  rpm.expand("%{-v}") ~= ""
+local informative =  rpm.expand("%{-i}") ~= ""
+local      silent =  rpm.expand("%{-s}") ~= ""
+local  processall = (rpm.expand("%{-a}") ~= "") and (rpm.expand("%{-z}") == "")
+if processall then
+  for _,s in pairs(fedora.getsuffixes("forgeurl")) do
+    forge.meta(s,verbose,informative,silent)
+  end
+else
+  forge.meta(rpm.expand("%{-z*}"),verbose,informative,silent)
+end
+}
+
+# Unpacks sources computed by %forgemeta
+# Control variables, flags and arguments:
+#   %{forgesource<number>}       the source archive that will be processed
+#   %{forgesetupargs<number>}    %setup arguments
+
+#   -z <number>                  only process the zth block of definitions
+#                                "" for the no-suffix block
+#   -v                           be verbose
+#   -a                   process all sources in one go, instead of using
+#                        separate -z calls
+%forgesetup(z:va) %{lua:
+local fedora = require "fedora.common"
+if (rpm.expand("%{-z}") == "") and (rpm.expand("%{-a}") ~= "") then
+  for _,s in pairs(fedora.getsuffixes("forgesetupargs")) do
+    print(rpm.expand("%setup %{!-v:-q} %{?forgesetupargs" .. s                     .. "}\\n"))
+  end
+else
+  print(  rpm.expand("%setup %{!-v:-q} %{?forgesetupargs" .. rpm.expand("%{-z*}") .. "}\\n"))
+end
+}
+
+# Calls %autosetup using %forgemeta results
+#   – this will probably be removed since it is unsafe in presence of multiple
+#     sources
+# Control variables, flags and arguments:
+#   -z <number>  process the zth block of definitions
+#   -v -N -S -p  relayed to %autosetup
+%forgeautosetup(z:vNS:p:q) %{lua:
+print(rpm.expand("%autosetup %{-v} %{-N} %{?-S} %{?-p} %{?forgesetupargs" .. rpm.expand("%{-z*}") .. "}\\n"))
+}
