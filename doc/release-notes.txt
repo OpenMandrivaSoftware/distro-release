@@ -1,0 +1,622 @@
+OpenMandriva Lx 4.0
+
+   Contents
+
+        * [9]1 OpenMandriva Lx 4.0
+        * [10]2 Install
+             + [11]2.1 Available Media
+             + [12]2.2 Recommended Hardware
+             + [13]2.3 Internet Connection
+             + [14]2.4 Virtual Machines
+             + [15]2.5 What is Calamares ?
+             + [16]2.6 Partitioning
+             + [17]2.7 Installer and EFI Support
+             + [18]2.8 Changing Partition Type
+             + [19]2.9 Booting from USB
+                  o [20]2.9.1 - Use the ROSA Image Writer available from our
+                    repos
+                  o [21]2.9.2 - Via dd
+             + [22]2.10 Booting from ISO file
+        * [23]3 New Features and Major Changes
+             + [24]3.1 Package Management (change from URPMI to DNF)
+             + [25]3.2 LLVM/clang
+             + [26]3.3 Kernel
+             + [27]3.4 systemd
+             + [28]3.5 Xorg
+             + [29]3.6 Wayland
+             + [30]3.7 libinput
+             + [31]3.8 OMA-welcome
+             + [32]3.9 OpenMandriva Lx Control Center
+             + [33]3.10 OpenMandriva repo-picker
+             + [34]3.11 KDE Plasma 5.15.5
+             + [35]3.12 Calligra Suite 3.1.0
+             + [36]3.13 Krita 4.2.1
+             + [37]3.14 SDDM
+             + [38]3.15 LXQt 0.14.0
+             + [39]3.16 LibreOffice 6.2.4
+             + [40]3.17 Falkon 3.1.0
+             + [41]3.18 Firefox 66.0.5
+             + [42]3.19 Chromium 75.0
+             + [43]3.20 Java 12
+             + [44]3.21 Printing
+             + [45]3.22 Sound
+             + [46]3.23 Multimedia
+             + [47]3.24 libarchive
+             + [48]3.25 Perl
+             + [49]3.26 Python
+             + [50]3.27 Virtualization
+             + [51]3.28 Games
+             + [52]3.29 ISO build tools
+             + [53]3.30 Upgrading from previous OpenMandriva Lx Releases
+        * [54]4 Changes to Hardware Support
+             + [55]4.1 Graphics Support
+             + [56]4.2 NVIDIA Graphics Cards
+             + [57]4.3 AMD/ATI Graphics Cards
+             + [58]4.4 Intel Graphics Chips
+             + [59]4.5 Miscellaneous Graphic Cards
+             + [60]4.6 Proprietary Drivers
+             + [61]4.7 Firewall
+        * [62]5 Booting with systemd
+        * [63]6 Desktop Environments
+        * [64]7 Media Sources
+        * [65]8 Helping the Project
+        * [66]9 Errata
+
+   The OpenMandriva Lx teams are pleased to announce the availability of
+   OpenMandriva Lx 4.0!
+
+   Detailed below are some of the advances that the distribution has
+   incorporated since OpenMandriva Lx 3.03.
+
+Install
+
+Available Media
+
+   This release is available as a live media DVD, downloadable in ISO
+   format. These are available on our [67]downloads page.
+
+   Live media means you are able to run OpenMandriva Lx straight from a
+   DVD or memory stick (see below) and try it before installing it. You
+   may also install the system to hard disk either from the running live
+   image or from the boot manager.
+
+   Available ISO files are:
+
+   1. [68]KDE Plasma desktop only full featured (includes the most common
+   used functionalities, multimedia and office software.)
+
+   2. [69]LXQt desktop only somewhat full featured (includes many
+   applications but lighter on memory and disk space usage.)
+
+   3. Basic GUI with minimal desktop and only basic system packages and a
+   web browser.
+   The concept is for user to then install only packages they wish to use
+   after installing basic system. Also for users with less robust
+   hardware.
+
+Recommended Hardware
+
+   OpenMandriva Lx 4.0 requires at least 2.0 GB of memory and at least 10
+   GB of hard drive space (see below for known issues with partitioning).
+
+   Release is available for x86_64 and znver1 architectures, the 32-bit
+   ARM, aarch64, and RISC-V architectures are being worked on, but are not
+   yet available for this release.
+
+   Important Note: Graphics Hardware
+
+   The KDE Plasma Desktop requires a 3D graphics card that supports OpenGL
+   2.0 or above. We recommend using AMD, Intel, Adreno or VC4 graphics
+   chips.
+
+Internet Connection
+
+   Calamares Installer checks if an Internet connection is available, but
+   OpenMandriva Lx 4 will install just fine even without. It is perfectly
+   OK to simply install as you normally would and proceed to use your new
+   system as normal.
+
+   Updating such a system would require being temporarily connected to the
+   internet or downloading the packages elsewhere and transferring them to
+   the installed system and installing the updated packages. But as you
+   are not connected to the internet you could simply use the system and
+   not update for how ever long you see fit.
+
+Virtual Machines
+
+   At this time the only virtualization software that OMLx ISOs are tested
+   on is VirtualBox. The same hardware requirements apply when running in
+   virtual machines.
+
+   For VirtualBox, however, you must always have at least 2048 MB of
+   memory or OpenMandriva Lx will fail to boot.
+
+   Also for VirtualBox it is advisable to install to a fresh VM, as trying
+   to install to an existing one may occasionally fail.
+
+What is Calamares ?
+
+   Calamares is an installer framework. By design it is very customizable,
+   in order to satisfy a wide variety of needs and use cases. It aims to
+   be easy, usable, beautiful, pragmatic, inclusive and
+   distribution-agnostic.
+   Calamares includes an advanced partitioning feature, with support for
+   both manual and automated partitioning operations. It is the first
+   installer with an automated “Replace Partition” option, which makes it
+   easy to reuse a partition over and over for distribution testing.
+
+Partitioning
+
+   At this time partitioning LVM and Raid setups with Calamares (the
+   installer) is NOT supported.
+
+Installer and EFI Support
+
+   This release of OpenMandriva Lx supports booting and installation with
+   and without [70]UEFI.
+
+   Note that secure boot is NOT supported.
+
+   If you wish to perform an EFI installation on an existing MBR disk it
+   will be necessary to convert the disk partition table to the newer GPT
+   partitioning scheme. To do this you need to use the gdisk tool. A
+   typical invocation would be 'gdisk /dev/sda': the existing partition
+   table will be converted in memory to the GPT scheme. Warnings will be
+   issued about potential data loss, the disk will not be altered until
+   you write the partition table by pressing "w". You are advised to back
+   up any important data.
+
+   There may be occasions where the conversion cannot be performed, this
+   will usually be due to insufficient space at the beginning or end of
+   the disk to write the partition table. It may be necessary to delete or
+   resize a partition to create the needed space, gparted is your friend
+   in these circumstances.
+
+   There is still a need to create an efi partition to contain the boot
+   equipment and this must be created while running the Calamares
+   installer. When the installer reaches the partitioning stage the /
+   (root) partition should be removed and a small (330 MB) FAT16 or FAT32
+   partition created at the start of the drive. If diskspace is critical
+   then a smaller partition may be used, but be sure to set it as FAT16 or
+   FAT32 in Calamares otherwise the installation will fail. If you fail to
+   observe these steps the installation of the boot loader will fail.
+   Subsequently partition the disk in the normal way. Please share your
+   experiences on the forums so that we may improve this aspect of the
+   installation.
+
+   If you are installing beside Windows 8, 8.1, 10 or similar EFI booted
+   OS as a precaution please ensure that you have recovery disks and you
+   have backed up any important data. Our testing has been limited with
+   this configuration, but successful installations have been performed
+   with no issues. We would welcome any feedback in this area.
+
+Changing Partition Type
+
+   Please note that Calamares cannot convert one partition type to another
+   and preserve partition data. If you run Calamares from the live image
+   it is not possible to change an existing partition type. Trying to do
+   this generates an error message. In order to do this you must first
+   delete the partition and recreate it as the type that you wish.
+
+Booting from USB
+
+   It is also possible to boot this release from an USB storage device. To
+   transfer the live/installation image you may:
+
+- Use the ROSA Image Writer available from our repos
+
+sudo dnf --refresh install rosa-imagewriter
+
+   Or, if you do not have OpenMandriva Lx yet, you can get ROSA Image
+   Writer download links at [71]this page
+   At least 4 GB of flash drive capacity is recommended. Persistent
+   storage is not necessary. Note that this will erase everything on your
+   USB!
+   [72]Warning.png
+   Please do not use other usb-writing tools as some Windows tools (e.g.
+   Rufus) truncate the volume name. This breaks the boot process.
+
+- Via dd
+
+   You may alternatively dd the image to your USB stick:
+dd if=<iso_name> of=<usb_drive> bs=4M
+
+   Replace <iso_name> with the path to the ISO and <usb_drive> with the
+   device node of the USB drive, i.e. /dev/sdb.
+
+   SUSE Studio ImageWriter has also been tested and works for burning ISO
+   images to USB storage device.
+
+Booting from ISO file
+
+   Grub2 entry ( to be added in /boot/grub2/grub.cfg)
+submenu "OpenMandriva (64 bit)" {
+        set isofile=/home/user/OpenMandrivaLx.4.0-final-plasma.x86_64.iso
+        set isoname=OpenMandrivaLx_4.0
+        loopback loop $isofile
+
+        menuentry "OpenMandriva" {
+                linux (loop)/boot/vmlinuz0 root=live:LABEL=${isoname} iso-scan/f
+ilename=${isofile} rd.live.image toram --
+                initrd (loop)/boot/liveinitrd.img
+        }
+
+}
+
+New Features and Major Changes
+
+   OpenMandriva Lx 4.0 is a new release. In order to keep current with
+   latest changes in Linux, computer security issues, and computer code
+   writing there are major changes in OM Lx4.
+
+Package Management (change from URPMI to DNF)
+
+   Major changes for OM Lx 4 include switching from [73]rpm5/[74]URPMI to
+   [75]rpm.org/[76]DNF for package management. This will require users to
+   get used to new commands if they use command line, [77]DNF. Also there
+   are How To articles in our Forum in the Resources category such as
+   [78]this.
+
+LLVM/clang
+
+   OpenMandriva provides LLVM/clang 8.0.1 as the default compiler, GCC 9.1
+   is also available. Over 98% of packages in our main repository are now
+   built with LLVM/clang.
+
+   Benefits for end user:
+     * Faster compiles and Low Memory Use
+     * Expressive Diagnostics
+     * GCC Compatibility
+     * Better object code generation compared to others
+     * Object code is optimized for its size
+     * OpenMP support enabled by default
+
+   More information can be found [79]here.
+
+Kernel
+
+   OpenMandriva Lx uses the latest stable kernel, 5.1.9, by default BFQ is
+   set up as a default I/O scheduler to achieve best performance.
+   By default an [80]UKSM is enabled to manage memory efficiently.
+
+systemd
+
+   Default init system is [81]systemd with version 242
+
+Xorg
+
+   We have upgraded Xorg to version 1.20.4, and Mesa to 19.0.3, which
+   brings the latest free drivers for the best performance. A Compose
+   cache is now incorporated which speeds up application startup time and
+   reduces memory usage especially in locales with large Compose tables
+   (e.g. all UTF-8 locales).
+
+   We are using modesetting driver by default for nVIDIA, Intel and AMD
+   graphics cards as well as Adreno GPUs.
+
+   With end of 02 October 2017 a S3TC patent has expired, and we have
+   included S3TC texture compression in our Mesa.
+
+Wayland
+
+   We are working on many new and interesting shells using new display
+   technology based on [82]Wayland 1.17 version.
+   KDE Plasma 5 running on wayland is still experimental and not
+   recommended for daily use. Testing and feedback of Wayland is welcome.
+
+libinput
+
+   All the input devices like keyboard, mouse, touchpad and others are now
+   handled though [83]libinput 1.13.1 version library by default.
+
+OMA-welcome
+
+   The oma-welcome or Welcome to OpenMandriva Lx application introduces
+   the users to OpenMandriva Lx and shows them some of the features we
+   have, as well as providing quick links to common tasks such as
+   updating, installing new software, and configuring the desktop.
+
+OpenMandriva Lx Control Center
+
+   OpenMandriva Lx Control Center or om-control-center is a tool designed
+   to help you configure your system.
+
+OpenMandriva repo-picker
+
+   OpenMandriva Lx repo-picker or om-repo-picker is a frontend for DNF
+   package repository selection.
+
+KDE Plasma 5.15.5
+
+   We have upgraded to the latest and greatest version of the KDE Plasma
+   desktop. [84]Learn more at KDE Plasma website.
+   KDE Frameworks are updated to [85]5.58.0 version. We have implemented
+   full KDE Frameworks that allows user to get all of benefits of Plasma 5
+   desktop
+   KDE Applications are updated to [86]19.04.2
+
+   Our distribution is running with Qt [87]5.12 version.
+
+   Important notice! Plasma 5 make heavy use of Qt5 OpenGL. This means
+   that the minimal system requirement is to have a graphics card that can
+   support OpenGL 2.0 or newer version.
+
+Calligra Suite 3.1.0
+
+   [88]Calligra Suite is a graphic art and office suite written in Qt5 and
+   supports KDE Plasma 5. It is possible to install whole calligra suite
+   after installation is finished.
+
+Krita 4.2.1
+
+   [89]Krita is a creative sketching and painting application. It was part
+   of Calligra up to version 2.9 and became a project independent from
+   Calligra since then. It has already been ported to Qt5 and is included
+   in the install image.
+
+SDDM
+
+   SDDM is a new and lightweight displaymanager written in Qt5 with QML
+   and provides new features and benefits to enduser compared to KDM.
+
+LXQt 0.14.0
+
+   We have prepared LXQt for our Release. LXQt is a lightweight desktop
+   fully written in Qt5.
+
+   By default SDDM is used as display manager.
+
+LibreOffice 6.2.4
+
+   The latest [90]LibreOffice featuring much faster load times and many
+   bug fixes.
+   LibreOffice 6.2.4 has much improved KDE Plasma integration.
+
+Falkon 3.1.0
+
+   [91]Falkon is a full featured web browser using Qt5WebEngine as a
+   rendering engine. More information can be found [92]here.
+
+   We encourage you to give Falkon a try as a new experience in the web
+   browsers world.
+
+Firefox 66.0.5
+
+   The latest [93]Firefox Quantum with its new graphical interface and all
+   the latest features.
+   You may wish to suspend desktop effects when running Firefox is in full
+   screen mode, as it speeds up scrolling.
+
+Chromium 75.0
+
+   A [94]Chromium web browser is available to install it on running system
+   either by using dnf, Discover or dnfdragora.
+sudo dnf --refresh install chromium-browser-stable
+
+   If you wish to try an experimental version with newer features (but not
+   quite the stability), you can also try
+sudo dnf --refresh install chromium-browser-dev
+
+   The -stable and -dev versions can coexist on the same installation.
+
+Java 12
+
+   The OpenMandriva Lx Java stack has been rebuilt on top of OpenJDK 12,
+   and we have added support for [95]Java Modules and JAR libraries in the
+   RPM provides/requires generators. We have also started adding module
+   information (module-info.class) to packages providing JAR libraries.
+   Migrating the remaining Java packages to newer systems will happen over
+   the next releases (adding module support to any related package that
+   gets an update). This should enable much better packaging of Java
+   related packages in the future.
+
+Printing
+
+   Printing support is based on [96]Cups 2.2.10 and ghostscript 9.26.
+
+Sound
+
+   [97]ALSA is updated to version 1.1.9
+
+   Pulseaudio version is 12.2, you can find more information about
+   features [98]here.
+
+Multimedia
+
+   The [99]SMPlayer media player is included, using [100]MPV as its
+   default backend. If you live in a country that allows it, you may want
+   to install the various codecs from the restricted repository for
+   improved codec support.
+
+   We have enabled [101]LAME support by default. With 2017 start all the
+   patents related to [102]MP3 are expired. By default our ffmpeg,
+   gstreamer, and other media frameworks now supports LAME.
+
+libarchive
+
+   We have decided to make better use of [103]libarchive, and starting
+   from OM Lx 3 release by default we use:
+     * bsdtar as a default tar program
+     * bsdcpio as a default cpio program
+
+   Detailed features and benefits can be found [104]here.
+
+Perl
+
+   Perl base package has been updated to 5.28 version. All perl related
+   software in main repository has been rebuilt to meet new version.
+
+Python
+
+   Python has been updated to 3.7.3 version and starting from now it
+   became the default python interpreter over python 2.x. Python 2.x is no
+   longer included in the default ISO, but continues to be available in
+   the repositories for people in need of legacy applications.
+
+Virtualization
+
+   We provide support for:
+     * qemu
+     * docker
+     * virtualbox
+
+   You can install and run these out of the box.
+
+Games
+
+   We provide many of the games which have been developed for or ported to
+   Linux.
+   By using of [105]PlayOnLinux you can also play games usually available
+   only on the Windows(tm) platform.
+   Of course [106]Steam package is also available and can be installed
+   using dnf, dnfdragora or plasma-discover.
+
+   To give it a go, enable the non-free and 32bit repositories, then:
+sudo dnf install steam
+
+ISO build tools
+
+   Previously livecd-tools were used to build OpenMandriva ISO images. Due
+   to code complication and its limits, we moved to build own ISO image
+   build tool.
+
+   [107]omdv-build-iso is written as a bash shell script, which works out
+   of box on [108]ABF and in userland.
+
+Upgrading from previous OpenMandriva Lx Releases
+
+   Currently a fresh install is recommended.
+
+   In order to keep current with latest changes in Linux, computer
+   security issues, and computer code writing there are major changes in
+   OM Lx4. A Fresh install is recommended. Upgrading from OM Lx 3 will not
+   work. We strongly advise not to try upgrading from earlier versions.
+
+Changes to Hardware Support
+
+Graphics Support
+
+   Graphics support has improved with the latest drivers. We managed to
+   reduce issues by using by default DRM subsystem and modesetting driver
+   for AMD, intel and nVIDIA graphics cards.
+
+   If any users have special needs they will need to be configured from
+   command line. If you need help please contact us at our [109]forum or
+   [110]IRC room.
+
+NVIDIA Graphics Cards
+
+   This release includes the reverse engineered nouveau driver, which
+   gives moderately good support for most NVIDIA cards. For some
+   dual-screen work it is actually better than NVIDIA binary driver as it
+   supports screen rotation on a second monitor, which is useful for
+   monitors with rotatable screens.
+
+   The drivers from nvidia website are not supported. This is not possible
+   for a number or reasons.
+
+   We strongly recommend against using the proprietary drivers. They are
+   impossible to support, and break frequently. If you install them, you
+   do so at your own risk.
+
+AMD/ATI Graphics Cards
+
+   AMD closed source driver is not supported (abandoned upstream) , Open
+   source drivers are fully supported and only limited by Kernel/mesa BUGS
+   or missing upstream (AMD) firmwares for newer Cards.
+
+   If you need help please contact us at our [111]forum or [112]IRC room.
+
+Intel Graphics Chips
+
+   Intel graphics chips are fully supported.
+
+Miscellaneous Graphic Cards
+
+   We have not had feedback from users. Should you have an unusual
+   graphics card that is not performing as it should please contact us at
+   our [113]forum or [114]IRC room. If issue persists please file a bug at
+   [115]issues.openmandriva.org.
+
+Proprietary Drivers
+
+   Proprietary drivers not available for Lx 4 RC release. When they are
+   available user will need to install and configure these from command
+   line.
+
+   The drivers from nvidia web site are not supported. This is not
+   possible for a number or reasons.
+
+Firewall
+
+   We have since OM Lx 3 used firewall-config, which relies on firewalld.
+
+   The service responsible for starting the firewall is enabled by
+   default.
+
+Booting with systemd
+
+   Systemd has now been moved into the initramfs and the result is
+   super-fast booting. Switching runlevels has changed. Instead of adding
+   the target runlevel, as before, there are now specific boot options.
+   Namely, the following options must be appended to the kernel command
+   line:
+     * Rescue Mode: systemd.unit=rescue.target
+     * Text Mode: systemd.unit=multi-user.target
+     * Graphical Mode: systemd.unit=graphical.target
+
+Desktop Environments
+
+   This release offers the KDE Plasma 5 desktop environment. LXQt is
+   available in repos for users to install and test.
+
+Media Sources
+
+     * main
+
+   main is the core packages maintained by the OpenMandriva Lx team. This
+   includes anything included in the install images as well as many more
+   applications considered important.
+     * unsupported
+
+   unsupported represents community maintained packages. These are not
+   supported by the core OpenMandriva Lx team, and depend on package
+   maintainers to update it. There are many packages in unsupported that
+   will not install and others that install but do not work properly.
+   Users are welcome to use whatever they find in this repository that is
+   working.
+     * restricted
+
+   restricted contains libraries that aren't installed by default due to
+   legal concerns (such as patent issues). The usage of these packages
+   vary by country - OpenMandriva Lx is not responsible for their usage!
+   If you believe that their usage is disallowed in your country, please
+   disable the restricted repositories.
+     * non-free
+
+   non-free contains applications and drivers that are distributable, but
+   do not meet the definitions of [116]Free Software. While we can adjust
+   the packaging of such applications, we do not have the source code and
+   therefore can not fix problems caused by anything in this repository.
+
+[117]Om-donate.svg Helping the Project
+
+   The OpenMandriva development teams (Cooker & QA) are always looking for
+   new contributors to assist in creating and maintaining packages and to
+   assist bugfixing and testing. You are welcome to join us and help us in
+   this work which is not only rewarding but also tremendous fun!
+
+   If you feel that your talents do not lie in the realm of software, then
+   the OpenMandriva Workshop group, which is made up from the artwork,
+   documentation, translation and Communication teams, is always open for
+   the submissions of artwork and translations. New contributors who would
+   like to help with these wide-ranging tasks should see the wiki for more
+   details, and to learn how to join! Alternatively you may use our
+   [118]Forum.
+
+   It also costs time and money to keep our servers up and running. If you
+   can, please [119]donate to keep the lights on!
+
+Errata
+
+   See [120]4.0/Errata.

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=OpenMandriva 4.2 default style
+Name=OpenMandriva 4.2
+X-KDE-PluginInfo-Author=OpenMandriva
+X-KDE-PluginInfo-Category=Plasma Look And Feel
+X-KDE-PluginInfo-Email=openmandriva.org
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-License=LGPL 2.1+
+X-KDE-PluginInfo-Name=org.openmandriva4.desktop
+X-KDE-PluginInfo-Version=0.3
+X-KDE-PluginInfo-Website=openmandriva.org
+X-KDE-ServiceTypes=Plasma/LookAndFeel

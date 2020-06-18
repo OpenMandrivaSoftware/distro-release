@@ -1,0 +1,5 @@
+[AC][HandleButtonEvents]
+powerButtonAction=16
+
+[Battery][HandleButtonEvents]
+powerButtonAction=16

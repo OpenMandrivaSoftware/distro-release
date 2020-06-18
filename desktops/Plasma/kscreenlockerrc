@@ -1,0 +1,12 @@
+[Daemon]
+Autolock=false
+LockGrace=5
+LockOnResume=true
+Timeout=5
+
+[Greeter]
+Theme=org.openmandriva4.desktop
+WallpaperPlugin=org.kde.image
+
+[Greeter][Wallpaper][org.kde.image][General]
+Image=file:///usr/share/mdk/backgrounds/default.png

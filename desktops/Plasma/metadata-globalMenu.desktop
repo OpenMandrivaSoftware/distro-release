@@ -1,0 +1,16 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=OpenMandriva Global Menu Panel
+Type=Service
+ServiceTypes=Plasma/LayoutTemplate
+X-Plasma-Shell=plasmashell
+X-Plasma-ContainmentCategories=panel
+X-KDE-PluginInfo-Author=Bernhard Rosenkränzer
+X-KDE-PluginInfo-Email=bero@lindev.ch
+X-KDE-PluginInfo-Name=org.openmandriva.plasma.desktop.globalMenuPanel
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Website=https://www.openmandriva.org
+X-KDE-PluginInfo-Category=
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=GPLv3
+X-KDE-PluginInfo-EnabledByDefault=false

@@ -1,0 +1,47 @@
+include: /usr/lib/rpm/rpmrc
+
+#############################################################
+# Values for RPM_OPT_FLAGS for various platforms
+
+optflags: aarch64 %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} %{?!_disable_lto:-flto}
+optflags: riscv64 %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -march=rv64imafdc -mabi=lp64d
+
+optflags: armv6j %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -march=armv6j -mfpu=vfp -mfloat-abi=hard %{?!_disable_lto:-flto}
+optflags: armv7l %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 %{?!_disable_lto:-flto}
+optflags: armv7hl %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -march=armv7-a -mfloat-abi=hard %{?!_disable_lto:-flto}
+optflags: armv7hnl %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -march=armv7-a -mfloat-abi=hard %{?!_disable_neon:-mfpu=neon-vfpv4} %{?!_disable_lto:-flto}
+optflags: armv8l %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -march=armv8-a -mfloat-abi=softfp -mfpu=vfpv3-d16 %{?!_disable_lto:-flto}
+optflags: armv8hl %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -march=armv8-a -mfloat-abi=hard %{?!_disable_lto:-flto}
+optflags: armv8hnl %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -march=armv8-a -mfloat-abi=hard %{?!_disable_neon:-mfpu=neon-vfpv4} %{?!_disable_lto:-flto}
+optflags: armv8hcnl %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -march=armv8-a+crypto -mfloat-abi=hard %{?!_disable_neon:-mfpu=neon-vfpv4} %{?!_disable_lto:-flto}
+
+optflags: i386 %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -m32 -march=i386 -mtune=generic -fasynchronous-unwind-tables %{?!_disable_lto:-flto}
+optflags: i486 %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -m32 -march=i486 -fasynchronous-unwind-tables %{?!_disable_lto:-flto}
+optflags: i586 %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -m32 -march=i586 -mtune=atom -fasynchronous-unwind-tables %{?!_disable_lto:-flto}
+optflags: i686 %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -m32 -march=i686 -mtune=generic -msse -mfpmath=sse -fasynchronous-unwind-tables -mstackrealign %{?!_disable_lto:-flto}
+optflags: znver1_32 %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -O3 -m32 -march=znver1 -mtune=znver1 -mmmx -msse -msse2 -mssse3 -msse4a -msse4.1 -msse4.2 -mavx -mavx2 -msha -maes -mclflushopt -mfsgsbase -mrdrnd -mfma -mrdseed -mpopcnt -madx -mbmi -mbmi2 -mfxsr -mxsave -mxsaveopt -mxsavec -mxsaves -mmwaitx -mclzero -mfpmath=sse -fasynchronous-unwind-tables %{?!_disable_lto:-flto}
+
+optflags: ia64 %{?__common_cflags:%{__common_cflags}}%{!?__common_cflags:-O2 -g} %{?!_disable_lto:-flto}
+
+optflags: mips %{?__common_cflags:%{__common_cflags}}%{!?__common_cflags:-O2 -g -m32} -march=mips3 %{?!_disable_lto:-flto}
+optflags: mipsel %{?__common_cflags:%{__common_cflags}}%{!?__common_cflags:-O2 -g -m32} -march=mips3 -mtune=loongson2f %{?!_disable_lto:-flto}
+
+optflags: ppc %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -m32 %{?!_disable_lto:-flto}
+optflags: ppc64 %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -m64 -mminimal-toc %{?!_disable_lto:-flto}
+
+optflags: x86_64 %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -m64 -mtune=generic %{?!_disable_lto:-flto}
+optflags: znver1 %{?__common_cflags_with_ssp:%{__common_cflags_with_ssp}}%{!?__common_cflags_with_ssp:-O2 -g} -O3 -m64 -march=znver1 -mtune=znver1 -mmmx -msse -msse2 -mssse3 -msse4a -msse4.1 -msse4.2 -mavx -mavx2 -msha -maes -mclflushopt -mfsgsbase -mrdrnd -mfma -mrdseed -mpopcnt -madx -mbmi -mbmi2 -mfxsr -mxsave -mxsaveopt -mxsavec -mxsaves -mmwaitx -mclzero -mfpmath=sse %{?!_disable_lto:-flto}
+
+#############################################################
+# For a given uname().machine, the default build arch
+
+buildarchtranslate: athlon: i686
+buildarchtranslate: geode: i686
+buildarchtranslate: pentium4: i686
+buildarchtranslate: pentium3: i686
+buildarchtranslate: i586: i686
+
+buildarchtranslate: armv8hcnl: armv7hnl
+buildarchtranslate: armv8hnl: armv7hnl
+buildarchtranslate: armv8hl: armv7hnl
+buildarchtranslate: armv7hl: armv7hnl

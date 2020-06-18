@@ -1,0 +1,16 @@
+#!/bin/sh
+# --- .so files.
+#
+filelist=
+while read instfile ; do
+	filelist="$filelist $instfile"
+done
+
+for i in $(echo $filelist | tr '[:blank:]' "\n" | egrep '(/usr)?/lib(|64)(/gcc(-lib)?/.+)?/[^/]+\.so$'); do
+    objd="$(objdump -p ${i} | grep SONAME)"
+    [ -h ${i} -a -n "${objd}" ] && \
+    lib64=$(if file -L $i 2>/dev/null | grep "ELF 64-bit" >/dev/null; then echo "(64bit)"; fi) && \
+    echo ${objd} | perl -p -e "s/.*SONAME\s+(\S+)\.so.*/devel(\1$lib64)/g"
+done | sort -u
+
+

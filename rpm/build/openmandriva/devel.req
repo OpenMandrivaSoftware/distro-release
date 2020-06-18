@@ -1,0 +1,39 @@
+#/bin/sh
+# .so files.
+#
+filelist=
+while read instfile ; do
+	filelist="$filelist $instfile"
+done
+
+# for objdump:
+export LC_ALL=C
+
+# --- Set needed to 0 for traditional find-requires behavior.
+needed=1
+
+for i in $(echo $filelist | tr '[:blank:]' "\n" | egrep "(/usr)?/lib(|64)/[^/]+\.so$"); do
+    objd="$(objdump -p ${i} | grep SONAME)"
+    lib64=$(if file -L $i 2>/dev/null | grep "ELF 64-bit" >/dev/null; then echo "(64bit)"; fi) && \
+    if [ -h ${i} -a -n "${objd}" ]; then
+      if [ "$needed" -eq 0 ]; then
+       ldd ${i} \
+       | grep -v "statically linked" \
+       | grep -v "/\(lib\|lib64\)/\(ld\|ld64\|ld-linux.*\)\.so" \
+       | perl -p -e "s/\s+(\S+)\.so.*/devel(\1$lib64)/g"
+      else
+       objdump -p $i | grep -v "\(ld\|ld64\|ld-linux.*\)\.so" \
+                     | awk 'BEGIN { START=0; }
+       /^$/ { START=0; }
+       /^Dynamic Section:$/ { START=1; }
+       (START==1) && /NEEDED/ {
+           sub(/^/, "devel(", $2) ;
+           sub(/\.so.*$/, "'$lib64')", $2) ;
+           print $2 ;
+       }
+       '
+      fi
+    fi
+done | egrep -v 'devel\(linux-gate|linux-vdso32|linux-vdso64|lib(c|pthread|rt)(\(64bit\))?\)' | sort -u
+
+

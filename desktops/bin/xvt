@@ -1,0 +1,83 @@
+#!/bin/sh
+#---------------------------------------------------------------
+# Project         : MandrivaLinux
+# Module          : bin
+# File            : xvt
+# Version         : $Id: xvt 266850 2010-03-15 16:54:17Z fcrozat $
+# Author          : Frederic Lepied
+# Created On      : Tue Aug 31 16:26:54 2004
+# Purpose         : launch a terminal emulator
+#---------------------------------------------------------------
+
+# allowed parameters, that must be handled by all terminals:
+#   -geometry <geometry>
+#   -T <title>
+#   -e <program>
+
+strip_terminal_var() {
+if [ -n "$TERMINAL" ]; then
+    if [ $(basename "$TERMINAL") = "xvt" ]; then
+	unset TERMINAL
+    fi
+fi
+}
+
+strip_terminal_var
+if [ -z "$TERMINAL" ]; then
+
+    # using GNOME
+    if [ -n "$GNOME_DESKTOP_SESSION_ID" ]; then
+	TERMINAL=$(gsettings get org.gnome.desktop.default-applications.terminal exec | tr -d \')
+    fi
+
+    # using MATE
+    if [ -n "$MATE_DESKTOP_SESSION_ID" || x"$XDG_CURRENT_DESKTOP" = x"MATE" ]; then
+	TERMINAL=$(gsettings get org.mate.applications-terminal exec | tr -d \')
+    fi
+
+    #using KDE
+    if [ -n "$KDE_FULL_SESSION" ]; then
+	TERMINAL=$(kreadconfig5 --file kdeglobals --group General --key TerminalApplication --default "konsole")
+    fi
+
+    if [ -n "$_LXSESSION_PID" ]; then
+	[ -z "$TERMINAL" ] && TERMINAL=$(command -v which lxterminal 2> /dev/null)
+    fi
+
+    #using Xfce
+    if [  x"$XDG_CURRENT_DESKTOP" = x"XFCE" ]; then
+	[ -z "$TERMINAL" ] && TERMINAL=$(sed -n -e 's,^TerminalEmulator=\(.*\),\1,p' $HOME/.config/xfce4/helpers.rc 2> /dev/null)
+    fi
+
+    # using LXQt
+    if [  x"$XDG_CURRENT_DESKTOP" = x"LXQt" ]; then
+	[ -z "$TERMINAL" ] && TERMINAL=$(which qterminal 2> /dev/null)
+    fi
+
+   strip_terminal_var
+
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v konsole 2> /dev/null)
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v qterminal 2> /dev/null)
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v gnome-terminal 2> /dev/null)
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v mate-terminal 2> /dev/null)
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v kterm 2> /dev/null)
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v lxterminal 2> /dev/null)
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v xfce4-terminal 2> /dev/null)
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v aterm 2> /dev/null)
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v Eterm 2> /dev/null)
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v multi-gnome-terminal 2> /dev/null)
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v multixterm 2> /dev/null)
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v rxvt 2> /dev/null)
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v terminal 2> /dev/null)
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v terminator 2> /dev/null)
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v xterm 2> /dev/null)
+
+fi
+
+if [ -n "$TERMINAL" ]; then
+    exec $TERMINAL "$@"
+else
+    printf '%s\n' "No terminal emulator detected."
+fi
+
+# xvt ends here

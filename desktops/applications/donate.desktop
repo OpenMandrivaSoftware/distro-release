@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Donate
+Name[pl]=Dotacja
+Comment=Donate to OpenMandriva Community
+Comment[pl]=Wspomóż finansowo społeczność OpenMandriva
+Type=Link
+URL=https://www.openmandriva.org/Donate
+Icon=omv-donate

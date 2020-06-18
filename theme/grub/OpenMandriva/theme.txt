@@ -1,0 +1,61 @@
+# Global properties
+title-text: ""
+title-font: "GNU Unifont Regular 16"
+title-color: "#FFFFFF"
+message-font: "GNU Unifont Regular 16"
+message-color: "#000000"
+message-bg-color: "#f6f6f6"
+desktop-image: "background.png"
+terminal-font: "GNU Unifont Regular 16"
+terminal-box: "item_normal_*.png"
+
+# Show the boot menu
++ boot_menu {
+		left = 50%-332
+		width = 705
+		top = 50%-124
+		height = 325
+		item_font = "GNU Unifont Regular 16"
+		selected_item_font = "GNU Unifont Regular 16"
+		item_color = "#ffffff"
+		selected_item_color = "#033d6e"
+		item_height = 28
+		item_padding = 0
+		item_spacing = 8
+		icon_width = 30
+		icon_height = 28
+		item_pixmap_style = "*"
+		selected_item_pixmap_style = "highlighted_*.png"
+		scrollbar = true
+		scrollbar_width = 10
+		scrollbar_thumb = "scrollbar_*.png"
+		scrollbar_frame = "scrollback_*.png"
+		menu_pixmap_style = "*"
+		max_items_shown = 10
+}
+
+# show timeout
++ label {
+		top = 100%-37
+		left = 65%
+		width = 30%
+		align = "center"
+		id = "__timeout__"
+		text = "Start in %d second(s)"
+		color = "#FFFFFF"
+		font = "GNU Unifont Regular 16"
+}
+
+# Show an informational message.
++ hbox {
+		top = 100%-37
+		left = 50%-332
+		+ label {text = "E: " font = "GNU Unifont Regular 16" color = "#7ebeec" align = "left"}
+		+ label {text = "Edit entry   " font = "GNU Unifont Regular 16" color = "#d4e0ec" align = "left"}
+		+ label {text = "C: " font = "GNU Unifont Regular 16" color = "#7ebeec" align = "left"}
+		+ label {text = "Console   " font = "GNU Unifont Regular 16" color = "#d4e0ec" align = "left"}
+                + label {text = "Enter: " font = "GNU Unifont Regular 16" color = "#7ebeec" align = "left"}
+                + label {text = "Boot entry   " font = "GNU Unifont Regular 16" color = "#d4e0ec" align = "left"}
+                + label {text = "ESC: " font = "GNU Unifont Regular 16" color = "#7ebeec" align = "left"}
+                + label {text = "Back" font = "GNU Unifont Regular 16" color = "#d4e0ec" align = "left"}
+}

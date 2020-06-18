@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Gigolo
+Comment=A simple frontend to easily connect to remote filesystems
+Exec=gigolo -i
+Icon=gtk-network
+Terminal=false
+StartupNotify=false
+OnlyShowIn=XFCE;

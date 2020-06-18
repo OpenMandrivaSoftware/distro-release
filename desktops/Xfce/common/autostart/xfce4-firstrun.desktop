@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Mandriva xfce4 update tool
+Comment=Update config and icons for Xfce
+Icon=mandriva
+Exec=xfce4-firstrun
+StartupNotify=false
+Terminal=false
+Hidden=false
+OnlyShowIn=XFCE;

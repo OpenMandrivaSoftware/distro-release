@@ -1,0 +1,98 @@
+﻿# -*- encoding: utf-8 -*-
+#
+# Type | Comment | Name and email
+#
+# first field ("Translators") is translatable, it is the main section
+# second field is the subsection for language, it is half translatable,
+# and half non translatable, eg: "French (Français)", "French (%s)"
+# is translatable, but "Français" is not; so when displaying under
+# Spanish locale it would look like "Francés (Français)" and
+# under Russian locale "Француска (Français)"
+# last field is the translator name (and possibly email), it is not
+# translatable.
+# maybe also the language section may be made into a clickable
+# link to the url of the translation status page?
+
+OpenMandriva Lx 4| Contributors involved in OpenMandriva Lx 3 development: The following people have contributed to the development of the OpenMandriva Lx 4. Thanks for all contributing their time and talents. |
+
+Contributors | AngryPenguinPL
+Contributors | Alexander Burmashev
+Contributors | Alexander Khryukin
+Contributors | Alexey Vokhmin
+Contributors | Alisson Oliveira
+Contributors | Andrey Bondrov
+Contributors | Anurag Bhandari
+Contributors | Ben Bullard
+Contributors | Bernhard Rosenkränzer
+Contributors | Blackcrack
+Contributors | Caig
+Contributors | Charles H-Schulz
+Contributors | Chris Tanner
+Contributors | Colin Close
+Contributors | Crispin Boylan
+Contributors | Cristina (rugyada)
+Contributors | David Walser
+Contributors | Denis Silakov
+Contributors | Derrick Devine
+Contributors | Gabriel Craciunescu (crazy)
+Contributors | Guilherme Moro
+Contributors | Hamp3
+Contributors | HisShadow
+Contributors | Jean-Claude Vanier
+Contributors | Jeffrey Johnson
+Contributors | Jochen Schönfelder
+Contributors | John Cave
+Contributors | Johnny A. Solbu
+Contributors | João Azevedo Patrício
+Contributors | Julia
+Contributors | Kate Lebedeff
+Contributors | Kamil Rytarowski
+Contributors | Krzysztof Zalewski
+Contributors | mandian-lx
+Contributors | Matthew Dawkins
+Contributors | Marco Benatto
+Contributors | Nicolo Costanza
+Contributors | Neal Gompa
+Contributors | Paulo César Pereira de Andrade
+Contributors | Panah Biru
+Contributors | Per Oyvind Karlsen
+Contributors | Raphaël Jadot
+Contributors | Raul Liota da Rosa
+Contributors | Robert Xu
+Contributors | Subperceptual
+Contributors | SymbianFlo
+Contributors | Tomasz Paweł Gajc
+Contributors | Wayne Sallee
+Testers | Ben Bullard
+Testers | Chris Tanner
+Testers | Colin Close
+Testers | Davide Garatti
+Testers | Francisco Panis Kaseker
+Testers | Karol
+Testers | Giorgio
+Testers | Gus Be
+Testers | Robert Xu
+Testers | Rolf Pedersen
+Testers | Luca Pedrielli
+Testers | Joel Tesson
+Testers | viking60
+Testers | Many unnamed and unknown beta testers and bug reporters that helped make sure it all worked right |
+Translators | Brazilian Portuguese (Português do Brasil) | Alisson Oliveira
+Translators | Brazilian Portuguese (Português do Brasil) | Raul Liota da Rosa
+Translators | Dutch (Nederlands) | Arvi Pingus
+Translators | Dutch (Nederlands) | Willie
+Translators | French (français) | Jean-Claude Vanier
+Translators | French (français) | Raphaël Jadot
+Translators | German (Deutsch) | Isadora
+Translators | German (Deutsch) | blackcrack
+Translators | German (Deutsch) | tapwag
+Translators | Hindi (हिन्दी) | Anurag Bhandari
+Translators | Indonesian (Bahasa Indonesia) | Panahbiru
+Translators | Italian (Italiano) | Cristina (rugyada)
+Translators | Polish (polski) | Tomasz Paweł Gajc
+Translators | Portuguese (Português) | Eu_Talvez
+Translators | Russian (Русский) | Kate Lebedeff
+Translators | Spanish (español) | BlogDrake
+Translators | Spanish (español) | mdktrans
+Translators | Turkish (Türkçe) | elektronist
+Translators | Ukrainian (Українська) | Taras Boychuk

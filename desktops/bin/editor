@@ -1,0 +1,61 @@
+#!/bin/sh
+#---------------------------------------------------------------
+# Project         : Mageia
+# Module          : bin
+# File            : editor
+# Author          : David Walser
+# Created On      : Thu Apr 3 16:26:54 2012
+# Purpose         : launch a text editor
+#---------------------------------------------------------------
+
+strip_texteditor_var() {
+if [ -n "$TEXTEDITOR" ]; then
+    if [ $(basename "$TEXTEDITOR") = "editor" ]; then
+	unset TEXTEDITOR
+    elif ! command -v $TEXTEDITOR > /dev/null 2>&1; then
+	unset TEXTEDITOR
+    fi
+fi
+}
+
+strip_texteditor_var
+if [ -z "$TEXTEDITOR" ]; then
+
+    # using GNOME
+    if [ -n "$GNOME_DESKTOP_SESSION_ID" ]; then
+	TEXTEDITOR="gedit"
+    fi
+
+    #using KDE
+    if [ -n "$KDE_FULL_SESSION" ]; then
+	TEXTEDITOR="kwrite"
+    fi
+
+    strip_texteditor_var
+
+    [ -z "$TEXTEDITOR" ] && TEXTEDITOR=$(command -v kwrite 2> /dev/null)
+    [ -z "$TEXTEDITOR" ] && TEXTEDITOR=$(command -v gedit 2> /dev/null)
+
+    if [ -z "$TEXTEDITOR" ]; then
+	EMACS=$(/usr/sbin/update-alternatives --list emacs)
+	if [ -n "$EMACS" ]; then
+	    if [ $(basename "$EMACS") = "emacs-nox" ]; then
+		TEXTEDITOR="xvt -e emacs"
+	    else
+		TEXTEDITOR="emacs"
+	    fi
+	fi
+    fi
+
+    [ -z "$TEXTEDITOR" ] && command -v mcedit > /dev/null 2>&1 && TEXTEDITOR="xvt -e mcedit"
+    [ -z "$TEXTEDITOR" ] && command -v vim > /dev/null 2>&1 && TEXTEDITOR="xvt -e vim"
+    [ -z "$TEXTEDITOR" ] && command -v nano > /dev/null 2>&1 && TEXTEDITOR="xvt -e nano"
+fi
+
+if [ -n "$TEXTEDITOR" ]; then
+    exec $TEXTEDITOR "$@"
+else
+    printf '%s\n' "No text editor detected."
+fi
+
+# editor ends here
