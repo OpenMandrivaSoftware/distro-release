@@ -1,0 +1,45 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# tuhaihe <1132321739qq@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: indexhtml\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-08-30 17:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Language: zh_CN\n"
+"X-Source-Language: C\n"
+
+#. name appearing in To:
+#: mail/placeholder.h:8
+msgid "Mageia Users"
+msgstr "Mageia 用户"
+
+#. subject
+#: mail/placeholder.h:10
+msgid "Welcome to Mageia"
+msgstr "欢迎使用 Mageia"
+
+#.
+#: mail/placeholder.h:12
+msgid "Welcome to Mageia!"
+msgstr "欢迎使用 Mageia！"
+
+#. mail greeting heading
+#: mail/placeholder.h:14
+msgid "Hello,"
+msgstr "您好，"
+
+#. goodbye signature (2nd line)
+#: mail/placeholder.h:41
+msgid "The Mageia team"
+msgstr "Mageia 团队"

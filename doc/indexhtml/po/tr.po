@@ -1,0 +1,44 @@
+# Turkish translations for indexhtml package
+# indexhtml paketi için Türkçe çeviriler.
+# Copyright (C) 2013 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Atilla ÖNTAŞ <tarakbumba@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: indexhtml\n"
+"Report-Msgid-Bugs-To: Mageia i18n Team <i18n@mageia.org>\n"
+"POT-Creation-Date: 2005-08-30 17:45+0200\n"
+"PO-Revision-Date: 2013-03-08 00:45+0300\n"
+"Last-Translator: Atilla ÖNTAŞ <tarakbumba@gmail.com>\n"
+"Language-Team: Mageia Turkish Translation Team <i18n-tr@ml.mageia.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Virtaal 0.7.1\n"
+
+#. name appearing in To:
+#: mail/placeholder.h:8
+msgid "Mageia Users"
+msgstr "Mageia Kullanıcıları"
+
+#. subject
+#: mail/placeholder.h:10
+msgid "Welcome to Mageia"
+msgstr "Mageia' ya hoş geldiniz"
+
+#.
+#: mail/placeholder.h:12
+msgid "Welcome to Mageia!"
+msgstr "Mageia' ya hoş geldiniz!"
+
+#. mail greeting heading
+#: mail/placeholder.h:14
+msgid "Hello,"
+msgstr "Merhaba,"
+
+#. goodbye signature (2nd line)
+#: mail/placeholder.h:41
+msgid "The Mageia team"
+msgstr "Mageia ekibi"

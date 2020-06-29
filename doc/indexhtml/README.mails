@@ -1,0 +1,24 @@
+* Text only mails are created like this:
+
+cat mail/header-$lang > tmpfile
+cat mail/mail-$lang.txt >> tmpfile
+
+* text+html+images mails are created like this:
+
+cat mail/header-$lang > tmpfile
+cat < EOF >> tmpfile
+Content-Type: multipart/related; type="multipart/alternative";
+       boundary="=-tThpx1YEZqL4gn53WjQ1"
+
+--=-tThpx1YEZqL4gn53WjQ1
+Content-Type: multipart/alternative; boundary="=-aFPGjTr5jUHhXPWxbLcT"
+
+--=-aFPGjTr5jUHhXPWxbLcT
+EOF
+cat mail/mail-$lang.txt >> tmpfile
+cat mail/mail-$lang.html >> tmpfile
+cat mail/mail-images >> tmpfile
+
+
+
+
