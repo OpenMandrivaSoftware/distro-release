@@ -1,0 +1,23 @@
+#!/bin/sh
+
+if [ "x$GNOME_DESKTOP_SESSION_ID" != "x" ] && [ -x /usr/bin/yelp ]; then
+    www_browser="/usr/bin/yelp"
+else
+    www_browser="xdg-open"
+fi
+
+for lang in $(printf "%s\n" $LANG:$LANGUAGE | tr ':' ' ' | cut -d'_' -f1) ; do
+    file="/usr/share/mdk/about/index-$lang.html"
+    if [ -f "$file" ]; then
+	$www_browser $file
+	exit 0
+    fi
+done
+
+if [ -f /usr/share/mdk/about/index.html ]; then
+    $www_browser /usr/share/mdk/about/index.html
+    exit 0
+fi
+
+printf "%s\n" "File not found for about OpenMandriva Lx"
+exit 1

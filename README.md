@@ -6,6 +6,7 @@ This repository contains basic OpenMandriva Lx setup:
 - installer configurations
 - rpm configurations
 - common-licenses
+- indexhtml
 
 Direcotry layout:
 

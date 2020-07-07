@@ -1,0 +1,41 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Filip Komar <filip.komar@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: indexhtml_about\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-07 00:52+0100\n"
+"PO-Revision-Date: 2012-07-27 01:49+0100\n"
+"Last-Translator: Filip Komar <filip.komar@gmail.com>\n"
+"Language-Team: Translation list <mageia-i18n@mageia.org>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: index.html.in.h:1
+msgid "About OpenMandriva"
+msgstr "O distribuciji OpenMandriva"
+
+#: index.html.in.h:2
+msgid "Browse resources"
+msgstr "Prebrskaj vire"
+
+#: index.html.in.h:3
+msgid "Coming soon"
+msgstr "Prihaja"
+
+#: index.html.in.h:4
+msgid "Coming soon..."
+msgstr "Prihaja ..."
+
+#: index.html.in.h:5
+msgid "What is OpenMandriva Lx?"
+msgstr "Kaj je OpenMandriva Lx?"
+
+#: index.html.in.h:6
+msgid "top of this page"
+msgstr "vrh te strani"

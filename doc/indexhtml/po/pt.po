@@ -1,0 +1,44 @@
+# Copyright (C) 2011 Mageia
+# This file is distributed under the same license as the indexhtml package.
+#
+# Last-Translator: Zé <ze@mandriva.org>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-08-30 17:45+0200\n"
+"PO-Revision-Date: 2011-05-09 21:11+0100\n"
+"Last-Translator: Zé <ze@mandriva.org>\n"
+"Language-Team: Portuguese <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. name appearing in To:
+#: mail/placeholder.h:8
+msgid "Mageia Users"
+msgstr "Utilizadores Mageia"
+
+#. subject
+#: mail/placeholder.h:10
+msgid "Welcome to Mageia"
+msgstr "Bem-vindo à Mageia"
+
+#.
+#: mail/placeholder.h:12
+msgid "Welcome to Mageia!"
+msgstr "Bem-vindo à Mageia!"
+
+#. mail greeting heading
+#: mail/placeholder.h:14
+msgid "Hello,"
+msgstr "Olá,"
+
+#. goodbye signature (2nd line)
+#: mail/placeholder.h:41
+msgid "The Mageia team"
+msgstr "A equipa Mageia"
+

@@ -1,0 +1,104 @@
+html {
+	background-color: #fff;
+	color: #000;
+}
+
+body {
+	font-family: Sans, sans-serif;
+	font-size: 70%;
+	text-align: center;
+}
+
+em { font-style: normal; }
+
+a, a:visited { color: #21449c; }
+
+#title2 { 
+	color: #2b51a6; 
+	font-size: 200%;
+}
+h2
+        {
+        color: #2b51a6;
+        font-size: 150%;
+        text-align: center;
+}
+
+h3 a, h3 { 
+	color: #2b51a6;
+}
+
+#distro {
+	text-align: #center;
+}
+
+div#content {
+	width: 800px;
+	margin: auto;
+	text-align: left;
+}
+
+div#title {
+	display: block;
+	height: 100px;
+	width: 100%;
+	margin-bottom: 2em;
+	position: relative;
+}
+
+ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+	ul li {
+		margin-bottom: 0em;
+	}
+		ul li img {}
+		ul li h3 {
+			margin: 0px;
+			font-size: 120%;
+		}
+		ul li p {
+			margin-top: 0px;
+			text-align: justify;
+		}
+
+	ul.focus {}
+		ul.focus li {
+			text-align: center;
+			float: left;
+			padding: 1em;
+			width: 30%;
+		}
+			ul.focus li img {
+				margin: auto;
+			}
+			ul.focus li h3 {
+				text-align: left;
+				margin: 1em 0 0 0;
+			}
+			ul.focus li p {
+				text-align: left;
+			}
+
+	ul.list li p.more {
+		text-align: right;
+	}
+
+div.clear { clear: both; }
+
+div.bottom {
+	width: 100%;
+	height: 24px;
+	background-repeat: no-repeat;
+	margin-bottom: 2em;
+	position: relative;
+}
+div#title_top {
+        margin-top: 5px;
+        text-align: right;
+        margin-bottom: 3em;
+}
+

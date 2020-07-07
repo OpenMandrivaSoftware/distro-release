@@ -6,8 +6,14 @@ message-font: "Unifont Regular 14"
 message-color: "#000000"
 message-bg-color: "#f6f6f6"
 desktop-image: "background.png"
+desktop-color: "#000000"
 terminal-font: "Unifont Regular 14"
 terminal-box: "item_normal_*.png"
+terminal-left: "0"
+terminal-top: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+terminal-border: "0"
 
 # Show the boot menu
 + boot_menu {

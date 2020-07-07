@@ -1,0 +1,13 @@
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Bem-vindo à OpenMandriva Lx!
+
+Visite a nossa página http://www.openmandriva.org/ para obter mais dicas e actualizações
+acerca da OpenMandriva Lx.
+
+Divirta-se!
+
+--
+OpenMandriva Lx
+http://www.openmandriva.org/

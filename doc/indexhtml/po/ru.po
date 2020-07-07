@@ -1,0 +1,41 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: indexhtml\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-07 00:52+0100\n"
+"PO-Revision-Date: 2013-03-31 22:44-0000\n"
+"Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: index.html.in.h:1
+msgid "About Mageia"
+msgstr "О Mageia"
+
+#: index.html.in.h:2
+msgid "Browse resources"
+msgstr "Обзор ресурсов"
+
+#: index.html.in.h:3
+msgid "Coming soon"
+msgstr "Скоро будет"
+
+#: index.html.in.h:4
+msgid "Coming soon..."
+msgstr "Скоро будет..."
+
+#: index.html.in.h:5
+msgid "What is Mageia?"
+msgstr "Mageia - это что?"
+
+#: index.html.in.h:6
+msgid "top of this page"
+msgstr "наверх этой страницы"
+
