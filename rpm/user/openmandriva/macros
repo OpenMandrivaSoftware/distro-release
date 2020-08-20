@@ -128,6 +128,7 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
   FFLAGS="${FFLAGS:-%build_fflags}" ; export FFLAGS ; \
   FCFLAGS="${FCFLAGS:-%build_fflags}" ; export FCFLAGS ; \
   %{?build_ldflags:LDFLAGS="${LDFLAGS:-%{build_ldflags}}"; export LDFLAGS ;} \
+  LT_SYS_LIBRARY_PATH="${LT_SYS_LIBRARY_PATH:-%_libdir:}" ; export LT_SYS_LIBRARY_PATH ; \
 %if %{cross_compiling} \
     PKG_CONFIG_PATH=/usr/%{_target_platform}/sys-root%{_libdir}/pkgconfig:/usr/%{_target_platform}/sys-root%{_datadir}/pkgconfig:%{_libdir}/pkgconfig:%{_datadir}/pkgconfig:$PKG_CONFIG_PATH; export PKG_CONFIG_PATH; \
 %ifnarch noarch \
@@ -330,6 +331,21 @@ fi
 
 %__libtoolize_configure %{?__libtoolize:(cd $CONFIGURE_TOP; [ ! -f configure.in -a ! -f configure.ac ] || %{__libtoolize} --copy --force)}
 
+# This fixes various easy resolved configure tests that are compromised by LTO.
+%_fix_broken_configure_for_lto \
+  for file in $(find . -type f -name configure -print); do \
+    %{__sed} -r --in-place=.backup 's/^char \\(\\*f\\) \\(\\) = /__attribute__ ((used)) char (*f) () = /g' $file; \
+    diff -u $file.backup $file && mv $file.backup $file \
+    %{__sed} -r --in-place=.backup 's/^char \\(\\*f\\) \\(\\);/__attribute__ ((used)) char (*f) ();/g' $file; \
+    diff -u $file.backup $file && mv $file.backup $file \
+    %{__sed} -r --in-place=.backup 's/^char \\$2 \\(\\);/__attribute__ ((used)) char \\$2 ();/g' $file; \
+    diff -u $file.backup $file && mv $file.backup $file \
+    %{__sed} --in-place=.backup '1{$!N;$!N};$!N;s/int x = 1;\\nint y = 0;\\nint z;\\nint nan;/volatile int x = 1; volatile int y = 0; volatile int z, nan;/;P;D' $file; \
+    diff -u $file.backup $file && mv $file.backup $file \
+    %{__sed} --in-place=.backup 's#^lt_cv_sys_global_symbol_to_cdecl=.*#lt_cv_sys_global_symbol_to_cdecl="sed -n -e '"'"'s/^T .* \\\\(.*\\\\)$/extern int \\\\1();/p'"'"' -e '"'"'s/^$symcode* .* \\\\(.*\\\\)$/extern char \\\\1;/p'"'"'"#' $file; \
+    diff -u $file.backup $file && mv $file.backup $file \
+  done;
+
 %config_update \
   find . -name config.guess -o -name config.sub | while read i ; do \
            [ -f /usr/share/libtool/config/"$(basename \"$i\")" ] && /bin/rm -f "$i" && /bin/cp -fv /usr/share/libtool/config/"$(basename \"$i\")" "$i" ; \
@@ -351,6 +367,7 @@ fi
 %before_configure \
   %config_update \
   %set_build_flags \
+  %{?!_disable_lto:%{_fix_broken_configure_for_lto}} \
   CONFIGURE_TOP="${CONFIGURE_TOP:-.}"
 
 # This is an improved version of %configure (from PLD team).
