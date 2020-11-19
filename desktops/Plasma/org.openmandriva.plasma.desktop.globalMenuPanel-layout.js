@@ -29,14 +29,14 @@ launcher.currentConfigGroup = ["Shortcuts"]
 launcher.writeConfig("global", "Alt+F1")
 launcher.currentConfigGroup = ["General"]
 launcher.writeConfig("favorites", "preferred://browser,org.kde.kmail.desktop,org.kde.konversation.desktop,kcm_kdeconnect.desktop,org.kde.dolphin.desktop,org.kde.kate.desktop,org.kde.konsole.desktop,systemsettings.desktop")
-launcher.writeConfig("limitDepth", false)
-launcher.writeConfig("useExtraRunners", true)
-launcher.writeConfig("alignResultsToBottom", true)
+launcher.writeConfig("limitDepth", "false")
+launcher.writeConfig("useExtraRunners", "true")
+launcher.writeConfig("alignResultsToBottom", "true")
 launcher.writeConfig("appNameFormat", "3")
 launcher.writeConfig("showRecentContacts", "true")
 launcher.writeConfig("showRecentApps", "true")
 launcher.writeConfig("showRecentDocs", "true")
-launcher.writeConfig("appNameFormat", "0")
+launcher.writeConfig("showIconsRootLevel", "true")
 
 panel.addWidget("org.kde.plasma.appmenu")
 panel.addWidget("org.kde.plasma.panelspacer")
