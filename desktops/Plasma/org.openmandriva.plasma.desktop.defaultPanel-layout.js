@@ -1,5 +1,5 @@
 // Default Plasma panel for OpenMandriva
-// Author: Tomasz Paweł Gajc (tpgxyz@gmail.com) 2013, 2014, 2015, 2016
+// Author: Tomasz Paweł Gajc (tpgxyz@gmail.com) 2013, 2014, 2015, 2016, 2020
 // Bernhard Rosenkränzer <bero@lindev.ch> 2020
 // Licensed under GPLv2+
 
@@ -43,6 +43,7 @@ launcher.writeConfig("showIconsRootLevel", "true")
 
 var tasks = panel.addWidget("org.kde.plasma.taskmanager")
 tasks.currentConfigGroup = ["General"]
+tasks.writeConfig("launchers","")
 tasks.writeConfig("forceStripes","true")
 tasks.writeConfig("middleClickAction", "Close")
 tasks.writeConfig("onlyGroupWhenFull","true")
