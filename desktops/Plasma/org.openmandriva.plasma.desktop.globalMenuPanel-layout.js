@@ -32,7 +32,7 @@ launcher.writeConfig("favorites", "preferred://browser,org.kde.kmail.desktop,org
 launcher.writeConfig("limitDepth", "false")
 launcher.writeConfig("useExtraRunners", "true")
 launcher.writeConfig("alignResultsToBottom", "true")
-launcher.writeConfig("appNameFormat", "3")
+launcher.writeConfig("appNameFormat", "2")
 launcher.writeConfig("showRecentContacts", "true")
 launcher.writeConfig("showRecentApps", "true")
 launcher.writeConfig("showRecentDocs", "true")
