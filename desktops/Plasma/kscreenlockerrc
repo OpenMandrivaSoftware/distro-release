@@ -1,5 +1,5 @@
 [Daemon]
-Autolock=false
+Autolock=true
 LockGrace=5
 LockOnResume=true
 Timeout=5
@@ -10,3 +10,8 @@ WallpaperPlugin=org.kde.image
 
 [Greeter][Wallpaper][org.kde.image][General]
 Image=file:///usr/share/mdk/backgrounds/default.png
+SlidePaths=/usr/share/wallpapers
+
+[Greeter][Wallpaper][org.kde.slideshow][General]
+SlideInterval=300
+SlidePaths=/usr/share/mdk/screensaver
