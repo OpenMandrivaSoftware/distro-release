@@ -1,5 +1,5 @@
 [Daemon]
-Autolock=true
+Autolock=false
 LockGrace=5
 LockOnResume=true
 Timeout=5

@@ -67,7 +67,7 @@ ElectricBorderTiling=true
 ElectricBorders=1
 
 [NightColor]
-Active=true
+Active=false
 NightTemperature=300
 
 [TabBox]
