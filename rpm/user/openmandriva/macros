@@ -166,9 +166,7 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
 
 # Hardened Servers opt flags.
 # Also set the env variables for backward compatibility (#32050).
-%serverbuild_hardened %define _hardened_flags -Wl,-z,now -pie \
-export CFLAGS="%{optflags} -fPIE"; export CXXFLAGS="%{optflags} -fPIE"; export RPM_OPT_FLAGS="%{optflags} -fPIE" \
-%{nil}
+%serverbuild_hardened %define _hardened_flags -pie -Wl,-z,now
 
 # Include minimal debug information in build binaries.
 # Requires _enable_debug_packages.
