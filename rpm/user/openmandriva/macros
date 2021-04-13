@@ -110,7 +110,7 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
 
 # When LTOing, it is useful to duplicate CFLAGS in LDFALGS
 # See https://github.com/OpenMandrivaSoftware/rpm-openmandriva-setup/pull/3
-%build_ldflags %{optflags} -Wl,-O2 %{?!_disable_ld_no_undefined: -Wl,--no-undefined} %{?!_disable_lto:-flto} %{?_hardened_flags}
+%build_ldflags %{optflags} -Wl,-O2 %{?!_disable_ld_no_undefined: -Wl,--no-undefined} %{?!_disable_lto:-flto} %{?_hardened_flags} %{?!_disable_icf:-Wl,--icf=all} %{?!_disable_ipo:-Wl,--gc-sections}
 
 # Deprecated names.  For backwards compatibility only.
 %ldflags %build_ldflags
@@ -156,8 +156,11 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
 # cf http://wiki.mandriva.com/en/Development/Packaging/Problems#format_not_a_string_literal_and_no_format_arguments
 %Werror_cflags -Wformat -Werror=format-security
 
+# use non-LTO interprocedural optimization
+%ipo_cflags -ffunction-sections -fdata-sections
+
 %_ssp_cflags -fstack-protector-all --param=ssp-buffer-size=4
-%__common_cflags -Os -fomit-frame-pointer %{debugcflags} -pipe %{Werror_cflags} %{?_fortify_cflags}
+%__common_cflags -Os -fomit-frame-pointer %{debugcflags} -pipe %{Werror_cflags} %{?_fortify_cflags} %{?!_disable_ipo: %ipo_cflags}
 %__common_cflags_with_ssp %{__common_cflags} %{?_ssp_cflags}
 
 # Servers opt flags.
