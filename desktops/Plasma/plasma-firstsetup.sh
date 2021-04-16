@@ -5,7 +5,7 @@ if [ -n "$(command -v kreadconfig5)" ]; then # Check if Plasma is installed, oth
 
     if [ "$FIRSTRUN" = 'true' ]; then
 # (tpg) enable xscreensaver
-	if [ ! -f "~/.config/autostart/xscreensaver.desktop" -a -x "$(command -v xscreensaver)" ]; then
+	if [ ! -f "~/.config/autostart/xscreensaver.desktop" ] && [ -x "$(command -v xscreensaver)" ]; then
 	    mkdir -p "~/.config/autostart"
 	    cat > "~/.config/autostart/xscreensaver.desktop" << "EOF"
 [Desktop Entry]
@@ -23,7 +23,7 @@ EOF
 	USER_DESKTOP="$(xdg-user-dir DESKTOP)"
 	for i in om-welcome join donate calamares; do
 	    if [ ! -e "$USER_DESKTOP"/$i.desktop ] && [ -e /usr/share/applications/$i.desktop ]; then
-		cp -f /usr/share/applications/$i.desktop "$USER_DESKTOP" 2> /dev/null
+		cp -f /usr/share/applications/$i.desktop "$USER_DESKTOP"/$i.desktop 2> /dev/null
 		chmod +x "$USER_DESKTOP"/$i.desktop ||:
 	    fi
 	done
