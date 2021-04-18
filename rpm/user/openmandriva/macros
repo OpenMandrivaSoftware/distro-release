@@ -66,6 +66,13 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
 %_binary_payload w19.zstdio
 %_xz_threads -1
 
+# don't use compression for source packages.
+# (It is unnecessary since the biggest part of
+# a src.rpm is the source tarball -- which is
+# already compressed. Compressing compressed files
+# doesn't help.)
+%_source_payload w.ufdio
+
 # Use SHA-256 for FILEDIGESTS instead of default MD5
 %_source_filedigest_algorithm 8
 %_binary_filedigest_algorithm 8
