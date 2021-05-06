@@ -154,7 +154,7 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
   echo "%%setup_compile_flags is deprecated, please update the spec to use %%set_build_flags instead" >&2; \
   %set_build_flags
 
-%debugcflags %{?_enable_debug_packages:-g1 -Wstrict-aliasing=2}
+%debugcflags %{?_enable_debug_packages:-g3 -gdwarf-5 -Wstrict-aliasing=2}
 
 # common compilation flags
 
