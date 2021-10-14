@@ -2,7 +2,7 @@
 cursorTheme=Breeze_Snow
 
 [kdeglobals][General]
-ColorScheme=Breeze
+ColorScheme=BreezeLight
 
 [kdeglobals][KDE]
 widgetStyle=breeze
@@ -15,7 +15,6 @@ LayoutName=org.kde.breeze.desktop
 
 [kwinrc][org.kde.kdecoration2]
 library=org.kde.breeze
-theme=
 
 [plasmarc][Theme]
 name=breeze-dark
