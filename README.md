@@ -8,7 +8,7 @@ This repository contains basic OpenMandriva Lx setup:
 - common-licenses
 - indexhtml
 
-Direcotry layout:
+Directory layout:
 
 - desktops
 
