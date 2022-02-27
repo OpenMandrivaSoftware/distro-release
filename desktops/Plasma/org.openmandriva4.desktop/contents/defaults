@@ -15,6 +15,7 @@ LayoutName=org.kde.breeze.desktop
 
 [kwinrc][org.kde.kdecoration2]
 library=org.kde.breeze
+theme=Breeze
 
 [plasmarc][Theme]
 name=breeze-dark
