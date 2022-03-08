@@ -16,22 +16,22 @@
 # dwz will stop considering file for multifile optimizations
 # and enter a low memory mode, in which it will optimize
 # in about half the memory needed otherwise.
-%_dwz_low_mem_die_limit		 10000000
+%_dwz_low_mem_die_limit 10000000
 # Number of DIEs above which dwz will stop processing
 # a file altogether.
-%_dwz_max_die_limit     	 50000000
+%_dwz_max_die_limit 50000000
 
 # On x86_64 increase the higher limit to make libwebkit* optimizable.
 # libwebkit* in mid 2012 contains roughly 87mil DIEs, and 64-bit
 # dwz is able to optimize it from ~1.1GB to ~410MB using 5.2GB of RAM.
-%_dwz_max_die_limit_x86_64	110000000
+%_dwz_max_die_limit_x86_64 110000000
 
 # On ARM, build boxes often have only 512MB of RAM and are very slow.
 # Lower both the limits.
-%_dwz_low_mem_die_limit_armv5tel  4000000
-%_dwz_low_mem_die_limit_armv7hl	  4000000
-%_dwz_max_die_limit_armv5tel	 10000000
-%_dwz_max_die_limit_armv7hl	 10000000
+%_dwz_low_mem_die_limit_armv5tel 4000000
+%_dwz_low_mem_die_limit_armv7hl 4000000
+%_dwz_max_die_limit_armv5tel 10000000
+%_dwz_max_die_limit_armv7hl 10000000
 
 %_dwz_limit() %{expand:%%{?%{1}_%{_arch}}%%{!?%{1}_%{_arch}:%%%{1}}}
 %_find_debuginfo_dwz_opts --run-dwz\\\
