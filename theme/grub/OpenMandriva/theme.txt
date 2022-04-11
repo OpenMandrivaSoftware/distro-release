@@ -1,4 +1,4 @@
-# Violetto GRUB2  Linux theme
+# OpenMandriva GRUB2  Linux theme
 # by ruru
 # based on Linux Vimix
 
