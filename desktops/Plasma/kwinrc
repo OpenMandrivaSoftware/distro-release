@@ -66,6 +66,10 @@ ElectricBorderMaximize=true
 ElectricBorderTiling=true
 ElectricBorders=1
 
+[NightColor]
+Active=false
+NightTemperature=300
+
 [TabBox]
 ActivitiesMode=1
 ApplicationsMode=0
