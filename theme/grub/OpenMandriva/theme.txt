@@ -1,13 +1,17 @@
 # OpenMandriva GRUB2  Linux theme
 # by ruru
 # based on Linux Vimix
-# OMLx v. 4.3
 
 # Global Property
 title-text: ""
+title-font: "Unifont Regular 14"
+title-color: "#FFFFFF"
+message-font: "Unifont Regular 14"
+message-color: "#000000"
+message-bg-color: "#f6f6f6"
 desktop-image: "background.png"
 desktop-color: "#000000"
-terminal-font: "Terminus Regular 14"
+terminal-font: "Unifont Regular 14"
 terminal-box: "item_normal_*.png"
 terminal-left: "0"
 terminal-top: "0"
@@ -17,10 +21,10 @@ terminal-border: "0"
 
 # Show the boot menu
 + boot_menu {
-  left = 50%-332
-  top = 50%-124
-  width = 65%
-  height = 50%
+	left = 50%-332
+	width = 705
+	top = 50%-124
+	height = 325
   item_font = "Unifont Regular 16"
   item_color = "#cccccc"
   selected_item_color = "#ffffff"
@@ -32,7 +36,6 @@ terminal-border: "0"
   selected_item_pixmap_style = "select_*.png"
 }
 
-# ruru + timeout
 # show timeout
 + label {
 	top = 100%-37
@@ -45,7 +48,6 @@ terminal-border: "0"
 	font = "Unifont Regular 14"
 }
 
-# ruru + info
 # Show an informational message.
 + hbox {
 	top = 100%-37
