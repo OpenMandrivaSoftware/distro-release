@@ -2,7 +2,7 @@
 idleTime=600000
 
 [AC][HandleButtonEvents]
-lidAction=32
+powerButtonAction=16
 triggerLidActionWhenExternalMonitorPresent=false
 
 [Battery][DimDisplay]
