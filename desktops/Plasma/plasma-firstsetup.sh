@@ -4,21 +4,6 @@ if [ -n "$(command -v kreadconfig5)" ]; then # Check if Plasma is installed, oth
     FIRSTRUN=$(kreadconfig5 --group "OpenMandriva" --key "FirstRun" --default "true")
 
     if [ "$FIRSTRUN" = 'true' ]; then
-# (tpg) enable xscreensaver
-	if [ ! -f "~/.config/autostart/xscreensaver.desktop" ] && [ -x "$(command -v xscreensaver)" ]; then
-	    mkdir -p "~/.config/autostart"
-	    cat > "~/.config/autostart/xscreensaver.desktop" << "EOF"
-[Desktop Entry]
-Name=XScreenSaver
-Exec=xscreensaver -nosplash
-Icon=xscreensaver
-Terminal=False
-Type=Application
-X-KDE-StartupNotify=False
-OnlyShowIn=KDE;
-EOF
-	fi
-
 # (tpg) add special icons on DESKTOP
 	USER_DESKTOP="$(xdg-user-dir DESKTOP)"
 	for i in om-welcome join donate calamares; do
