@@ -19,5 +19,8 @@ library=org.kde.breeze
 [plasmarc][Theme]
 name=breeze-dark
 
+[Wallpaper]
+Image=OpenMandriva
+
 [KSplash]
 Theme=org.openmandriva4.desktop
