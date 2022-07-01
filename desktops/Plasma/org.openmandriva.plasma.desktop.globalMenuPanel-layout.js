@@ -8,8 +8,8 @@ print("Loading OpenMandriva Plasma panel configuration")
 // remove already existing old panels
 function removeOldPanels()
 {
-	while(panelIds.length)
-		panelById(panelIds[0]).remove()
+    while(panelIds.length)
+	panelById(panelIds[0]).remove()
 }
 
 // remove already existing other panels
@@ -81,7 +81,7 @@ var langIds = ["as",    // Assamese
                "zh_TW"] // Traditional Chinese
 
 if (langIds.indexOf(languageId) != -1) {
-	panel.addWidget("org.kde.plasma.kimpanel");
+    panel.addWidget("org.kde.plasma.kimpanel");
 }
 
 var systray = panel.addWidget("org.kde.plasma.systemtray")
