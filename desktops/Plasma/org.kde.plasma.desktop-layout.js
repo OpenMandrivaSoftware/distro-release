@@ -9,6 +9,7 @@ var desktopsArray = desktopsForActivity(currentActivity());
 for( var j = 0; j < desktopsArray.length; j++) {
 	desktopsArray[j].wallpaperPlugin = 'org.kde.image';
 	desktopsArray[j].wallpaperMode = 'SingleImage';
+	desktopsArray[j].plugin = 'org.kde.desktopcontainment';
 	desktopsArray[j].currentConfigGroup = new Array("General")
 	desktopsArray[j].writeConfig("pressToMove",true)
 	desktopsArray[j].writeConfig("showToolbox",false)
