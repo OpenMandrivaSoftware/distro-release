@@ -85,8 +85,6 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
 %_build_pkgcheck_srpm /usr/bin/rpmlint -f %{_sourcedir}/%{name}.rpmlintrc
 %_nonzero_exit_pkgcheck_terminate_build 1
 
-%source_date_epoch_from_changelog 1
-
 %_enable_debug_packages 1
 
 # Default extension to use (for man & info files)
