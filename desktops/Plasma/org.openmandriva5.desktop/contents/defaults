@@ -26,7 +26,7 @@ name=breeze-dark
 Image=OpenMandriva
 
 [ksplashrc][KSplash]
-Theme=org.openmandriva4.desktop
+Theme=org.openmandriva5.desktop
 
 [kscreenlockerrc][Greeter]
-Theme=org.openmandriva4.desktop
+Theme=org.openmandriva5.desktop
