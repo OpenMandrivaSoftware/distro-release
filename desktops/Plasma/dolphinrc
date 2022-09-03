@@ -7,6 +7,7 @@ FontWeight=50
 PreviewSize=16
 
 [General]
+FilterBar=true
 ShowCopyMoveMenu=true
 ShowKlookToggle=true
 ShowToolTips=true

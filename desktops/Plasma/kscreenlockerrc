@@ -5,12 +5,11 @@ LockOnResume=true
 Timeout=5
 
 [Greeter]
-Theme=org.openmandriva4.desktop
+Theme=org.openmandriva5.desktop
 WallpaperPlugin=org.kde.image
 
 [Greeter][Wallpaper][org.kde.image][General]
-Image=file:///usr/share/mdk/backgrounds/default.png
-SlidePaths=/usr/share/wallpapers
+Image=/usr/share/wallpapers/OpenMandriva/
 
 [Greeter][Wallpaper][org.kde.slideshow][General]
 SlideInterval=300

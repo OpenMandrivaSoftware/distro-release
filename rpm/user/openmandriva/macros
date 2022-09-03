@@ -66,6 +66,13 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
 %_binary_payload w19.zstdio
 %_xz_threads -1
 
+# don't use compression for source packages.
+# (It is unnecessary since the biggest part of
+# a src.rpm is the source tarball -- which is
+# already compressed. Compressing compressed files
+# doesn't help.)
+%_source_payload w.ufdio
+
 # Use SHA-256 for FILEDIGESTS instead of default MD5
 %_source_filedigest_algorithm 8
 %_binary_filedigest_algorithm 8
@@ -78,8 +85,6 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
 %_build_pkgcheck_srpm /usr/bin/rpmlint -f %{_sourcedir}/%{name}.rpmlintrc
 %_nonzero_exit_pkgcheck_terminate_build 1
 
-%source_date_epoch_from_changelog 1
-
 %_enable_debug_packages 1
 
 # Default extension to use (for man & info files)
@@ -90,8 +95,8 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
 # - %{mklibname test}               => lib64test, on a lib64 platform
 # - %{mklibname test 1 -d}      => libtest1-devel
 # - %{mklibname test 1 -d 0 -s} => libtest1_0-static-devel
-%mklibname(ds)  %{_lib}%{1}%{!-d:%(if echo %{1} |rev |cut -b1 |grep -q '[0-9]'; then echo -n _; fi)}%{?2:%{2}}%{?3:_%{3}}%{-s:-static}%{-d:-devel}
-%mklib32name(ds)  lib%{1}%{!-d:%(if echo %{1} |rev |cut -b1 |grep -q '[0-9]'; then echo -n _; fi)}%{?2:%{2}}%{?3:_%{3}}%{-s:-static}%{-d:-devel}
+%mklibname(ds)  %{_lib}%{1}%{!-d:%(if echo %{1} |rev |cut -b1 |grep -q '[0-9]' && [ -n "%{?2:%{2}}%{?3:_}" ]; then echo -n _; fi)}%{?2:%{2}}%{?3:_%{3}}%{-s:-static}%{-d:-devel}
+%mklib32name(ds)  lib%{1}%{!-d:%(if echo %{1} |rev |cut -b1 |grep -q '[0-9]' && [ -n "%{?2:%{2}}%{?3:_}" ]; then echo -n _; fi)}%{?2:%{2}}%{?3:_%{3}}%{-s:-static}%{-d:-devel}
 
 #==============================================================================
 # ---- compiler flags.
@@ -147,7 +152,7 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
   echo "%%setup_compile_flags is deprecated, please update the spec to use %%set_build_flags instead" >&2; \
   %set_build_flags
 
-%debugcflags %{?_enable_debug_packages:-g1 -Wstrict-aliasing=2}
+%debugcflags %{?_enable_debug_packages:-g3 -gdwarf-4 -Wstrict-aliasing=2}
 
 # common compilation flags
 
@@ -166,9 +171,7 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
 
 # Hardened Servers opt flags.
 # Also set the env variables for backward compatibility (#32050).
-%serverbuild_hardened %define _hardened_flags -Wl,-z,now -pie \
-export CFLAGS="%{optflags} -fPIE"; export CXXFLAGS="%{optflags} -fPIE"; export RPM_OPT_FLAGS="%{optflags} -fPIE" \
-%{nil}
+%serverbuild_hardened %define _hardened_flags -pie -Wl,-z,now
 
 # Include minimal debug information in build binaries.
 # Requires _enable_debug_packages.

@@ -4,6 +4,9 @@ cursorTheme=Breeze_Snow
 [kdeglobals][General]
 ColorScheme=BreezeLight
 
+[kdeglobals][Icons]
+Theme=breeze
+
 [kdeglobals][KDE]
 widgetStyle=breeze
 
@@ -19,5 +22,11 @@ library=org.kde.breeze
 [plasmarc][Theme]
 name=breeze-dark
 
-[KSplash]
-Theme=org.openmandriva4.desktop
+[Wallpaper]
+Image=OpenMandriva
+
+[ksplashrc][KSplash]
+Theme=org.openmandriva5.desktop
+
+[kscreenlockerrc][Greeter]
+Theme=org.openmandriva5.desktop

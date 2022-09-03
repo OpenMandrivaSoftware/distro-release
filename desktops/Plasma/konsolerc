@@ -1,8 +1,8 @@
 [Desktop Entry]
-DefaultProfile=OMV.profile
+DefaultProfile=OM.profile
 
 [Favorite Profiles]
-Favorites=OMV.profile
+Favorites=OM.profile
 
 [MainWindow]
 ToolBarsMovable=Disabled

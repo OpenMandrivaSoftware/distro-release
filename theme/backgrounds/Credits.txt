@@ -22,5 +22,12 @@ The-atmosphere_NitrogenC.jpg | jcl | https://gallery.openmandriva.org/index.php?
 The-atmosphere_Nitrogen-OM.jpg | Guilherme Marçal Silva | https://gallery.openmandriva.org/index.php?/category/24
 The-atmosphere_Sky_View | Guilherme Marçal Silva | https://gallery.openmandriva.org/index.php?/category/24
 Bright-and-shiny_1939MercuryCoupe | jimmyc | https://gallery.openmandriva.org/index.php?/category/34
-Sunset-bn01.jpg | Astragalo | 
-Sunset-bn02.jpg | Astragalo | 
+Sunset-bn01.jpg | Astragalo | https://gallery.openmandriva.org/index.php?/category/41
+Sunset-bn02.jpg | Astragalo | https://gallery.openmandriva.org/index.php?/category/41
+urnersee-01.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
+urnersee-02.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
+urnersee-03.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
+urnersee-04.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
+urnersee-05.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
+urnersee-06.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
+urnersee-07.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
