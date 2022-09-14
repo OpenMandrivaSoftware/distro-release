@@ -239,7 +239,7 @@ DisabledValue=1
 Size=16
 
 [Toolbar style]
-ToolButtonStyle=TextBesideIcon
+ToolButtonStyle=IconOnly
 ToolButtonStyleOtherToolbars=TextBesideIcon
 
 [ToolbarIcons]
