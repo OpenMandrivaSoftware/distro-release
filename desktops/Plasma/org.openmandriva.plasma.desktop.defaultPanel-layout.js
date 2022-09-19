@@ -17,7 +17,7 @@ removeOldPanels()
 // start new panel
 var panel = new Panel
 if (panelIds.length == 1) {
-	// we are the only panel, so set the location for the user
+	// we have only one panel, so set the location for the user
 	panel.location = "bottom";
 }
 
@@ -35,7 +35,7 @@ launcher.writeConfig("favorites", "preferred://browser,org.kde.kmail.desktop,kcm
 launcher.writeConfig("limitDepth", "false")
 launcher.writeConfig("useExtraRunners", "true")
 launcher.writeConfig("alignResultsToBottom", "true")
-launcher.writeConfig("appNameFormat", "2")
+launcher.writeConfig("appNameFormat", "0")
 launcher.writeConfig("showRecentContacts", "false")
 launcher.writeConfig("showRecentApps", "true")
 launcher.writeConfig("showRecentDocs", "true")
@@ -49,7 +49,7 @@ tasks.writeConfig("middleClickAction", "Close")
 tasks.writeConfig("onlyGroupWhenFull","true")
 tasks.writeConfig("groupingStrategy","1")
 tasks.writeConfig("highlightWindows","false")
-tasks.writeConfig("maxStripes","2")
+tasks.writeConfig("maxStripes","1")
 tasks.writeConfig("showOnlyCurrentDesktop","true")
 tasks.writeConfig("showOnlyCurrentScreen","false")
 tasks.writeConfig("showOnlyMinimized","false")
