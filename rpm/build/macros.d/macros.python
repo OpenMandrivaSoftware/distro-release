@@ -41,8 +41,12 @@ find %1 -name '*.pyo' -exec rm -f {} \\; \
 %py_shbang_opts -s
 
 %py_build() %{expand:\\\
-  CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} build --executable="%{__python} %{py_shbang_opts}" %{?*}
-  sleep 1
+  if [ -e pyproject.toml ]; then
+    mkdir RPMBUILD_wheels
+    CFLAGS="%{optflags}" pip wheel --wheel-dir RPMBUILD_wheels --no-deps --no-build-isolation --verbose .
+  else
+    CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} build --executable="%{__python} %{py_shbang_opts}" %{?*}
+  fi
 }
 
 %py3_build %py_build
@@ -58,7 +62,11 @@ find %1 -name '*.pyo' -exec rm -f {} \\; \
 }
 
 %py_install() %{expand:\\\
-  CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} install -O1 --skip-build --root %{buildroot} %{?*}
+  if [ -d RPMBUILD_wheels ]; then
+    CFLAGS="%{optflags}" pip install --root=%{buildroot} --no-deps --verbose --ignore-installed --no-warn-script-location --no-index --no-cache-dir --find-links RPMBUILD_wheels RPMBUILD_wheels/*.whl
+  else
+    CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} install -O1 --skip-build --root %{buildroot} %{?*}
+  fi
 }
 
 %py3_install %py_install
