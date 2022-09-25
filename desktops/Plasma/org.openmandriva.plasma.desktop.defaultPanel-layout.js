@@ -31,7 +31,8 @@ var launcher = panel.addWidget("org.kde.plasma.kicker")
 launcher.currentConfigGroup = ["Shortcuts"]
 launcher.writeConfig("global", "Alt+F1")
 launcher.currentConfigGroup = ["General"]
-launcher.writeConfig("favoriteApps", "preferred://browser,org.kde.kmail.desktop,kcm_kdeconnect.desktop,org.kde.dolphin.desktop,org.kde.kate.desktop,org.kde.konsole.desktop,systemsettings.desktop")
+// launcher.writeConfig("favoriteApps", "preferred://browser,org.kde.kmail.desktop,kcm_kdeconnect.desktop,org.kde.dolphin.desktop,org.kde.kate.desktop,org.kde.konsole.desktop,systemsettings.desktop")
+launcher.writeConfig("favoriteApps", "preferred://browser,org.kde.kdeconnect.app.desktop,systemsettings.desktop,org.kde.dolphin.desktop,org.kde.konsole.desktop,org.kde.kate.desktop")
 launcher.writeConfig("limitDepth", "false")
 launcher.writeConfig("useExtraRunners", "true")
 launcher.writeConfig("alignResultsToBottom", "true")
