@@ -22,7 +22,8 @@ if (panelIds.length == 1) {
 }
 
 // let's calculate desired panel height based on scren's DPI
-panel.height = gridUnit * 3
+// panel.height = gridUnit * 3
+panel.height = 2 * Math.floor(gridUnit * 2.5 / 2)
 panel.alignment = "left";
 panel.hiding = "none";
 
@@ -32,8 +33,7 @@ launcher.currentConfigGroup = ["Shortcuts"]
 launcher.writeConfig("global", "Alt+F1")
 launcher.currentConfigGroup = ["General"]
 // launcher.writeConfig("favoriteApps", "preferred://browser,org.kde.kmail.desktop,kcm_kdeconnect.desktop,org.kde.dolphin.desktop,org.kde.kate.desktop,org.kde.konsole.desktop,systemsettings.desktop")
-launcher.writeConfig("favoriteApps", "preferred://browser,org.kde.kdeconnect.app.desktop,systemsettings.desktop,org.kde.dolphin.desktop,org.kde.konsole.desktop,org.kde.kate.desktop")
-launcher.writeConfig("favoriteSystemActions", "logout")
+launcher.writeConfig("favoriteApps", "preferred://browser,systemsettings.desktop,org.kde.dolphin.desktop,org.kde.konsole.desktop,org.kde.kwrite.desktop")
 launcher.writeConfig("limitDepth", "false")
 launcher.writeConfig("useExtraRunners", "true")
 launcher.writeConfig("alignResultsToBottom", "true")
