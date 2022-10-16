@@ -1,29 +1,33 @@
 Credits:
 Filename | Author | link
 
-Energy_Grid.jpg | Nathalie Encinas | https://gallery.openmandriva.org/index.php?/category/11
-Energy_Rays-at-sunset.jpg | Sirius | https://gallery.openmandriva.org/index.php?/category/11
-Energy_The-sunset.jpg | Thanasis | https://gallery.openmandriva.org/index.php?/category/11
-Energy_Whiterays.jpg | SteJo | https://gallery.openmandriva.org/index.php?/category/11
-Flavor_of_freedom_Cantaloupe_Island.jpg | Kekek | https://gallery.openmandriva.org/index.php?/category/8
-Flavor_of_freedom_Dantes_Skyline.jpg | Monty | https://gallery.openmandriva.org/index.php?/category/8
-Flavor_of_freedom_Descartes_Awakening.jpg | Monty | https://gallery.openmandriva.org/index.php?/category/8
-Flavor_of_freedom_Glacier.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/8
-Flavor_of_freedom_Kampenwand.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/8
-Flavor_of_freedom_Lake_walen.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/8
-Flavor_of_freedom_Misty_Mountains.png | Caig | https://gallery.openmandriva.org/index.php?/category/8
-Flavor_of_freedom_Mythen.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/8
-Flavor_of_freedom_Pastures.jpg | jclv | https://gallery.openmandriva.org/index.php?/category/8
-Flavor_of_freedom_Reflection2.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/8
-The-atmosphere_Maquapit-Lake.png | ve9cbc | https://gallery.openmandriva.org/index.php?/category/24
-The-atmosphere_Nitro1.jpg | jimmyc | https://gallery.openmandriva.org/index.php?/category/24
-The-atmosphere_Nitrogen01.png | jimmyc | https://gallery.openmandriva.org/index.php?/category/24
-The-atmosphere_NitrogenC.jpg | jcl | https://gallery.openmandriva.org/index.php?/category/24
-The-atmosphere_Nitrogen-OM.jpg | Guilherme Marçal Silva | https://gallery.openmandriva.org/index.php?/category/24
-The-atmosphere_Sky_View | Guilherme Marçal Silva | https://gallery.openmandriva.org/index.php?/category/24
-Bright-and-shiny_1939MercuryCoupe | jimmyc | https://gallery.openmandriva.org/index.php?/category/34
-Sunset-bn01.jpg | Astragalo | https://gallery.openmandriva.org/index.php?/category/41
-Sunset-bn02.jpg | Astragalo | https://gallery.openmandriva.org/index.php?/category/41
+arches4nerds.jpg | Raphael | https://gallery.openmandriva.org/index.php?/category/41
+bright-and-shiny-1939mercurycoupe.png | jimmyc | https://gallery.openmandriva.org/index.php?/category/34
+energy-grid.jpg | Nathalie Encinas | https://gallery.openmandriva.org/index.php?/category/11
+energy-rays-at-sunset.jpg | Sirius | https://gallery.openmandriva.org/index.php?/category/11
+energy-the-sunset.jpg | Thanasis | https://gallery.openmandriva.org/index.php?/category/11
+energy-whiterays.jpg | SteJo | https://gallery.openmandriva.org/index.php?/category/11
+flavor-of-freedom-cantaloupe-island.jpg | Kekek | https://gallery.openmandriva.org/index.php?/category/8
+flavor-of-freedom-dantes-skyline.jpg | Monty | https://gallery.openmandriva.org/index.php?/category/8
+flavor-of-freedom-descartes-awakening.jpg | Monty | https://gallery.openmandriva.org/index.php?/category/8
+flavor-of-freedom-glacier.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/8
+flavor-of-freedom-kampenwand.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/8
+flavor-of-freedom-lake-walen.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/8
+flavor-of-freedom-misty-mountains.png | Caig | https://gallery.openmandriva.org/index.php?/category/8
+flavor-of-freedom-mythen.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/8
+flavor-of-freedom-pastures.jpg | jclv | https://gallery.openmandriva.org/index.php?/category/8
+flavor-of-freedom-reflection2.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/8
+rome-background-contest-01.jpg | D.R.L. DeVita | https://gallery.openmandriva.org/index.php?/category/41
+rome-background-contest-05.jpg | D.R.L. DeVita | https://gallery.openmandriva.org/index.php?/category/41
+rome-background-contest-06.jpg | SteJo | https://gallery.openmandriva.org/index.php?/category/41
+sunset-bn01.jpg | Astragalo | https://gallery.openmandriva.org/index.php?/category/41
+sunset-bn02.jpg | Astragalo | https://gallery.openmandriva.org/index.php?/category/41
+the-atmosphere-maquapit-lake.png | ve9cbc | https://gallery.openmandriva.org/index.php?/category/24
+the-atmosphere-nitro1.jpg | jimmyc | https://gallery.openmandriva.org/index.php?/category/24
+the-atmosphere-nitrogen01.png | jimmyc | https://gallery.openmandriva.org/index.php?/category/24
+the-atmosphere-nitrogenc.jpg | jcl | https://gallery.openmandriva.org/index.php?/category/24
+the-atmosphere-nitrogen-om.jpg | Guilherme Marçal Silva | https://gallery.openmandriva.org/index.php?/category/24
+the-atmosphere-sky-view.jpg | Guilherme Marçal Silva | https://gallery.openmandriva.org/index.php?/category/24
 urnersee-01.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
 urnersee-02.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
 urnersee-03.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
@@ -31,7 +35,3 @@ urnersee-04.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
 urnersee-05.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
 urnersee-06.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
 urnersee-07.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
-arches4nerds.jpg | Raphael | https://gallery.openmandriva.org/index.php?/category/41
-rome-background-contest-01.jpg | D.R.L. DeVita | https://gallery.openmandriva.org/index.php?/category/41
-rome-background-contest-05.jpg | D.R.L. DeVita | https://gallery.openmandriva.org/index.php?/category/41
-rome-background-contest-06.jpg | SteJo | https://gallery.openmandriva.org/index.php?/category/41
