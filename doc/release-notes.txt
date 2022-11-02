@@ -1,5 +1,8 @@
 OpenMandriva Lx
 
+More in detail:
+https://wiki.openmandriva.org/en/distribution/releases/current
+
 Available Media
 
    This release is available as a live media DVD, downloadable in ISO
