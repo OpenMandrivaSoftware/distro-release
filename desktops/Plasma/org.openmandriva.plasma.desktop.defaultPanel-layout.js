@@ -63,6 +63,8 @@ pager.currentConfigGroup = ["General"]
 pager.writeConfig("showWindowIcons","true")
 pager.writeConfig("displayedText", "Number")
 
+panel.addWidget("org.kde.plasma.marginsseparator")
+
 /* Next up is determining whether to add the Input Method Panel
  * widget to the panel or not. This is done based on whether
  * the system locale's language id is a member of the following
