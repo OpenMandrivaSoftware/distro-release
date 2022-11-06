@@ -1,4 +1,5 @@
 [General]
-Name=OpenMandriva Lx
+Name=OpenMandriva
 LogoPath=/usr/share/icons/openmandriva.svg
 Website=http://www.openmandriva.org
+Version=Cooker
