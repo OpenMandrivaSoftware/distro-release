@@ -17,12 +17,13 @@ removeOldPanels()
 // start new panel
 var panel = new Panel
 if (panelIds.length == 1) {
-	// we are the only panel, so set the location for the user
+	// we have only one panel, so set the location for the user
 	panel.location = "bottom";
 }
 
 // let's calculate desired panel height based on scren's DPI
-panel.height = gridUnit * 3
+// panel.height = gridUnit * 3
+panel.height = 2 * Math.floor(gridUnit * 2.5 / 2)
 panel.alignment = "left";
 panel.hiding = "none";
 
@@ -31,11 +32,12 @@ var launcher = panel.addWidget("org.kde.plasma.kicker")
 launcher.currentConfigGroup = ["Shortcuts"]
 launcher.writeConfig("global", "Alt+F1")
 launcher.currentConfigGroup = ["General"]
-launcher.writeConfig("favorites", "preferred://browser,org.kde.kmail.desktop,kcm_kdeconnect.desktop,org.kde.dolphin.desktop,org.kde.kate.desktop,org.kde.konsole.desktop,systemsettings.desktop")
+launcher.writeConfig("favoriteApps", "preferred://browser,systemsettings.desktop,org.kde.dolphin.desktop,org.kde.konsole.desktop")
+launcher.writeConfig("favoriteSystemActions", "logout")
 launcher.writeConfig("limitDepth", "false")
 launcher.writeConfig("useExtraRunners", "true")
 launcher.writeConfig("alignResultsToBottom", "true")
-launcher.writeConfig("appNameFormat", "2")
+launcher.writeConfig("appNameFormat", "0")
 launcher.writeConfig("showRecentContacts", "false")
 launcher.writeConfig("showRecentApps", "true")
 launcher.writeConfig("showRecentDocs", "true")
@@ -49,7 +51,7 @@ tasks.writeConfig("middleClickAction", "Close")
 tasks.writeConfig("onlyGroupWhenFull","true")
 tasks.writeConfig("groupingStrategy","1")
 tasks.writeConfig("highlightWindows","false")
-tasks.writeConfig("maxStripes","2")
+tasks.writeConfig("maxStripes","1")
 tasks.writeConfig("showOnlyCurrentDesktop","true")
 tasks.writeConfig("showOnlyCurrentScreen","false")
 tasks.writeConfig("showOnlyMinimized","false")
@@ -60,6 +62,8 @@ var pager = panel.addWidget("org.kde.plasma.pager")
 pager.currentConfigGroup = ["General"]
 pager.writeConfig("showWindowIcons","true")
 pager.writeConfig("displayedText", "Number")
+
+panel.addWidget("org.kde.plasma.marginsseparator")
 
 /* Next up is determining whether to add the Input Method Panel
  * widget to the panel or not. This is done based on whether
@@ -113,8 +117,8 @@ systray.writeConfig("systemServicesShown","true")
 systray.writeConfig("hardwareControlShown","true")
 systray.writeConfig("miscellaneousShown","true")
 systray.writeConfig("extraItems", "org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.clipboard")
-systray.writeConfig("hiddenItems", "hp-systray,python3.4m")
-systray.writeConfig("knownItems", "org.kde.plasma.notifications,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.plasma.battery,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.clipboard")
+systray.writeConfig("hiddenItems", "hp-systray,python3.11")
+systray.writeConfig("knownItems", "org.kde.plasma.notifications,org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.clipboard")
 
 var clock = panel.addWidget("org.kde.plasma.digitalclock")
 clock.currentConfigGroup = ["Appearance"]

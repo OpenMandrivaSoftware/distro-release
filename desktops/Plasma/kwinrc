@@ -68,7 +68,7 @@ ElectricBorders=0
 
 [NightColor]
 Active=false
-NightTemperature=300
+NightTemperature=4500
 
 [TabBox]
 ActivitiesMode=1
