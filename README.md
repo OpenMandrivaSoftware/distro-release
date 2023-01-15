@@ -33,4 +33,4 @@ Directory layout:
 
     a place for files related to licenses
     
-*Master branch*
+*5.0 branch*
