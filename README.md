@@ -1,3 +1,5 @@
+*Temporary rome branch before merge*
+
 This repository contains basic OpenMandriva Lx setup:
 - versioning
 - branding
@@ -33,4 +35,3 @@ Directory layout:
 
     a place for files related to licenses
     
-*Master branch*
