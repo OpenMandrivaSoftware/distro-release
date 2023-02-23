@@ -1,0 +1,11 @@
+[Event/exitkde]
+Action=
+
+[Event/startkde]
+Action=
+
+[Event/warning]
+Action=Sound|Popup
+Execute=
+Logfile=
+TTS=
