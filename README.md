@@ -1,4 +1,4 @@
-# ROME branch
+# ROME - rolling branch
 
 This repository contains basic OpenMandriva Lx setup:
 - versioning
