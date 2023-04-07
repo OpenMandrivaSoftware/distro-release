@@ -1,3 +1,5 @@
+# 5.0 branch
+
 This repository contains basic OpenMandriva Lx setup:
 - versioning
 - branding
@@ -32,5 +34,3 @@ Directory layout:
 - common-licenses
 
     a place for files related to licenses
-    
-*5.0 branch*
