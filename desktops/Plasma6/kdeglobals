@@ -147,7 +147,7 @@ Size=32
 emoticonsTheme=Breeze
 
 [General]
-BrowserApplication[$e]=org.kde.falkon.desktop
+BrowserApplication[$e]=chromium-browser.desktop
 TerminalApplication[$e]=konsole
 XftAntialias=true
 XftHintStyle=hintslight
