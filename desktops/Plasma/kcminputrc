@@ -1,2 +1,6 @@
 [Mouse]
 cursorTheme=Breeze_Snow
+
+[Keyboard]
+RepeatDelay=450
+RepeatRate=27
