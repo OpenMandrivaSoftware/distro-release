@@ -20,10 +20,13 @@ LayoutName=org.kde.breeze.desktop
 library=org.kde.breeze
 
 [plasmarc][Theme]
-name=default
+name=breeze-dark
 
 [Wallpaper]
 Image=OpenMandriva
 
-[KSplash]
-Theme=org.openmandriva6
+[ksplashrc][KSplash]
+Theme=org.openmandriva6.desktop
+
+[kscreenlockerrc][Greeter]
+Theme=org.openmandriva6.desktop
