@@ -238,6 +238,9 @@ DisabledSemiTransparent=true
 DisabledValue=1
 Size=16
 
+[Sounds]
+Theme=oxygen
+
 [Toolbar style]
 ToolButtonStyle=IconOnly
 ToolButtonStyleOtherToolbars=TextBesideIcon
