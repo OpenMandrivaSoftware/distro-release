@@ -179,7 +179,7 @@ ShowIconsInMenuItems=true
 ShowIconsOnPushButtons=true
 ShowDeleteCommand=true
 contrast=4
-widgetStyle=breeze
+widgetStyle=Breeze
 
 [MainToolbarIcons]
 ActiveColor=169,156,255
