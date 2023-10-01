@@ -147,6 +147,7 @@ Size=32
 emoticonsTheme=Breeze
 
 [General]
+BrowserApplication[$e]=chromium-browser.desktop
 TerminalApplication[$e]=konsole
 XftAntialias=true
 XftHintStyle=hintslight
@@ -173,12 +174,12 @@ SingleClick=true
 StartDragDist=4
 StartDragTime=500
 WheelScrollLines=3
-LookAndFeelPackage=org.openmandriva5.desktop
+LookAndFeelPackage=org.openmandriva6.desktop
 ShowIconsInMenuItems=true
 ShowIconsOnPushButtons=true
 ShowDeleteCommand=true
 contrast=4
-widgetStyle=breeze
+widgetStyle=Breeze
 
 [MainToolbarIcons]
 ActiveColor=169,156,255
@@ -236,6 +237,9 @@ DisabledEffect=togray
 DisabledSemiTransparent=true
 DisabledValue=1
 Size=16
+
+[Sounds]
+Theme=oxygen
 
 [Toolbar style]
 ToolButtonStyle=IconOnly

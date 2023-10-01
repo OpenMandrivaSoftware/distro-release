@@ -1,7 +1,5 @@
-// Default Plasma panel for OpenMandriva
-// Author: Tomasz Paweł Gajc (tpgxyz@gmail.com) 2013, 2014, 2015, 2016, 2020
-// Bernhard Rosenkränzer <bero@lindev.ch> 2020
-// Licensed under GPLv2+
+// Plasma panel for OpenMandriva Plasma6
+// 2023-09-14 (rugyada)
 
 print("Loading OpenMandriva Plasma panel configuration")
 // remove already existing old panels
@@ -17,60 +15,32 @@ removeOldPanels()
 // start new panel
 var panel = new Panel
 if (panelIds.length == 1) {
-	// we have only one panel, so set the location for the user
+	// set the location for the user
 	panel.location = "bottom";
 }
 
-// let's calculate desired panel height based on scren's DPI
+// panel height based on scren's DPI
 // panel.height = gridUnit * 3
 panel.height = 2 * Math.floor(gridUnit * 2.5 / 2)
-panel.alignment = "left";
+panel.alignment = "center";
 panel.hiding = "none";
 
 // by default kicker is used, options are kickoff and kickerdash
 var launcher = panel.addWidget("org.kde.plasma.kicker")
 launcher.currentConfigGroup = ["Shortcuts"]
 launcher.writeConfig("global", "Alt+F1")
+launcher.writeConfig("favoriteSystemActions", "logout")
 launcher.currentConfigGroup = ["General"]
-launcher.writeConfig("favoriteApps", "preferred://browser,applications:systemsettings.desktop,applications:org.kde.dolphin.desktop,applications:org.kde.konsole.desktop")
+launcher.writeConfig("favoriteApps", "applications:chromium-browser.desktop,systemsettings.desktop,org.kde.dolphin.desktop,org.kde.konsole.desktop")
 launcher.writeConfig("favoriteSystemActions", "logout")
 launcher.writeConfig("limitDepth", "false")
 launcher.writeConfig("useExtraRunners", "true")
-launcher.writeConfig("alignResultsToBottom", "true")
-launcher.writeConfig("appNameFormat", "0")
-launcher.writeConfig("showRecentContacts", "false")
-launcher.writeConfig("showRecentApps", "true")
-launcher.writeConfig("showRecentDocs", "true")
-launcher.writeConfig("showIconsRootLevel", "true")
 
-var tasks = panel.addWidget("org.kde.plasma.taskmanager")
-tasks.currentConfigGroup = ["General"]
-tasks.writeConfig("launchers","")
-tasks.writeConfig("forceStripes","true")
-tasks.writeConfig("middleClickAction", "Close")
-tasks.writeConfig("onlyGroupWhenFull","true")
-tasks.writeConfig("groupingStrategy","1")
-tasks.writeConfig("highlightWindows","false")
-tasks.writeConfig("maxStripes","1")
-tasks.writeConfig("showOnlyCurrentDesktop","true")
-tasks.writeConfig("showOnlyCurrentScreen","false")
-tasks.writeConfig("showOnlyMinimized","false")
-tasks.writeConfig("showToolTips","false")
-tasks.writeConfig("sortingStrategy","2")
+panel.addWidget("org.kde.plasma.icontasks")
 
 var pager = panel.addWidget("org.kde.plasma.pager")
 pager.currentConfigGroup = ["General"]
 pager.writeConfig("showWindowIcons","true")
-pager.writeConfig("displayedText", "Number")
-
-panel.addWidget("org.kde.plasma.marginsseparator")
-
-/* Next up is determining whether to add the Input Method Panel
- * widget to the panel or not. This is done based on whether
- * the system locale's language id is a member of the following
- * white list of languages which are known to pull in one of
- * our supported IME backends when chosen during installation
- * of common distributions. */
 
 var langIds = ["as",    // Assamese
                "bn",    // Bengali
@@ -134,3 +104,4 @@ sleep(0.5)
 panel.reloadConfig()
 // if set to true it is not possible to remove panel :)
 panel.locked = false;
+
