@@ -2,18 +2,9 @@
 // Author: Bernhard Rosenkränzer <bero@lindev.ch>, (C) 2020
 // Licensed under GPLv3+
 // Partially based on default panel config
+// 2023-09-14 (rugyada)
 
 print("Loading OpenMandriva Plasma panel configuration")
-
-// remove already existing old panels
-function removeOldPanels()
-{
-    while(panelIds.length)
-	panelById(panelIds[0]).remove()
-}
-
-// remove already existing other panels
-removeOldPanels()
 
 // start new panel
 var panel = new Panel
@@ -27,26 +18,14 @@ panel.hiding = "none"
 var launcher = panel.addWidget("org.kde.plasma.kicker")
 launcher.currentConfigGroup = ["Shortcuts"]
 launcher.writeConfig("global", "Alt+F1")
+launcher.writeConfig("favoriteSystemActions", "logout")
 launcher.currentConfigGroup = ["General"]
 launcher.writeConfig("favoriteApps", "preferred://browser,systemsettings.desktop,org.kde.dolphin.desktop,org.kde.konsole.desktop")
 launcher.writeConfig("limitDepth", "false")
 launcher.writeConfig("useExtraRunners", "true")
-launcher.writeConfig("alignResultsToBottom", "true")
-launcher.writeConfig("appNameFormat", "2")
-launcher.writeConfig("showRecentContacts", "true")
-launcher.writeConfig("showRecentApps", "true")
-launcher.writeConfig("showRecentDocs", "true")
-launcher.writeConfig("showIconsRootLevel", "true")
 
 panel.addWidget("org.kde.plasma.appmenu")
 panel.addWidget("org.kde.plasma.panelspacer")
-
-/* Next up is determining whether to add the Input Method Panel
- * widget to the panel or not. This is done based on whether
- * the system locale's language id is a member of the following
- * white list of languages which are known to pull in one of
- * our supported IME backends when chosen during installation
- * of common distributions. */
 
 var langIds = ["as",    // Assamese
                "bn",    // Bengali
