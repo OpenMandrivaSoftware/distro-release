@@ -81,8 +81,8 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
 %_unpackaged_subdirs_terminate_build 1
 %_files_listed_twice_terminate_build 1
 
-%_build_pkgcheck_set /usr/bin/rpmlint -f %{_sourcedir}/%{name}.rpmlintrc
-%_build_pkgcheck_srpm /usr/bin/rpmlint -f %{_sourcedir}/%{name}.rpmlintrc
+%_build_pkgcheck_set /usr/bin/rpmlint %([ -e %{_sourcedir}/%{name}.rpmlintrc ] && echo -n --file %{_sourcedir}/%{name}.rpmlintrc)
+%_build_pkgcheck_srpm /usr/bin/rpmlint %([ -e %{_sourcedir}/%{name}.rpmlintrc ] && echo -n --file %{_sourcedir}/%{name}.rpmlintrc)
 %_nonzero_exit_pkgcheck_terminate_build 1
 
 %_enable_debug_packages 1
