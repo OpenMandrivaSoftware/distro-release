@@ -80,7 +80,10 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
 
 %_build_pkgcheck_set /usr/bin/rpmlint %([ -e %{_sourcedir}/%{name}.rpmlintrc ] && echo -n --file %{_sourcedir}/%{name}.rpmlintrc)
 %_build_pkgcheck_srpm /usr/bin/rpmlint %([ -e %{_sourcedir}/%{name}.rpmlintrc ] && echo -n --file %{_sourcedir}/%{name}.rpmlintrc)
-%_nonzero_exit_pkgcheck_terminate_build 1
+
+# This will be enabled at some point - for now, let it pass since many
+# packages aren't ready for rpmlint 2.5 yet
+%_nonzero_exit_pkgcheck_terminate_build 0
 
 %_enable_debug_packages 1
 
