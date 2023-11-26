@@ -19,9 +19,6 @@
 
 %__urlgetfile(url, dest) wget %1 -O %2 || (rm -f %2 && exit 1)
 
-# This will die as soon as remaining usage has been phased out...
-%mkrel(c:) %{-c: 0.%{-c*}.}%{1}%{?subrel:.%subrel}
-
 # For the built rpm filename format...
 %disttag %{!?distsuffix:omv}%{?distsuffix}%{!?distrelease:%(sed -e 's#.*release\\ \\(\\S*\\).*#\\1#' /etc/release)}%{?distrelease}
 
