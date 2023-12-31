@@ -1,6 +1,0 @@
-[Event/Update]
-Action=Sound|Popup
-Execute=
-Logfile=
-Sound=Oxygen-Sys-Question.ogg
-TTS=
