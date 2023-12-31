@@ -1,0 +1,5 @@
+# devel(foobar) provides/requires
+# Disable requires
+#__devel_requires	%{_rpmconfigdir}/openmandriva/devel.req
+%__devel_provides	%{_rpmconfigdir}/openmandriva/devel.prov
+%__devel_path		(/usr)?/lib(|64)(/gcc(-lib)?/.+)?/[^/]+\.so$

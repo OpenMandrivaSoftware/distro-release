@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# If we got any argument, we can call xdg-open, if we haven´t already done it
+#
+if [ "$#" -ge 1 ]; then
+# Lock against bug #29599
+    exec xdg-open "$@"
+fi
+
+#
+# No URL specified, so we must find a proper browser for the current env
+#
+[ -n "$BROWSER" ] && [ $(basename "$BROWSER") = "www-browser" ] && unset BROWSER
+if [ -n "$BROWSER" ] && ! command -v $BROWSER &>/dev/null; then
+    unset BROWSER
+fi
+
+if [ -z "$BROWSER" ]; then
+    for i in falkon firefox chromium-browser-stable chromium-browser-beta chromium-browser-dev otter-browser arora; do
+	BROWSER="$(command -v $i 2>/dev/null)"
+	[ -n "$BROWSER" ] && break
+    done
+fi
+
+exec $BROWSER

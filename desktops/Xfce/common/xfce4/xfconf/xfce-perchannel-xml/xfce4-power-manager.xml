@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-power-manager" version="1.0">
+  <property name="xfce4-power-manager" type="empty">
+    <property name="cpu-scaling-gov" type="empty"/>
+    <property name="show-tray-icon" type="empty"/>
+    <property name="dpms-enabled" type="bool" value="true"/>
+    <property name="on-ac-monitor-dpms-timeouts" type="empty"/>
+    <property name="sleep-switch-action" type="empty"/>
+    <property name="power-switch-action" type="empty"/>
+    <property name="dpms-sleep-mode" type="string" value="standby"/>
+    <property name="lock-screen-suspend-hibernate" type="bool" value="true"/>
+    <property name="on-ac-dpms-sleep" type="empty"/>
+    <property name="on-ac-dpms-off" type="empty"/>
+    <property name="general-notification" type="bool" value="true"/>
+    <property name="power-button-action" type="uint" value="3"/>
+    <property name="hibernate-button-action" type="uint" value="3"/>
+    <property name="sleep-button-action" type="uint" value="3"/>
+    <property name="inactivity-sleep-mode" type="string" value="Suspend"/>
+    <property name="spin-down-on-ac" type="bool" value="false"/>
+    <property name="inactivity-on-ac" type="uint" value="14"/>
+  </property>
+</channel>

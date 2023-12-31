@@ -1,0 +1,99 @@
+# Python specific macro definitions.
+# To make use of these macros insert the following line into your spec file:
+# %{load:%{_rpmconfigdir}/macros.d/python}
+
+%__python %{_bindir}/python
+
+%python_sitearch %(%{__python} -c "import os; from distutils.sysconfig import get_python_lib; lib=get_python_lib(1); print(os.path.islink(lib) and os.path.abspath(os.path.join(os.path.dirname(lib),os.readlink(lib))) or lib)")
+%python_sitelib %(%{__python} -c "import os; from distutils.sysconfig import get_python_lib; lib=get_python_lib(); print(os.path.islink(lib) and os.path.abspath(os.path.join(os.path.dirname(lib),os.readlink(lib))) or lib)")
+%python_version %(%{__python3} -Ic "import sys; sys.stdout.write(sys.version[:3])")
+
+# python main version
+%py_ver %(%{__python} -c "import sys; v=sys.version_info[:2]; print('%%d.%%d'%%v)" 2>/dev/null || echo PYTHON-NOT-FOUND)
+%py_prefix %(%{__python} -c "import sys; print(sys.prefix)" 2>/dev/null || echo PYTHON-NOT-FOUND)
+%py_platlibdir %(%{__python} -c 'import distutils.sysconfig; print(distutils.sysconfig.get_python_lib(standard_lib=1,plat_specific=1))' 2>/dev/null || echo PYTHON-LIBDIR-NOT-FOUND)
+%py_purelibdir %(%{__python} -c 'import distutils.sysconfig; print(distutils.sysconfig.get_python_lib(standard_lib=1,plat_specific=0))' 2>/dev/null || echo PYTHON-LIBDIR-NOT-FOUND)
+# backward compatibility
+%py_libdir %py_purelibdir
+
+%py_platsitedir %(%{__python} -c 'import distutils.sysconfig; print(distutils.sysconfig.get_python_lib(plat_specific=1))' 2>/dev/null || echo PYTHON-LIBDIR-NOT-FOUND)
+%py_puresitedir %(%{__python} -c 'import distutils.sysconfig; print(distutils.sysconfig.get_python_lib())' 2>/dev/null || echo PYTHON-LIBDIR-NOT-FOUND)
+%py_sitedir %py_puresitedir
+
+%py_dyndir %{py_platlibdir}/lib-dynload
+
+%py_incdir %(%{__python} -c 'import distutils.sysconfig; print(distutils.sysconfig.get_python_inc())' 2>/dev/null || echo PYTHON-INCLUDEDIR-NOT-FOUND)
+
+%py_compile(O)  \
+find %1 -name '*.pyc' -exec rm -f {} \\; \
+%{__python} -c "import sys, os, compileall; br='%{buildroot}'; compileall.compile_dir(sys.argv[1], ddir=br and (sys.argv[1][len(os.path.abspath(br)):]+'/') or None)" %1 \
+%{-O: \
+find %1 -name '*.pyo' -exec rm -f {} \\; \
+%{__python} -O -c "import sys, os, compileall; br='%{buildroot}'; compileall.compile_dir(sys.argv[1], ddir=br and (sys.argv[1][len(os.path.abspath(br)):]+'/') or None)" %1 \
+}
+
+# pure python modules compilation
+%py_comp %{__python} -c "import compileall; import sys; compileall.compile_dir(sys.argv[1], ddir=sys.argv[1][len('%{buildroot}'):])"
+
+%py_ocomp %{__python} -O -c "import compileall; import sys; compileall.compile_dir(sys.argv[1], ddir=sys.argv[1][len('%{buildroot}'):])"
+
+%py_setup setup.py
+%py_shbang_opts -s
+
+%py_build() %{expand:\\\
+  if [ -e pyproject.toml ]; then
+    mkdir ../RPMBUILD_wheels
+    CFLAGS="%{optflags}" pip wheel --wheel-dir ../RPMBUILD_wheels --no-deps --no-build-isolation --verbose .
+  else
+    CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} build --executable="%{__python} %{py_shbang_opts}" %{?*}
+  fi
+}
+
+%py3_build %py_build
+
+%py_build_egg() %{expand:\\\
+  CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} bdist_egg %{?*}
+  sleep 1
+}
+
+%py_build_wheel() %{expand:\\\
+  CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} bdist_wheel %{?*}
+  sleep 1
+}
+
+%py_install() %{expand:\\\
+  if [ -d ../RPMBUILD_wheels ]; then
+    CFLAGS="%{optflags}" pip install --root=%{buildroot} --no-deps --verbose --ignore-installed --no-warn-script-location --no-index --no-cache-dir --find-links ../RPMBUILD_wheels ../RPMBUILD_wheels/*.whl
+  else
+    CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} install -O1 --skip-build --root %{buildroot} %{?*}
+  fi
+}
+
+%py3_install %py_install
+
+%py_install_egg() %{expand:\\\
+  mkdir -p %{buildroot}%{python_sitelib}
+  easy_install -m --prefix %{buildroot}%{_prefix} -Z dist/*-py%{python_version}.egg %{?*}
+}
+
+%py_install_wheel() %{expand:\\\
+  pip install -I dist/%{1} --root %{buildroot} --strip-file-prefix %{buildroot} --no-deps
+}
+
+%py2_build() %{expand:\\\
+  CFLAGS="%{optflags}" %{__python2} %{py_setup} %{?py_setup_args} build --executable="%{__python2} %{py_shbang_opts}" %{?*}
+  sleep 1
+}
+
+%py2_install() %{expand:\\\
+  CFLAGS="%{optflags}" %{__python2} %{py_setup} %{?py_setup_args} install -O1 --skip-build --root %{buildroot} %{?*}
+}
+
+%py_requires(d) \
+BuildRequires: %{__python} %{-d:python-devel}
+
+# Should python bytecompilation errors terminate a build?
+%_python_bytecompile_errors_terminate_build 1
+
+# Enable python bytecompilation
+%_python_bytecompile_build 1

@@ -1,0 +1,28 @@
+{
+    "KPackageStructure": "Plasma/LayoutTemplate",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "openmandriva.org",
+                "Name": "OpenMandriva",
+                "Name[en_GB]": "OpenMandriva",
+                "Name[x-test]": "xxOpenMandrivaxx"
+            }
+        ],
+        "Category": "",
+        "Description": "OpenMandriva Global Menu Panel",
+        "Description[en_GB]": "OpenMandriva Global Menu Panel",
+        "Description[x-test]": "xxOpenMandriva Global Menu Panelxx",
+        "EnabledByDefault": true,
+        "Id": "org.om.plasma.desktop.globalMenuPanel",
+        "License": "LGPLv2+",
+        "Name": "OM Global Menu Panel",
+        "Name[en_GB]": "OM Global Menu Panel",
+        "Name[x-test]": "xxOM Global Menu Panelxx",
+        "Website": "https://www.openmandriva.org"
+    },
+    "X-Plasma-ContainmentCategories": [
+        "panel"
+    ],
+    "X-Plasma-Shell": "plasmashell"
+}

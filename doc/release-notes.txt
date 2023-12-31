@@ -1,0 +1,143 @@
+OpenMandriva Lx
+
+More in detail:
+https://wiki.openmandriva.org/en/distribution/releases/current
+
+Available Media
+
+   This release is available as a live media DVD, downloadable in ISO
+   format. These are available on our downloads page.
+
+   Live media means you are able to run OpenMandriva Lx straight from a
+   DVD or memory stick (see below) and try it before installing it. You
+   may also install the system to hard disk either from the running live
+   image or from the boot manager.
+
+   Available ISO files are:
+
+   1. KDE Plasma desktop x86_64 full featured (includes the most common
+   used functionalities, multimedia and office software.)
+
+   2. KDE Plasma desktop znver1 full featured (includes the most common
+   used functionalities, multimedia and office software.)
+
+   3. Basic GUI with minimal desktop and only basic system packages and a
+   web browser.
+   The concept is for user to then install only packages they wish to use
+   after installing basic system. Also for users with less robust
+   hardware.
+
+Recommended Hardware
+
+   OpenMandriva Lx requires at least 2.0 GB of memory and at least 10
+   GB of hard drive space (see below for known issues with partitioning).
+
+   Release is available for x86_64 and znver1 architectures, the 32-bit
+   ARM, aarch64, and RISC-V architectures are being worked on, but are not
+   yet available for this release.
+
+   Important Note: Graphics Hardware
+
+   The KDE Plasma Desktop requires a 3D graphics card that supports OpenGL
+   2.0 or above. We recommend using AMD, Intel, Adreno or VC4 graphics
+   chips.
+
+Virtual Machines
+
+   At this time the only virtualization software that OMLx ISOs are tested
+   on is VirtualBox. The same hardware requirements apply when running in
+   virtual machines.
+
+   For VirtualBox, however, you must always have at least 2048 MB of
+   memory or OpenMandriva Lx will fail to boot.
+
+
+Partitioning
+
+   At this time partitioning LVM and Raid setups with Calamares (the
+   installer) is NOT supported.
+
+Installer and EFI Support
+
+   This release of OpenMandriva Lx supports booting and installation with
+   and without UEFI.
+
+   Note that secure boot is NOT supported.
+
+
+Booting from USB
+
+It is also possible to boot this release from an USB storage device. To 
+transfer the live/installation image you may use the ROSA Image Writer available from our repos
+Warning: Please do not use other usb-writing tools as some Windows tools (e.g.
+   Rufus) truncate the volume name. This breaks the boot process.
+
+- Via dd
+
+   You may alternatively dd the image to your USB stick:
+dd if=<iso_name> of=<usb_drive> bs=4M
+
+   Replace <iso_name> with the path to the ISO and <usb_drive> with the
+   device node of the USB drive, i.e. /dev/sdb.
+
+   SUSE Studio ImageWriter has also been tested and works for burning ISO
+   images to USB storage device.
+
+Upgrading from previous OpenMandriva Lx Releases
+
+   Currently a fresh install is recommended.
+
+   In order to keep current with latest changes in Linux, computer
+   security issues, and computer code writing there are major changes in
+   OM Lx4. A Fresh install is recommended.
+
+
+Media Sources
+
+     * main
+
+   main is the core packages maintained by the OpenMandriva Lx team. This
+   includes anything included in the install images as well as many more
+   applications considered important.
+   
+     * unsupported
+
+   unsupported represents community maintained packages. These are not
+   supported by the core OpenMandriva Lx team, and depend on package
+   maintainers to update it. There are many packages in unsupported that
+   will not install and others that install but do not work properly.
+   Users are welcome to use whatever they find in this repository that is
+   working.
+   
+     * restricted
+
+   restricted contains libraries that aren't installed by default due to
+   legal concerns (such as patent issues). The usage of these packages
+   vary by country - OpenMandriva Lx is not responsible for their usage!
+   If you believe that their usage is disallowed in your country, please
+   disable the restricted repositories.
+   
+     * non-free
+
+   non-free contains applications and drivers that are distributable, but
+   do not meet the definitions of Free Software. While we can adjust
+   the packaging of such applications, we do not have the source code and
+   therefore can not fix problems caused by anything in this repository.
+
+Helping the Project
+
+   The OpenMandriva development teams (Cooker & QA) are always looking for
+   new contributors to assist in creating and maintaining packages and to
+   assist bugfixing and testing. You are welcome to join us and help us in
+   this work which is not only rewarding but also tremendous fun!
+
+   If you feel that your talents do not lie in the realm of software, then
+   the OpenMandriva Workshop group, which is made up from the artwork,
+   documentation, translation and Communication teams, is always open for
+   the submissions of artwork and translations. New contributors who would
+   like to help with these wide-ranging tasks should see the wiki for more
+   details, and to learn how to join! Alternatively you may use our Forum.
+
+   It also costs time and money to keep our servers up and running. If you
+   can, please donate to keep the lights on!
+

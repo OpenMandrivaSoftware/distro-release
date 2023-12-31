@@ -1,0 +1,101 @@
+html {
+	background-color: #fff;
+	color: #000;
+}
+
+body {
+	font-family: Sans, sans-serif;
+	font-size: 60%;
+	text-align: center;
+	font-style: italic;
+}
+
+em { font-style: normal; }
+
+a, a:visited { color: #21449c; }
+h3 a, h3 a:visited { color: #21449c; }
+
+div#content {
+	width: 800px;
+	margin: auto;
+	text-align: right;
+}
+
+div#title {
+	display: block;
+	height: 200px;
+	width: 100%;
+	margin-bottom: 2em;
+	position: relative;
+}
+	div#title h1 { position: absolute; top: 135px; left: 0px; }
+		div#title h1 a { float: left; width: 290px; height: 50px; }
+		div#title h1 a span { display: none; }
+
+	div#title ul { list-style: none; }
+		div#title ul li { top: 20px; position: absolute; }
+		div#title ul li#dis { left: 300px; }
+			div#title ul li#dis a { width: 119px; }
+
+		div#title ul li#pp { left: 420px; }
+			div#title ul li#pp a { width: 116px; }
+
+		div#title ul li#ppp { left: 537px; }
+			div#title ul li#ppp a { width: 119px; }
+
+		div#title ul li#flash { left: 695px; }
+			div#title ul li#flash a { width: 100px; }
+
+	li#dis a, li#pp a, li#ppp a, li#flash a { float: left; height: 178px; }
+	li#dis a span, li#pp a span, li#ppp a span, li#flash a span { display: none; }
+
+hr {
+	border: 1px solid #eee;
+	margin-bottom: 2em;
+}
+
+img { border: 1px solid #000; }
+
+ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px 1em 1em 2em;
+}
+
+	ul li {
+		margin-bottom: 2em;
+	}
+		ul li img {}
+		ul li h3 {
+			margin: 0px;
+			font-size: 120%;
+		}
+		ul li p {
+			margin-top: 0px;
+			text-align: justify;
+		}
+
+	ul.focus {}
+		ul.focus li {
+			text-align: center;
+			float: right;
+			padding: 1em;
+			width: 30%;
+		}
+			ul.focus li img {
+				margin: auto;
+			}
+			ul.focus li h3 {
+				text-align: right;
+				margin: 1em 0 0 0;
+			}
+			ul.focus li p {
+				text-align: right;
+			}
+
+	ul.list li p.more {
+		text-align: left;
+	}
+
+div.clear { clear: both; }
+

@@ -1,0 +1,33 @@
+#!/bin/sh
+# Simple script which configure Xfce environment for a fresh user
+# 2012 Author: tpg@mandriva.org
+# 2014 Author: tpgxyz@gmail.com
+# Licensed under GPL terms
+
+MDV_FLAVOUR=`echo $META_CLASS`
+USER_DESKTOP=`xdg-user-dir DESKTOP`
+DESKTOP_FILE=$HOME/.config/autostart/xfce4-firstrun.desktop
+
+if [ `whoami` = "root" ]; then
+    echo "xfce4-firstrun: not supported for superuser."
+    exit || 0
+else
+    if [ ! -e $DESKTOP_FILE ]; then
+	echo "xfce4-firstrun: localised desktop folder exists."
+	if [ ! -d $HOME/.config/autostart ]; then
+	mkdir -p $HOME/.config/autostart
+	fi
+
+cat > $HOME/.config/autostart/xfce4-firstrun.desktop << EOF
+[Desktop Entry]
+Hidden=true
+EOF
+#
+
+	if [ "$(pidof xfdesktop)" ]; then 
+		xfdesktop --reload 1> /dev/null; echo "xfce4-firstrun: xfdesktop reloaded.";
+	fi
+    fi
+fi
+
+#EOF

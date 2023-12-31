@@ -1,0 +1,13 @@
+
+[Desktop Entry]
+Name=Configure Your Computer
+Name[pl]=Konfiguracja komputera
+Comment=Configure Your Computer
+Comment[pl]=Konfiguracja komputera
+Exec=/usr/sbin/drakconf
+Icon=drakconf
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=GTK;X-MandrivaLinux-CrossDesktop;System;
+X-XFCE-Source=file:///usr/share/applications/mandriva-drakconf.desktop

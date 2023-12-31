@@ -1,0 +1,26 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "openmandriva.org",
+                "Name": "OpenMandriva",
+                "Name[x-test]": "xxOpenMandrivaxx"
+            }
+        ],
+        "Category": "",
+        "Description": "OpenMandriva Plasma6 style",
+        "Description[x-test]": "xxOpenMandriva Plasma6 stylexx",
+        "Id": "org.openmandriva6.desktop",
+        "License": "GPLv2+",
+        "Name": "OpenMandriva6",
+        "Name[x-test]": "xxOpenMandriva6xx",
+        "Version": "2.0",
+        "Website": "openmandriva.org"
+    },
+    "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",
+
+    "Keywords[x-test]": "xxDesktopxx;xxWorkspacexx;xxAppearancexx;xxLook and Feelxx;xxLogoutxx;xxLockxx;xxSuspendxx;xxShutdownxx;xxHibernatexx;",
+    "X-Plasma-APIVersion": "2",
+    "X-Plasma-MainScript": "defaults"
+}

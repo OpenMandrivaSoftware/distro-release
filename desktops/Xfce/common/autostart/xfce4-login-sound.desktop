@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Xfce Login Sound
+Comment=Plays login sound for Xfce with libcanberra
+Exec=/usr/bin/canberra-gtk-play --id="ia_ora-startup" --description="Xfce Login"
+Icon=xfce4_xicon
+StartupNotify=false
+Terminal=false
+OnlyShowIn=XFCE;

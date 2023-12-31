@@ -1,0 +1,4 @@
+[General]
+dontChangeAASettings=false
+# This may be useful on screens that report bogus EDID
+# forceFontDPI=96
