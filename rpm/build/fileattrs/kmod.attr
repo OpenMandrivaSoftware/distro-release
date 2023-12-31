@@ -1,2 +1,0 @@
-%__kmod_provides	%{_rpmconfigdir}/openmandriva/kmod-deps.sh -P
-%__kmod_path		^.*(/lib/modules/|/var/lib/dkms/).*\.ko(\.gz|\.xz|\.zst)?$
