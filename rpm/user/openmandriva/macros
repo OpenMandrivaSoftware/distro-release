@@ -593,7 +593,7 @@ objdump -p %{?!2:%{_libdir}}%{?2}/lib%{1}.so | grep -e SONAME | sed -e 's#.*\\\(
 #------------------------------------------------------------------------------
 # arch macros
 # arch macro for all EFI-compatible architectures
-%efi %{ix86} x86_64 znver1 ia64 aarch64
+%efi %{ix86} %{x86_64} %{aarch64} %{riscv} ia64
 
 # macro that contains all arm archs, even 64 bit ones
 %armx %arm aarch64
