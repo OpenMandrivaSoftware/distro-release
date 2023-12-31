@@ -1,5 +1,0 @@
-
-Mails:
- - extract localized headers from mail/header-* and regenerate headers
-   each time (for correct timestamps)
- - design a new welcome email
