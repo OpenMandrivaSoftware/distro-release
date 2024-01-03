@@ -520,52 +520,6 @@ Internationalization and locale data for %{?1:%{1}}%{?!1:%{name}}\
 [ %{_with check} -eq 1 ] || exit 0 \
 %{nil}
 
-%libpackage()\
-%%package -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
-Summary: The %{1} library, a part of %{name}\
-Group: System/Libraries\
-Obsoletes: %{expand:%%mklibname %{1} %{2} %{?3:%{3}}} < %{EVRD}\
-%%description -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
-The %{1} library, a part of %{name}\
-%%files -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
-%{_libdir}/lib%{1}%{?3:-%{2}}.so.%{?3:%{3}}%{?!3:%{2}}*\
-%{nil}
-
-%dependinglibpackage()\
-%%package -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
-Summary: The %{1} library, a part of %{name}\
-Group: System/Libraries\
-Obsoletes: %{expand:%%mklibname %{1} %{2} %{?3:%{3}}} < %{EVRD}\
-Requires: %{name} = %{EVRD}\
-%%description -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
-The %{1} library, a part of %{name}\
-%%files -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
-%{_libdir}/lib%{1}%{?3:-%{2}}.so.%{?3:%{3}}%{?!3:%{2}}*\
-%{nil}
-
-%lib32package()\
-%%package -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
-Summary: The %{1} library, a part of %{name} (32-bit)\
-Group: System/Libraries\
-Obsoletes: %{expand:%%mklib32name %{1} %{2} %{?3:%{3}}} < %{EVRD}\
-%%description -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
-The %{1} library, a part of %{name}\
-%%files -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
-%{_prefix}/lib/lib%{1}%{?3:-%{2}}.so.%{?3:%{3}}%{?!3:%{2}}*\
-%{nil}
-
-%dependinglib32package()\
-%%package -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
-Summary: The %{1} library, a part of %{name} (32-bit)\
-Group: System/Libraries\
-Obsoletes: %{expand:%%mklib32name %{1} %{2} %{?3:%{3}}} < %{EVRD}\
-Requires: %{name} = %{EVRD}\
-%%description -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
-The %{1} library, a part of %{name}\
-%%files -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
-%{_prefix}/lib/lib%{1}%{?3:-%{2}}.so.%{?3:%{3}}%{?!3:%{2}}*\
-%{nil}
-
 # get dependencies from library that foo.so points to, very convenient if
 # one wants to ie. generate requires/suggests against libraries that are
 # dlopen()'ed.
