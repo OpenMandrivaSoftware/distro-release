@@ -128,7 +128,7 @@ if [ -d %{buildroot}%{_libdir} ]; then \
 		echo "%package -n $LN" >%{specpartsdir}/$LN.specpart \
 		echo "Summary: $L library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
 		echo "Group: System/Libraries" >>%{specpartsdir}/$LN.specpart \
-		%{!?-D:echo "Requires: %{name} = %{EVRD}" >>%{specpartsdir}/$LN.specpart} \
+		%{?-D:echo "Requires: %{name} = %{EVRD}" >>%{specpartsdir}/$LN.specpart} \
 		echo "%description -n $LN" >>%{specpartsdir}/$LN.specpart \
 		echo "$L library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
 		echo "%files -n $LN" >>%{specpartsdir}/$LN.specpart \
@@ -203,7 +203,7 @@ if [ "%{_lib}" != "lib" -a -d %{buildroot}%{_prefix}/lib ]; then \
 		echo "%package -n $LN" >%{specpartsdir}/$LN.specpart \
 		echo "Summary: $L library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
 		echo "Group: System/Libraries" >>%{specpartsdir}/$LN.specpart \
-		%{!?-D:echo "Requires: %{name} = %{EVRD}" >>%{specpartsdir}/$LN.specpart} \
+		%{?-D:echo "Requires: %{name} = %{EVRD}" >>%{specpartsdir}/$LN.specpart} \
 		echo "%description -n $LN" >>%{specpartsdir}/$LN.specpart \
 		echo "$L library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
 		echo "%files -n $LN" >>%{specpartsdir}/$LN.specpart \
