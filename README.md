@@ -1,4 +1,4 @@
-This repository contains the theme for ROME
+This repository contains the theme for Rock
 
     
-*rome branch*
+*5.0 branch*
