@@ -1,4 +1,2 @@
-This repository contains the theme for ROME
-
-    
-*rome branch*
+This repository contains the theme for Cooker
+*master branch*
