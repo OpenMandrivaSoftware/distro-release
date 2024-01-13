@@ -1,7 +1,0 @@
-#!/bin/sh
-set -e
-
-cat << EOF
-set color_normal=white/black
-set menu_color_normal=white/black
-EOF
