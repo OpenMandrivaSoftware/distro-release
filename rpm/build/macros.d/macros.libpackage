@@ -122,7 +122,7 @@ if [ -d %{buildroot}%{_libdir} ]; then \
 	cd %{buildroot}%{_libdir} \
 	for i in *.so.*; do \
 		[ -e "$i" ] || continue \
-		L=$(echo $i |sed -e 's,^lib,,;s,\.so\..*,,') \
+		L=$(echo $i |sed -e 's,^lib,,;s,\\.so\\..*,,') \
 		LN=%{mklibname $L} \
 		[ -e %{specpartsdir}/$LN.specpart ] && continue \
 		echo "%package -n $LN" >%{specpartsdir}/$LN.specpart \
@@ -137,7 +137,7 @@ if [ -d %{buildroot}%{_libdir} ]; then \
 	done \
 	%{!?-d:for i in *.so; do \
 		[ -e "$i" ] || continue \
-		L=$(echo $i |sed -e 's,^lib,,;s,\.so$,,') \
+		L=$(echo $i |sed -e 's,^lib,,;s,\\.so$,,') \
 		LN=%{mklibname -d $L} \
 		[ -e %{specpartsdir}/$LN.specpart ] && continue \
 		echo "%package -n $LN" >%{specpartsdir}/$LN.specpart \
@@ -160,7 +160,7 @@ if [ -d %{buildroot}%{_libdir} ]; then \
 	done} \
 	%{!?-s:for i in *.a; do \
 		[ -e "$i" ] || continue \
-		L=$(echo $i |sed -e 's,^lib,,;s,\.a$,,') \
+		L=$(echo $i |sed -e 's,^lib,,;s,\\.a$,,') \
 		LN=%{mklibname -s -d $L} \
 		[ -e %{specpartsdir}/$LN.specpart ] && continue \
 		if echo " $LIBPACKAGES " |grep -q " $L "; then \
@@ -195,7 +195,7 @@ if [ "%{_lib}" != "lib" -a -d %{buildroot}%{_prefix}/lib ]; then \
 	cd %{buildroot}%{_prefix}/lib \
 	for i in *.so.*; do \
 		[ -e "$i" ] || continue \
-		L=$(echo $i |sed -e 's,^lib,,;s,\.so\..*,,') \
+		L=$(echo $i |sed -e 's,^lib,,;s,\\.so\\..*,,') \
 		LN=%{mklib32name $L} \
 		# Typical problem: e.g. %%mklib32name xyz == libxyz (potentially == source name) \
 		[ "$LN" = "%{name}" ] && LN="${LN}32" \
@@ -212,7 +212,7 @@ if [ "%{_lib}" != "lib" -a -d %{buildroot}%{_prefix}/lib ]; then \
 	done \
 	%{!?-d:for i in *.so; do \
 		[ -e "$i" ] || continue \
-		L=$(echo $i |sed -e 's,^lib,,;s,\.so$,,') \
+		L=$(echo $i |sed -e 's,^lib,,;s,\\.so$,,') \
 		# Typical problem: e.g. %%mklib32name xyz == libxyz (potentially == source name) \
 		if [ "%{mklib32name $L}" = "%{name}" ]; then \
 			WL=${L}32 \
@@ -237,7 +237,7 @@ if [ "%{_lib}" != "lib" -a -d %{buildroot}%{_prefix}/lib ]; then \
 	done} \
 	%{!?-s:for i in *.a; do \
 		[ -e "$i" ] || continue \
-		L=$(echo $i |sed -e 's,^lib,,;s,\.a$,,') \
+		L=$(echo $i |sed -e 's,^lib,,;s,\\.a$,,') \
 		# Typical problem: e.g. %%mklib32name xyz == libxyz (potentially == source name) \
 		if [ "%{mklib32name $L}" = "%{name}" ]; then \
 			WL=${L}32 \
