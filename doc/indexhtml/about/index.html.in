@@ -1,29 +1,51 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" dir="ltr">
-        <head>
-                <_title>About OpenMandriva</_title>
-                <link rel="stylesheet" media="screen" type="text/css" href="style/screen.css" />
-        </head>
-        <body>
-<a name="top" />
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<_title>About OpenMandriva</_title>
+<link type="text/css" rel="stylesheet" media="screen" href="style/screen.css"/>
+</head>
+<body>
+<!--TOP-->
+<a name="top"/>
 <div id="content">
+<div id="title_top"><a href="#what"><_span>What is OpenMandriva?</_span></a> | <a href="#browse"><_span>Browse resources</_span></a></div>
+<a name="what"/>
+<!--TOP -->
+<_div id="title1">Welcome to OpenMandriva</_div>
+<_div id="title3">What is OpenMandriva</_div>
+<_p>OpenMandriva Association was established on December 12, 2012 under 1901 French law. It manages some Free Software projects including OpenMandriva Lx, a GNU/Linux operating system that is a free alternative to the wide world known Microsoft Windows and Apple MacOS.</_p>
+<_div id="title3">What is OpenMandriva Lx</_div>
+<_p>OpenMandriva Lx is a unique and independent distribution and direct descendant of Mandriva Linux.</_p>
 
-		<div id="title_top"><a href="#what"><_span>What is OpenMandriva Lx?</_span></a> | <a href="#browse"><_span>Browse resources</_span></a></div>
+<!--<p>Coming soon</p>-->
+<!--<p><a href="#top">[<span>top of this page</span>]</a></p>-->
+<div>
+<p><a name="browse"/>
+<_div id="title2">Browse resources</_div></p>
+</div>
+<_div id="title3">Wiki</_div>
+<p><a href="https://wiki.openmandriva.org/" target="_blank">https://wiki.openmandriva.org</a></p>
 
-<a name="what" />
+<div id="title3">Forum</div>
+<p><a href="https://forum.openmandriva.org/" target="_blank">https://forum.openmandriva.org</a></p>
+<p><_a href="https://forum.openmandriva.org/c/resources/13" target="_blank">Forum Resources guides</_a></p>
+<p><_a href="https://forum.openmandriva.org/t/resources-index/2768" target="_blank">Resources Index</_a></p>
 
-<_p>Coming soon</_p>
+<_div id="title3">Chat</_div>
+<div><_p>You are welcome to talk to our developers at <a href="https://wiki.openmandriva.org/en/team/chat" target="_blank">OpenMandriva Chat</a></_p>
+</div>
 
-<p><a href="#top">[<_span>top of this page</_span>]</a></p>
+<_div id="title3">Bug Tracker</_div>
+<_p>For serious technical issues and package/feature requests please file a bug report at <_a href="https://github.com/OpenMandrivaAssociation/distribution/issues" target="_blank">OpenMandriva Issue Tracker</_a></_p>
 
-<a name="browse" />
-<_div id="title2">Browse resources</_div>
-
-<_p>Coming soon...</_p>
-
+<p><br/></p>
+<!--<p>Coming soon...</p>-->
+<div>
+<_p>Make sure to visit <a href="https://openmandriva.org/" target="_blank">openmandriva.org</a> to get more tips and updates about OpenMandriva.</_p>
+<_p>Have fun!</_p>
+</div>
 <p><a href="#top">[<_span>top of this page</_span>]</a></p>
 
 </div>
-
 </body>
 </html>
-
