@@ -78,7 +78,7 @@ msgid ""
 msgstr ""
 
 #: index.html.in.h:15
-msgid "Bug Traker"
+msgid "Bug Tracker"
 msgstr ""
 
 #: index.html.in.h:16
