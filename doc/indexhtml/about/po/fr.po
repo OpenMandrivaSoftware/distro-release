@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# OpenMandrivaAssociation <i10n@openmandriva.org>, 2024
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-13 16:00+0100\n"
+"PO-Revision-Date: 2024-02-13 20:26+0000\n"
+"Last-Translator: OpenMandrivaAssociation <i10n@openmandriva.org>, 2024\n"
+"Language-Team: French (https://app.transifex.com/openmandriva/teams/1818/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#: index.html.in.h:1
+msgid "About OpenMandriva"
+msgstr "Présentation d'OpenMandriva"
+
+#: index.html.in.h:2
+msgid "What is OpenMandriva?"
+msgstr "Qu'est-ce qu'OpenMandriva ?"
+
+#: index.html.in.h:3
+msgid "Browse resources"
+msgstr "Explorer les ressources"
+
+#: index.html.in.h:5
+msgid "Welcome to OpenMandriva"
+msgstr "Bienvenue sur OpenMandriva"
+
+#: index.html.in.h:6
+msgid "What is OpenMandriva"
+msgstr "Qu'est-ce qu'OpenMandriva"
+
+#: index.html.in.h:7
+msgid ""
+"OpenMandriva Association was established on December 12, 2012 under 1901 "
+"French law. It manages some Free Software projects including OpenMandriva "
+"Lx, a GNU/Linux operating system that is a free alternative to the wide "
+"world known Microsoft Windows and Apple MacOS."
+msgstr ""
+"L'Association OpenMandriva a été créée le 12 décembre 2012 en vertu de la "
+"loi française de 1901. Elle gère certains projets de logiciels libres, dont "
+"OpenMandriva Lx, un système d'exploitation GNU/Linux qui constitue une "
+"alternative gratuite aux célèbres Microsoft Windows et Apple MacOS."
+
+#: index.html.in.h:8
+msgid "What is OpenMandriva Lx"
+msgstr "Qu'est-ce qu'OpenMandriva Lx"
+
+#: index.html.in.h:9
+msgid ""
+"OpenMandriva Lx is a unique and independent distribution and direct "
+"descendant of Mandriva Linux."
+msgstr ""
+"OpenMandriva Lx est une distribution unique et indépendante, héritière "
+"directe de Mandriva Linux."
+
+#: index.html.in.h:10
+msgid "Wiki"
+msgstr "Wiki"
+
+#: index.html.in.h:11
+msgid "Forum Resources guides"
+msgstr "Guides ressources du forum"
+
+#: index.html.in.h:12
+msgid "Resources Index"
+msgstr "Index des ressources"
+
+#: index.html.in.h:13
+msgid "Chat"
+msgstr "Chat"
+
+#: index.html.in.h:14
+msgid ""
+"You are welcome to talk to our developers at <a target=\"_blank\" "
+"href=\"https://wiki.openmandriva.org/en/team/chat\">OpenMandriva Chat</a>"
+msgstr ""
+"Vous êtes invité à discuter avec nos développeurs sur le <a "
+"target=\"_blank\" href=\"https://wiki.openmandriva.org/en/team/chat\">Chat "
+"OpenMandriva</a>"
+
+#: index.html.in.h:15
+msgid "Bug Tracker"
+msgstr "Suivi des bogues"
+
+#: index.html.in.h:16
+msgid ""
+"For serious technical issues and package/feature requests please file a bug "
+"report at <a target=\"_blank\" "
+"href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
+" Issue Tracker</a>"
+msgstr ""
+"Pour les problèmes techniques sérieux et les demandes de "
+"fonctionnalités/packages, veuillez soumettre un rapport de bogue sur le <a "
+"target=\"_blank\" "
+"href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">Suivi"
+" des problèmes OpenMandriva</a>"
+
+#: index.html.in.h:17
+msgid ""
+"Make sure to visit <a target=\"_blank\" "
+"href=\"http://www.openmandriva.org/\">www.openmandriva.org</a> to get more "
+"tips and updates about OpenMandriva."
+msgstr ""
+"N’hésitez pas à visiter <a target=\"_blank\" "
+"href=\"http://www.openmandriva.org/\">www.openmandriva.org</a>pour obtenir "
+"plus de conseils et de mises à jour sur OpenMandriva."
+
+#: index.html.in.h:18
+msgid "Have fun!"
+msgstr "Profitez bien !"
+
+#: index.html.in.h:19
+msgid "top of this page"
+msgstr "haut de la page"
