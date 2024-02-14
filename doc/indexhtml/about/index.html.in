@@ -13,12 +13,13 @@
 <!--TOP -->
 <_div id="title1">Welcome to OpenMandriva</_div>
 <_div id="title3">What is OpenMandriva</_div>
+<p>A pinch of Community, a pinch of Passion, a pinch of Innovation, flavoured with Fun.</p>
 <_p>OpenMandriva Association was established on December 12, 2012 under 1901 French law. It manages some Free Software projects including OpenMandriva Lx, a GNU/Linux operating system that is a free alternative to the wide world known Microsoft Windows and Apple MacOS.</_p>
 <_div id="title3">What is OpenMandriva Lx</_div>
 <_p>OpenMandriva Lx is a unique and independent distribution and direct descendant of Mandriva Linux.</_p>
 
-<!--<p>Coming soon</p>-->
 <!--<p><a href="#top">[<span>top of this page</span>]</a></p>-->
+<p><br></p>
 <div>
 <p><a name="browse"/>
 <_div id="title2">Browse resources</_div></p>
@@ -39,7 +40,6 @@
 <_p>For serious technical issues and package/feature requests please file a bug report at <_a href="https://github.com/OpenMandrivaAssociation/distribution/issues" target="_blank">OpenMandriva Issue Tracker</_a></_p>
 
 <p><br/></p>
-<!--<p>Coming soon...</p>-->
 <div>
 <_p>Make sure to visit <a href="https://openmandriva.org/" target="_blank">openmandriva.org</a> to get more tips and updates about OpenMandriva.</_p>
 <_p>Have fun!</_p>
