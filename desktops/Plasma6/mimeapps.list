@@ -1,0 +1,160 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: None
+
+[Default Applications]
+# Archive Manager
+application/x-tar=org.kde.ark.desktop
+application/x-compressed-tar=org.kde.ark.desktop
+application/x-bzip-compressed-tar=org.kde.ark.desktop
+application/x-tarz=org.kde.ark.desktop
+application/x-xz-compressed-tar=org.kde.ark.desktop
+application/x-lzma-compressed-tar=org.kde.ark.desktop
+application/x-lzip-compressed-tar=org.kde.ark.desktop
+application/x-tzo=org.kde.ark.desktop
+application/x-lrzip-compressed-tar=org.kde.ark.desktop
+application/x-lz4-compressed-tar=org.kde.ark.desktop
+application/x-zstd-compressed-tar=org.kde.ark.desktop
+application/x-cd-image=org.kde.ark.desktop
+application/x-bcpio=org.kde.ark.desktop
+application/x-cpio=org.kde.ark.desktop
+application/x-cpio-compressed=org.kde.ark.desktop
+application/x-sv4cpio=org.kde.ark.desktop
+application/x-sv4crc=org.kde.ark.desktop
+application/x-source-rpm=org.kde.ark.desktop
+application/vnd.ms-cab-compressed=org.kde.ark.desktop
+application/x-xar=org.kde.ark.desktop
+application/x-iso9660-appimage=org.kde.ark.desktop
+application/x-archive=org.kde.ark.desktop
+application/vnd.rar=org.kde.ark.desktop
+application/x-rar=org.kde.ark.desktop
+application/x-7z-compressed=org.kde.ark.desktop
+application/zip=org.kde.ark.desktop
+application/x-compress=org.kde.ark.desktop
+application/gzip=org.kde.ark.desktop
+application/x-bzip=org.kde.ark.desktop
+application/x-lzma=org.kde.ark.desktop
+application/x-xz=org.kde.ark.desktop
+application/zstd=org.kde.ark.desktop
+application/x-lha=org.kde.ark.desktop
+
+# Browser
+x-scheme-handler/http=chromium-browser.desktop;org.kde.falkon.desktop;firefox.desktop
+x-scheme-handler/https=chromium-browser.desktop;org.kde.falkon.desktop;firefox.desktop
+
+# Email
+x-scheme-handler/mailto=org.kde.kmail2.desktop;org.kde.trojita.desktop
+
+# File Manager
+inode/directory=org.kde.dolphin.desktop
+
+# Geo
+x-scheme-handler/geo=marble_geo.desktop
+
+# Images
+application/x-krita=org.kde.krita.desktop;org.kde.gwenview.desktop
+image/x-xcf=org.kde.krita.desktop;org.gimp.GIMP.desktop;org.kde.gwenview.desktop
+image/avif=org.kde.gwenview.desktop
+image/gif=org.kde.gwenview.desktop
+image/heif=org.kde.gwenview.desktop
+image/jpeg=org.kde.gwenview.desktop
+image/jxl=org.kde.gwenview.desktop
+image/png=org.kde.gwenview.desktop
+image/bmp=org.kde.gwenview.desktop
+image/x-eps=org.kde.gwenview.desktop
+image/x-icns=org.kde.gwenview.desktop
+image/x-ico=org.kde.gwenview.desktop
+image/x-portable-bitmap=org.kde.gwenview.desktop
+image/x-portable-graymap=org.kde.gwenview.desktop
+image/x-portable-pixmap=org.kde.gwenview.desktop
+image/x-xbitmap=org.kde.gwenview.desktop
+image/x-xpixmap=org.kde.gwenview.desktop
+image/tiff=org.kde.gwenview.desktop
+image/x-psd=org.kde.gwenview.desktop
+image/x-webp=org.kde.gwenview.desktop
+image/webp=org.kde.gwenview.desktop
+image/x-tga=org.kde.gwenview.desktop
+image/svg+xml=org.inkscape.Inkscape.desktop;org.kde.krita.desktop;org.kde.gwenview.desktop;org.kde.kwrite.desktop;kwriteroot.desktop
+image/svg+xml-compressed=org.inkscape.Inkscape.desktop;org.kde.krita.desktop;org.kde.gwenview.desktop
+
+# Music Player
+audio/aac=QMPlay2.desktop;org.kde.elisa.desktop
+audio/mp4=QMPlay2.desktop;org.kde.elisa.desktop
+audio/mpeg=QMPlay2.desktop;org.kde.elisa.desktop
+audio/mpegurl=QMPlay2.desktop;org.kde.elisa.desktop
+audio/ogg=QMPlay2.desktop;org.kde.elisa.desktop
+audio/vnd.rn-realaudio=QMPlay2.desktop;org.kde.elisa.desktop
+audio/vorbis=QMPlay2.desktop;org.kde.elisa.desktop
+audio/x-flac=QMPlay2.desktop;org.kde.elisa.desktop
+audio/x-mp3=QMPlay2.desktop;org.kde.elisa.desktop
+audio/x-mpegurl=QMPlay2.desktop;org.kde.elisa.desktop
+audio/x-ms-wma=QMPlay2.desktop;org.kde.elisa.desktop
+audio/x-musepack=QMPlay2.desktop;org.kde.elisa.desktop
+audio/x-oggflac=QMPlay2.desktop;org.kde.elisa.desktop
+audio/x-pn-realaudio=QMPlay2.desktop;org.kde.elisa.desktop
+audio/x-scpls=QMPlay2.desktop;org.kde.elisa.desktop
+audio/x-speex=QMPlay2.desktop;org.kde.elisa.desktop
+audio/x-vorbis=QMPlay2.desktop;org.kde.elisa.desktop
+audio/x-vorbis+ogg=QMPlay2.desktop;org.kde.elisa.desktop
+audio/x-wav=QMPlay2.desktop;org.kde.elisa.desktop
+
+# Packages
+x-scheme-handler/appstream=org.kde.discover.desktop
+application/x-rpm=org.kde.discover.desktop
+application/vnd.debian.binary-package=org.kde.discover.desktop
+
+# PDF Viewer
+application/pdf=okularApplication_pdf.desktop;chromium-browser.desktop
+
+# Tel
+x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop
+
+# Text Editor
+text/plain=org.kde.kate.desktop;org.kde.kwrite.desktop
+text/x-cmake=org.kde.kate.desktop;org.kde.kwrite.desktop
+text/markdown=org.kde.kate.desktop;org.kde.kwrite.desktop
+application/x-docbook+xml=org.kde.kate.desktop;org.kde.kwrite.desktop
+application/json=org.kde.kate.desktop;org.kde.kwrite.desktop
+application/x-yaml=org.kde.kate.desktop;org.kde.kwrite.desktop
+
+# Video Player
+video/3gp=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/3gpp=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/3gpp2=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/avi=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/divx=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/dv=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/fli=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/flv=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/mp2t=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/mp4=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/mp4v-es=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/mpeg=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/msvideo=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/ogg=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/quicktime=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/vnd.divx=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/vnd.mpegurl=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/vnd.rn-realvideo=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/webm=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-avi=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-flv=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-m4v=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-matroska=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-mpeg2=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-ms-asf=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-msvideo=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-ms-wmv=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-ms-wmx=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-ogm=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-ogm+ogg=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-theora=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-theora+ogg=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+application/x-matroska=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+
+[Added Associations]
+image/svg+xml=org.inkscape.Inkscape.desktop;org.kde.kwrite.desktop;org.kde.gwenview.desktop;kwriteroot.desktop
+image/svg+xml-compressed=org.inkscape.Inkscape.desktop;org.kde.kwrite.desktop
+text/plain=org.kde.kwrite.desktop;kwriteroot.desktop
+
+[Removed Associations]
+image/svg+xml-compressed=org.kde.ark.desktop;
