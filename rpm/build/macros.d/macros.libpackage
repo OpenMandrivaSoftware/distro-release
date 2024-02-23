@@ -1,0 +1,271 @@
+#------------------------------------------------------------------------------
+# Some macros to make packagers' lives easier:
+#
+# libpackage [-d] name [abi] major
+# Creates a libpackage for a library named <name> with .so major version
+# <major> and (possibly) abi <abi>.
+# It packages %{_libdir}/lib<name>[-<abi>].so.<major>*
+#
+# If -d is given, the lib package depends on the main package
+# (%{name} = %{EVRD}.
+%libpackage(d)\
+%%package -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
+Summary: The %{1} library, a part of %{name}\
+Group: System/Libraries\
+Obsoletes: %{expand:%%mklibname %{1} %{2} %{?3:%{3}}} < %{EVRD}\
+%{?-d:Requires: %{name} = %{EVRD}}\
+%%description -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
+The %{1} library, a part of %{name}\
+%%files -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
+%{_libdir}/lib%{1}%{?3:-%{2}}.so.%{?3:%{3}}%{?!3:%{2}}*\
+%{nil}
+
+# dependinglibpackage is obsolete and provided for compatibility only.
+# Use libpackage -d instead.
+%dependinglibpackage()\
+%%package -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
+Summary: The %{1} library, a part of %{name}\
+Group: System/Libraries\
+Obsoletes: %{expand:%%mklibname %{1} %{2} %{?3:%{3}}} < %{EVRD}\
+Requires: %{name} = %{EVRD}\
+%%description -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
+The %{1} library, a part of %{name}\
+%%files -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
+%{_libdir}/lib%{1}%{?3:-%{2}}.so.%{?3:%{3}}%{?!3:%{2}}*\
+%{nil}
+
+# lib32package [-d] name [abi] major
+# Creates a 32-bit compat libpackage for a library named <name> with .so major version
+# <major> and (possibly) abi <abi>.
+# It packages %{_prefix}/lib/lib<name>[-<abi>].so.<major>*
+#
+# If -d is given, the lib package depends on the main package
+# (%{name} = %{EVRD}.
+%lib32package(d)\
+%%package -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
+Summary: The %{1} library, a part of %{name} (32-bit)\
+Group: System/Libraries\
+Obsoletes: %{expand:%%mklib32name %{1} %{2} %{?3:%{3}}} < %{EVRD}\
+%{?-d:Requires: %{name} = %{EVRD}}\
+%%description -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
+The %{1} library, a part of %{name}\
+%%files -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
+%{_prefix}/lib/lib%{1}%{?3:-%{2}}.so.%{?3:%{3}}%{?!3:%{2}}*\
+%{nil}
+
+# dependinglib32package is obsolete and provided for compatibility only.
+# Use lib32package -d instead.
+%dependinglib32package()\
+%%package -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
+Summary: The %{1} library, a part of %{name} (32-bit)\
+Group: System/Libraries\
+Obsoletes: %{expand:%%mklib32name %{1} %{2} %{?3:%{3}}} < %{EVRD}\
+Requires: %{name} = %{EVRD}\
+%%description -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
+The %{1} library, a part of %{name}\
+%%files -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
+%{_prefix}/lib/lib%{1}%{?3:-%{2}}.so.%{?3:%{3}}%{?!3:%{2}}*\
+%{nil}
+
+# Automatically generate libpackages for all libraries present.
+# (This must be called after "make install" or equivalent).
+#
+# Parameters:
+# -d Don't autogenerate corresponding -devel packages
+# -D Make all libpackages depend on the main package
+# -s Don't autogenerate corresponding -static-devel packages
+#
+# Since autogenerating -devel packages is a lot harder than
+# autogenerating libpackages (e.g. what headers belong to what
+# libpackage, if there's multiple ones?), it sometimes makes sense
+# to still create -devel packages manually (use -d) or to postprocess
+# the generated packages.
+#
+# The macro also sets environment variables LIBPACKAGES, DEVELPACKAGES,
+# STATICPACKAGES, STATICONLYPACKAGES, LIB32PACKAGES, DEVEL32PACKAGES,
+# STATIC32PACKAGES and STATICONLY32PACKAGES to
+# provide a list of packages that have been created, e.g. for post-processing
+# such as adding additional files to a package.
+# STATICPACKAGES contains a list of static libraries that also exist as a shared library,
+# STATICONLYPACKAGES contains a list of static libraries that don't have a corresponding
+# shared library.
+#
+# The macro uses specpart files named after the package being generated,
+# so if you used "libpackages" on libexample.so, you can add additional
+# files with
+# echo /extra/file >>%{specpartsdir}/%{mklibname -d example}.specpart
+#
+# Or, to create a meta package pulling in all generated -devel packages:
+# cat >%{specpartsdir}/%{name}-devel.specpart <<EOF
+# %package devel
+# Summary: Development files for all components of %{name}
+# Group: Development/Libraries
+# EOF
+# for i in $DEVELPACKAGES; do
+# 	echo "Requires: %{mklibname -d $i}" >>%{specpartsdir}/%{name}-devel.specpart
+# done
+# cat >>%{specpartsdir}/%{name}-devel.specpart <<EOF
+# %description devel
+# Development files for all components of %{name}
+# %files devel
+# EOF
+%libpackages(dDs) \
+LIBPACKAGES="" \
+%{!?-d:DEVELPACKAGES=""} \
+%{!?-s:STATICPACKAGES=""} \
+%{!?-s:STATICONLYPACKAGES=""} \
+LIB32PACKAGES="" \
+%{!?-d:DEVEL32PACKAGES=""} \
+%{!?-s:STATIC32PACKAGES=""} \
+%{!?-s:STATICONLY32PACKAGES=""} \
+if [ -d %{buildroot}%{_libdir} ]; then \
+	cd %{buildroot}%{_libdir} \
+	for i in *.so.*; do \
+		[ -e "$i" ] || continue \
+		L=$(echo $i |sed -e 's,^lib,,;s,\\.so\\..*,,') \
+		LN=%{mklibname $L} \
+		[ -e %{specpartsdir}/$LN.specpart ] && continue \
+		echo "%package -n $LN" >%{specpartsdir}/$LN.specpart \
+		echo "Summary: $L library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
+		echo "Group: System/Libraries" >>%{specpartsdir}/$LN.specpart \
+		%{?-D:echo "Requires: %{name} = %{EVRD}" >>%{specpartsdir}/$LN.specpart} \
+		echo "%description -n $LN" >>%{specpartsdir}/$LN.specpart \
+		echo "$L library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
+		echo "%files -n $LN" >>%{specpartsdir}/$LN.specpart \
+		echo "%{_libdir}/lib${L}.so.*" >>%{specpartsdir}/$LN.specpart \
+		LIBPACKAGES="$LIBPACKAGES $L" \
+	done \
+	%{!?-d:for i in *.so; do \
+		[ -e "$i" ] || continue \
+		L=$(echo $i |sed -e 's,^lib,,;s,\\.so$,,') \
+		LN=%{mklibname -d $L} \
+		[ -e %{specpartsdir}/$LN.specpart ] && continue \
+		echo "%package -n $LN" >%{specpartsdir}/$LN.specpart \
+		echo "Summary: Development files for the $L library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
+		echo "Group: Development/Libraries" >>%{specpartsdir}/$LN.specpart \
+		echo "Requires: %{mklibname $L} = %{EVRD}" >>%{specpartsdir}/$LN.specpart \
+		echo "%description -n $LN" >>%{specpartsdir}/$LN.specpart \
+		echo "Development files for the $L library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
+		echo "%files -n $LN" >>%{specpartsdir}/$LN.specpart \
+		echo "%{_libdir}/lib${L}.so" >>%{specpartsdir}/$LN.specpart \
+		[ -e pkgconfig/${L}.pc ] && echo %{_libdir}/pkgconfig/${L}.pc >>%{specpartsdir}/$LN.specpart \
+		[ -e pkgconfig/lib${L}.pc ] && echo %{_libdir}/pkgconfig/lib${L}.pc >>%{specpartsdir}/$LN.specpart \
+		[ -e %{buildroot}%{_datadir}/pkgconfig/${L}.pc ] && echo %{_datadir}/pkgconfig/${L}.pc >>%{specpartsdir}/$LN.specpart \
+		[ -e %{buildroot}%{_datadir}/pkgconfig/lib${L}.pc ] && echo %{_datadir}/pkgconfig/lib${L}.pc >>%{specpartsdir}/$LN.specpart \
+		[ -d cmake/$L ] && echo %{_libdir}/cmake/$L >>%{specpartsdir}/$LN.specpart \
+		[ -d %{buildroot}%{_datadir}/cmake/$L ] && echo %{_datadir}/cmake/$L >>%{specpartsdir}/$LN.specpart \
+		[ -d %{buildroot}%{_includedir}/$L ] && echo %{_includedir}/$L >>%{specpartsdir}/$LN.specpart \
+		[ -d %{buildroot}%{_includedir}/lib$L ] && echo %{_includedir}/lib$L >>%{specpartsdir}/$LN.specpart \
+		DEVELPACKAGES="$DEVELPACKAGES $L" \
+	done} \
+	%{!?-s:for i in *.a; do \
+		[ -e "$i" ] || continue \
+		L=$(echo $i |sed -e 's,^lib,,;s,\\.a$,,') \
+		LN=%{mklibname -s -d $L} \
+		[ -e %{specpartsdir}/$LN.specpart ] && continue \
+		if echo " $LIBPACKAGES " |grep -q " $L "; then \
+			STATICONLY=false \
+		else \
+			STATICONLY=true \
+		fi \
+		echo "%package -n $LN" >%{specpartsdir}/$LN.specpart \
+		echo "Summary: $L static library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
+		echo "Group: Development/Libraries" >>%{specpartsdir}/$LN.specpart \
+		%{!?-d:$STATICONLY || echo "Requires: %{mklibname -d $L} = %{EVRD}" >>%{specpartsdir}/$LN.specpart} \
+		echo "%description -n $LN" >>%{specpartsdir}/$LN.specpart \
+		echo "$L static library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
+		echo "%files -n $LN" >>%{specpartsdir}/$LN.specpart \
+		echo "%{_libdir}/lib${L}.a" >>%{specpartsdir}/$LN.specpart \
+		if $STATICONLY; then \
+			[ -e pkgconfig/${L}.pc ] && echo %{_libdir}/pkgconfig/${L}.pc >>%{specpartsdir}/$LN.specpart \
+			[ -e pkgconfig/lib${L}.pc ] && echo %{_libdir}/pkgconfig/lib${L}.pc >>%{specpartsdir}/$LN.specpart \
+			[ -e %{buildroot}%{_datadir}/pkgconfig/${L}.pc ] && echo %{_datadir}/pkgconfig/${L}.pc >>%{specpartsdir}/$LN.specpart \
+			[ -e %{buildroot}%{_datadir}/pkgconfig/lib${L}.pc ] && echo %{_datadir}/pkgconfig/lib${L}.pc >>%{specpartsdir}/$LN.specpart \
+			[ -d cmake/$L ] && echo %{_libdir}/cmake/$L >>%{specpartsdir}/$LN.specpart \
+			[ -d %{buildroot}%{_datadir}/cmake/$L ] && echo %{_datadir}/cmake/$L >>%{specpartsdir}/$LN.specpart \
+			[ -d %{buildroot}%{_includedir}/$L ] && echo %{_includedir}/$L >>%{specpartsdir}/$LN.specpart \
+			[ -d %{buildroot}%{_includedir}/lib$L ] && echo %{_includedir}/lib$L >>%{specpartsdir}/$LN.specpart \
+			STATICONLYPACKAGES="$STATICONLYPACKAGES $L" \
+		else \
+			STATICPACKAGES="$STATICPACKAGES $L" \
+		fi \
+	done} \
+fi \
+if [ "%{_lib}" != "lib" -a -d %{buildroot}%{_prefix}/lib ]; then \
+	cd %{buildroot}%{_prefix}/lib \
+	for i in *.so.*; do \
+		[ -e "$i" ] || continue \
+		L=$(echo $i |sed -e 's,^lib,,;s,\\.so\\..*,,') \
+		LN=%{mklib32name $L} \
+		# Typical problem: e.g. %%mklib32name xyz == libxyz (potentially == source name) \
+		[ "$LN" = "%{name}" ] && LN="${LN}32" \
+		[ -e %{specpartsdir}/$LN.specpart ] && continue \
+		echo "%package -n $LN" >%{specpartsdir}/$LN.specpart \
+		echo "Summary: $L library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
+		echo "Group: System/Libraries" >>%{specpartsdir}/$LN.specpart \
+		%{?-D:echo "Requires: %{name} = %{EVRD}" >>%{specpartsdir}/$LN.specpart} \
+		echo "%description -n $LN" >>%{specpartsdir}/$LN.specpart \
+		echo "$L library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
+		echo "%files -n $LN" >>%{specpartsdir}/$LN.specpart \
+		echo "%{_prefix}/lib/lib${L}.so.*" >>%{specpartsdir}/$LN.specpart \
+		LIB32PACKAGES="$LIB32PACKAGES $L" \
+	done \
+	%{!?-d:for i in *.so; do \
+		[ -e "$i" ] || continue \
+		L=$(echo $i |sed -e 's,^lib,,;s,\\.so$,,') \
+		# Typical problem: e.g. %%mklib32name xyz == libxyz (potentially == source name) \
+		if [ "%{mklib32name $L}" = "%{name}" ]; then \
+			WL=${L}32 \
+		else \
+			WL=$L \
+		fi \
+		LN=%{mklib32name -d $WL} \
+		[ -e %{specpartsdir}/$LN.specpart ] && continue \
+		echo "%package -n $LN" >%{specpartsdir}/$LN.specpart \
+		echo "Summary: Development files for the $L library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
+		echo "Group: Development/Libraries" >>%{specpartsdir}/$LN.specpart \
+		echo "Requires: %{mklib32name $WL} = %{EVRD}" >>%{specpartsdir}/$LN.specpart \
+		echo "Requires: %{mklibname -d $L} = %{EVRD}" >>%{specpartsdir}/$LN.specpart \
+		echo "%description -n $LN" >>%{specpartsdir}/$LN.specpart \
+		echo "Development files for the $L library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
+		echo "%files -n $LN" >>%{specpartsdir}/$LN.specpart \
+		echo "%{_prefix}/lib/lib${L}.so" >>%{specpartsdir}/$LN.specpart \
+		[ -e pkgconfig/${L}.pc ] && echo %{_prefix}/lib/pkgconfig/${L}.pc >>%{specpartsdir}/$LN.specpart \
+		[ -e pkgconfig/lib${L}.pc ] && echo %{_prefix}/lib/pkgconfig/lib${L}.pc >>%{specpartsdir}/$LN.specpart \
+		[ -d cmake/$L ] && echo %{_prefix}/lib/cmake/$L >>%{specpartsdir}/$LN.specpart \
+		DEVEL32PACKAGES="$DEVEL32PACKAGES $L" \
+	done} \
+	%{!?-s:for i in *.a; do \
+		[ -e "$i" ] || continue \
+		L=$(echo $i |sed -e 's,^lib,,;s,\\.a$,,') \
+		# Typical problem: e.g. %%mklib32name xyz == libxyz (potentially == source name) \
+		if [ "%{mklib32name $L}" = "%{name}" ]; then \
+			WL=${L}32 \
+		else \
+			WL=$L \
+		fi \
+		LN=%{mklib32name -s -d $WL} \
+		[ -e %{specpartsdir}/$LN.specpart ] && continue \
+		if echo " $LIB32PACKAGES " |grep -q " $L "; then \
+			STATICONLY=false \
+		else \
+			STATICONLY=true \
+		fi \
+		echo "%package -n $LN" >%{specpartsdir}/$LN.specpart \
+		echo "Summary: $L static library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
+		echo "Group: Development/Libraries" >>%{specpartsdir}/$LN.specpart \
+		%{!?-d:$STATICONLY || echo "Requires: %{mklib32name -d $L} = %{EVRD}" >>%{specpartsdir}/$LN.specpart} \
+		echo "%description -n $LN" >>%{specpartsdir}/$LN.specpart \
+		echo "$L library, part of %{name}" >>%{specpartsdir}/$LN.specpart \
+		echo "%files -n $LN" >>%{specpartsdir}/$LN.specpart \
+		echo "%{_prefix}/lib/lib${L}.a" >>%{specpartsdir}/$LN.specpart \
+		if $STATICONLY; then \
+			[ -e pkgconfig/${L}.pc ] && echo %{_prefix}/lib/pkgconfig/${L}.pc >>%{specpartsdir}/$LN.specpart \
+			[ -e pkgconfig/lib${L}.pc ] && echo %{_prefix}/lib/pkgconfig/lib${L}.pc >>%{specpartsdir}/$LN.specpart \
+			[ -d cmake/$L ] && echo %{_prefix}/lib/cmake/$L >>%{specpartsdir}/$LN.specpart \
+			STATICONLY32PACKAGES="$STATICONLY32PACKAGES $L" \
+		else \
+			STATIC32PACKAGES="$STATIC32PACKAGES $L" \
+		fi \
+	done} \
+fi

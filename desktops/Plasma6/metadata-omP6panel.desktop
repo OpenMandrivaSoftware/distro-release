@@ -1,0 +1,16 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=OpenMandriva Plasma6 Panel
+Type=Service
+ServiceTypes=Plasma/LayoutTemplate
+X-Plasma-Shell=plasmashell
+X-Plasma-ContainmentCategories=panel
+X-KDE-PluginInfo-Author=OpenMandriva
+X-KDE-PluginInfo-Email=openmandriva.org
+X-KDE-PluginInfo-Name=org.om.plasma6.desktop.defaultPanel
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Website=https://www.openmandriva.org
+X-KDE-PluginInfo-Category=
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=LGPLv2+
+X-KDE-PluginInfo-EnabledByDefault=true

@@ -1,6 +1,6 @@
 [Desktop Entry]
-_Name=About OpenMandriva Lx
-_Comment=More about OpenMandriva Lx
+_Name=Info and Resources
+_Comment=OpenMandriva Info and Resources
 Icon=openmandriva
 Exec=about-openmandriva-lx
 Type=Application

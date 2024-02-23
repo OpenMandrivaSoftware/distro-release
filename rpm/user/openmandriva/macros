@@ -19,9 +19,6 @@
 
 %__urlgetfile(url, dest) wget %1 -O %2 || (rm -f %2 && exit 1)
 
-# This will die as soon as remaining usage has been phased out...
-%mkrel(c:) %{-c: 0.%{-c*}.}%{1}%{?subrel:.%subrel}
-
 # For the built rpm filename format...
 %disttag %{!?distsuffix:omv}%{?distsuffix}%{!?distrelease:%(sed -e 's#.*release\\ \\(\\S*\\).*#\\1#' /etc/release)}%{?distrelease}
 
@@ -81,9 +78,12 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
 %_unpackaged_subdirs_terminate_build 1
 %_files_listed_twice_terminate_build 1
 
-%_build_pkgcheck_set /usr/bin/rpmlint -f %{_sourcedir}/%{name}.rpmlintrc
-%_build_pkgcheck_srpm /usr/bin/rpmlint -f %{_sourcedir}/%{name}.rpmlintrc
-%_nonzero_exit_pkgcheck_terminate_build 1
+%_build_pkgcheck_set /usr/bin/rpmlint %([ -e %{_sourcedir}/%{name}.rpmlintrc ] && echo -n --file %{_sourcedir}/%{name}.rpmlintrc)
+%_build_pkgcheck_srpm /usr/bin/rpmlint %([ -e %{_sourcedir}/%{name}.rpmlintrc ] && echo -n --file %{_sourcedir}/%{name}.rpmlintrc)
+
+# This will be enabled at some point - for now, let it pass since many
+# packages aren't ready for rpmlint 2.5 yet
+%_nonzero_exit_pkgcheck_terminate_build 0
 
 %_enable_debug_packages 1
 
@@ -520,52 +520,6 @@ Internationalization and locale data for %{?1:%{1}}%{?!1:%{name}}\
 [ %{_with check} -eq 1 ] || exit 0 \
 %{nil}
 
-%libpackage()\
-%%package -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
-Summary: The %{1} library, a part of %{name}\
-Group: System/Libraries\
-Obsoletes: %{expand:%%mklibname %{1} %{2} %{?3:%{3}}} < %{EVRD}\
-%%description -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
-The %{1} library, a part of %{name}\
-%%files -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
-%{_libdir}/lib%{1}%{?3:-%{2}}.so.%{?3:%{3}}%{?!3:%{2}}*\
-%{nil}
-
-%dependinglibpackage()\
-%%package -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
-Summary: The %{1} library, a part of %{name}\
-Group: System/Libraries\
-Obsoletes: %{expand:%%mklibname %{1} %{2} %{?3:%{3}}} < %{EVRD}\
-Requires: %{name} = %{EVRD}\
-%%description -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
-The %{1} library, a part of %{name}\
-%%files -n %{expand:%%mklibname %{1} %{?3:%{2} %{3}}}\
-%{_libdir}/lib%{1}%{?3:-%{2}}.so.%{?3:%{3}}%{?!3:%{2}}*\
-%{nil}
-
-%lib32package()\
-%%package -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
-Summary: The %{1} library, a part of %{name} (32-bit)\
-Group: System/Libraries\
-Obsoletes: %{expand:%%mklib32name %{1} %{2} %{?3:%{3}}} < %{EVRD}\
-%%description -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
-The %{1} library, a part of %{name}\
-%%files -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
-%{_prefix}/lib/lib%{1}%{?3:-%{2}}.so.%{?3:%{3}}%{?!3:%{2}}*\
-%{nil}
-
-%dependinglib32package()\
-%%package -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
-Summary: The %{1} library, a part of %{name} (32-bit)\
-Group: System/Libraries\
-Obsoletes: %{expand:%%mklib32name %{1} %{2} %{?3:%{3}}} < %{EVRD}\
-Requires: %{name} = %{EVRD}\
-%%description -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
-The %{1} library, a part of %{name}\
-%%files -n %{expand:%%mklib32name %{1} %{?3:%{2} %{3}}}\
-%{_prefix}/lib/lib%{1}%{?3:-%{2}}.so.%{?3:%{3}}%{?!3:%{2}}*\
-%{nil}
-
 # get dependencies from library that foo.so points to, very convenient if
 # one wants to ie. generate requires/suggests against libraries that are
 # dlopen()'ed.
@@ -593,7 +547,7 @@ objdump -p %{?!2:%{_libdir}}%{?2}/lib%{1}.so | grep -e SONAME | sed -e 's#.*\\\(
 #------------------------------------------------------------------------------
 # arch macros
 # arch macro for all EFI-compatible architectures
-%efi %{ix86} x86_64 znver1 ia64 aarch64
+%efi %{ix86} %{x86_64} %{aarch64} %{riscv} ia64
 
 # macro that contains all arm archs, even 64 bit ones
 %armx %arm aarch64
