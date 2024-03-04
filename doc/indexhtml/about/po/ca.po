@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Davidmp <medipas@gmail.com>, 2024
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-13 16:00+0100\n"
+"PO-Revision-Date: 2024-02-13 20:26+0000\n"
+"Last-Translator: Davidmp <medipas@gmail.com>, 2024\n"
+"Language-Team: Catalan (https://app.transifex.com/openmandriva/teams/1818/ca/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ca\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: index.html.in.h:1
+msgid "About OpenMandriva"
+msgstr "Quant a l'OpenMandriva"
+
+#: index.html.in.h:2
+msgid "What is OpenMandriva?"
+msgstr "Què és l'OpenMandriva?"
+
+#: index.html.in.h:3
+msgid "Browse resources"
+msgstr "Navegueu pels recursos"
+
+#: index.html.in.h:5
+msgid "Welcome to OpenMandriva"
+msgstr "Us donem la benvinguda a l'OpenMandriva"
+
+#: index.html.in.h:6
+msgid "What is OpenMandriva"
+msgstr "Què és l'OpenMandriva"
+
+#: index.html.in.h:7
+msgid ""
+"OpenMandriva Association was established on December 12, 2012 under 1901 "
+"French law. It manages some Free Software projects including OpenMandriva "
+"Lx, a GNU/Linux operating system that is a free alternative to the wide "
+"world known Microsoft Windows and Apple MacOS."
+msgstr ""
+"L'Associació OpenMandriva es va establir el 12 de desembre de 2012 amb la "
+"llei francesa de 1901. Gestiona alguns projectes de programari lliure inclòs"
+" OpenMandriva Lx, un sistema operatiu GNU/Linux que és una alternativa "
+"gratuïta als coneguts Microsoft Windows i Apple MacOS."
+
+#: index.html.in.h:8
+msgid "What is OpenMandriva Lx"
+msgstr "Què és l'OpenMandriva Lx"
+
+#: index.html.in.h:9
+msgid ""
+"OpenMandriva Lx is a unique and independent distribution and direct "
+"descendant of Mandriva Linux."
+msgstr ""
+"OpenMandriva Lx és una distribució única i independent i descendent directe "
+"de Mandriva Linux."
+
+#: index.html.in.h:10
+msgid "Wiki"
+msgstr "Wiki"
+
+#: index.html.in.h:11
+msgid "Forum Resources guides"
+msgstr "Guies de recursos del fòrum"
+
+#: index.html.in.h:12
+msgid "Resources Index"
+msgstr "Índex de recursos"
+
+#: index.html.in.h:13
+msgid "Chat"
+msgstr "Xat"
+
+#: index.html.in.h:14
+msgid ""
+"You are welcome to talk to our developers at <a target=\"_blank\" "
+"href=\"https://wiki.openmandriva.org/en/team/chat\">OpenMandriva Chat</a>"
+msgstr ""
+"Us convidem a parlar amb els nostres desenvolupadors a l'<a "
+"target=\"_blank\" "
+"href=\"https://wiki.openmandriva.org/en/team/chat\">OpenMandriva Chat</a>"
+
+#: index.html.in.h:15
+msgid "Bug Tracker"
+msgstr "Rastrejador d'errors"
+
+#: index.html.in.h:16
+msgid ""
+"For serious technical issues and package/feature requests please file a bug "
+"report at <a target=\"_blank\" "
+"href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
+" Issue Tracker</a>"
+msgstr ""
+"Per a problemes tècnics greus i sol·licituds de paquets/funcions, envieu un "
+"informe d'error a<a target=\"_blank\" "
+"href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\"> "
+"OpenMandriva Issue Tracker</a>."
+
+#: index.html.in.h:17
+msgid ""
+"Make sure to visit <a target=\"_blank\" "
+"href=\"http://www.openmandriva.org/\">www.openmandriva.org</a> to get more "
+"tips and updates about OpenMandriva."
+msgstr ""
+"Assegureu-vos de visitar <a target=\"_blank\" "
+"href=\"http://www.openmandriva.org/\">www.openmandriva.org</a> per obtenir "
+"més consells i actualitzacions sobre OpenMandriva."
+
+#: index.html.in.h:18
+msgid "Have fun!"
+msgstr "Passeu-vos-ho bé!"
+
+#: index.html.in.h:19
+msgid "top of this page"
+msgstr "al capdamunt de la pàgina"
