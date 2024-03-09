@@ -5,43 +5,53 @@
 <link type="text/css" rel="stylesheet" media="screen" href="style/screen.css"/>
 </head>
 <body>
-<!--TOP-->
+
 <a name="top"/>
 <div id="content">
 <div id="title_top"><a href="#what"><_span>What is OpenMandriva?</_span></a> | <a href="#browse"><_span>Browse resources</_span></a></div>
 <a name="what"/>
-<!--TOP -->
+
 <_div id="title1">Welcome to OpenMandriva</_div>
 <_div id="title3">What is OpenMandriva</_div>
-<p>A pinch of Community, a pinch of Passion, a pinch of Innovation, flavoured with Fun.</p>
-<_p>OpenMandriva Association was established on December 12, 2012 under 1901 French law. It manages some Free Software projects including OpenMandriva Lx, a GNU/Linux operating system that is a free alternative to the wide world known Microsoft Windows and Apple MacOS.</_p>
+<_p>A pinch of Community, a pinch of Passion, a pinch of Innovation, flavoured with Fun.</_p>
+<_p>OpenMandriva Association was established on December 12, 2012 under 1901 French law. It manages some Free Software projects including OpenMandriva Lx, a GNU/Linux operating system that is a free alternative to the widely known Microsoft Windows and Apple MacOS.</_p>
 <_div id="title3">What is OpenMandriva Lx</_div>
 <_p>OpenMandriva Lx is a unique and independent distribution and direct descendant of Mandriva Linux.</_p>
 
-<!--<p><a href="#top">[<span>top of this page</span>]</a></p>-->
+
 <p><br/></p>
 <div>
 <p><a name="browse"/>
 <_div id="title2">Browse resources</_div></p>
 </div>
 <_div id="title3">Wiki</_div>
-<p><a href="https://wiki.openmandriva.org/" target="_blank">https://wiki.openmandriva.org</a></p>
+<p><a target="_blank" href="https://wiki.openmandriva.org/">https://wiki.openmandriva.org</a></p>
 
-<div id="title3">Forum</div>
-<p><a href="https://forum.openmandriva.org/" target="_blank">https://forum.openmandriva.org</a></p>
-<p><_a href="https://forum.openmandriva.org/c/resources/13" target="_blank">Forum Resources guides</_a></p>
-<p><_a href="https://forum.openmandriva.org/t/resources-index/2768" target="_blank">Resources Index</_a></p>
+<_div id="title3">Forum</_div>
+<p><a target="_blank" href="https://forum.openmandriva.org/">https://forum.openmandriva.org</a></p>
+<p><_a target="_blank" href="https://forum.openmandriva.org/c/resources/13">Forum Resources guides</_a></p>
+<p><_a target="_blank" href="https://forum.openmandriva.org/t/resources-index/2768">Resources Index</_a></p>
 
 <_div id="title3">Chat</_div>
-<div><_p>You are welcome to talk to our developers at <a href="https://wiki.openmandriva.org/en/team/chat" target="_blank">OpenMandriva Chat</a></_p>
+<div><_p>You are welcome to talk to our developers at <a target="_blank" href="https://wiki.openmandriva.org/en/team/chat">OpenMandriva Chat</a></_p>
 </div>
 
 <_div id="title3">Bug Tracker</_div>
-<_p>For serious technical issues and package/feature requests please file a bug report at <a href="https://github.com/OpenMandrivaAssociation/distribution/issues" target="_blank">OpenMandriva Issue Tracker</a></_p>
+<_p>For serious technical issues and package/feature requests please file a bug report at <a target="_blank" href="https://github.com/OpenMandrivaAssociation/distribution/issues">OpenMandriva Issue Tracker</a></_p>
+
+<p><br/></p>
+<_div id="title2">Join/Contribute</_div>
+<div><_p>You can join the development team or contribute to make OpenMandriva grow and improve by <a href="https://www.openmandriva.org/get-involved" target="_blank">getting involved</a></_p>
+</div>
+
+<p><br/></p>
+<_div id="title2">Donate</_div>
+<div><_p>Please consider making a <a href="https://www.openmandriva.org/donate" target="_blank">donation</a> to keep the lights on</_p>
+</div>
 
 <p><br/></p>
 <div>
-<_p>Make sure to visit <a href="https://openmandriva.org/" target="_blank">openmandriva.org</a> to get more tips and updates about OpenMandriva.</_p>
+<_p>Make sure to visit <a target="_blank" href="https://openmandriva.org/">openmandriva.org</a> to get more tips and updates about OpenMandriva.</_p>
 <_p>Have fun!</_p>
 </div>
 <p><a href="#top">[<_span>top of this page</_span>]</a></p>
