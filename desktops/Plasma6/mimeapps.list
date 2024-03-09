@@ -40,9 +40,11 @@ application/x-lha=org.kde.ark.desktop
 # Browser
 x-scheme-handler/http=chromium-browser.desktop;org.kde.falkon.desktop;firefox.desktop
 x-scheme-handler/https=chromium-browser.desktop;org.kde.falkon.desktop;firefox.desktop
+text/html=chromium-browser.desktop;org.kde.falkon.desktop;firefox.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop
+application/xhtml+xml=chromium-browser.desktop;org.kde.falkon.desktop;firefox.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop
 
 # Email
-x-scheme-handler/mailto=org.kde.kmail2.desktop;org.kde.trojita.desktop
+x-scheme-handler/mailto=org.kde.kmail2.desktop;org.kde.trojita.desktop;thunderbird.desktop
 
 # File Manager
 inode/directory=org.kde.dolphin.desktop
@@ -53,26 +55,26 @@ x-scheme-handler/geo=marble_geo.desktop
 # Images
 application/x-krita=org.kde.krita.desktop;org.kde.gwenview.desktop
 image/x-xcf=org.kde.krita.desktop;org.gimp.GIMP.desktop;org.kde.gwenview.desktop
-image/avif=org.kde.gwenview.desktop
-image/gif=org.kde.gwenview.desktop
-image/heif=org.kde.gwenview.desktop
-image/jpeg=org.kde.gwenview.desktop
-image/jxl=org.kde.gwenview.desktop
-image/png=org.kde.gwenview.desktop
-image/bmp=org.kde.gwenview.desktop
-image/x-eps=org.kde.gwenview.desktop
-image/x-icns=org.kde.gwenview.desktop
-image/x-ico=org.kde.gwenview.desktop
-image/x-portable-bitmap=org.kde.gwenview.desktop
-image/x-portable-graymap=org.kde.gwenview.desktop
-image/x-portable-pixmap=org.kde.gwenview.desktop
-image/x-xbitmap=org.kde.gwenview.desktop
-image/x-xpixmap=org.kde.gwenview.desktop
-image/tiff=org.kde.gwenview.desktop
-image/x-psd=org.kde.gwenview.desktop
-image/x-webp=org.kde.gwenview.desktop
-image/webp=org.kde.gwenview.desktop
-image/x-tga=org.kde.gwenview.desktop
+image/avif=org.kde.gwenview.desktop;org.kde.krita.desktop;org.kde.digikam.desktop
+image/gif=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/heif=org.kde.gwenview.desktop;org.kde.krita.desktop;org.kde.digikam.desktop
+image/jpeg=org.kde.gwenview.desktop;org.kde.krita.desktop;org.kde.digikam.desktop
+image/jxl=org.kde.gwenview.desktop;org.kde.krita.desktop;org.kde.digikam.desktop
+image/png=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/bmp=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/x-eps=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/x-icns=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/x-ico=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/x-portable-bitmap=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/x-portable-graymap=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/x-portable-pixmap=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/x-xbitmap=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/x-xpixmap=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/tiff=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/x-psd=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/x-webp=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/webp=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/x-tga=org.kde.gwenview.desktop;org.kde.krita.desktop
 image/svg+xml=org.inkscape.Inkscape.desktop;org.kde.krita.desktop;org.kde.gwenview.desktop;org.kde.kwrite.desktop;kwriteroot.desktop
 image/svg+xml-compressed=org.inkscape.Inkscape.desktop;org.kde.krita.desktop;org.kde.gwenview.desktop
 
