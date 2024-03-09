@@ -13,7 +13,7 @@ em { font-style: normal; }
 a, a:visited { color: #21449c; }
 
 #title1 {
-	color: #2b51a6; 
+	color: #2b51a6;
 	font-size: 250%;
 	margin-bottom: 1em;
 }
@@ -24,15 +24,13 @@ h2
 	text-align: center;
 }
 
-h3 a, h3 { 
+h3 a, h3 {
 	color: #2b51a6;
 }
 
 #title2 {
 	color: #2b51a6;
 	font-size: 200%;
-	margin-bottom: 1em;
-	margin-top: 0,5em;
 }
 h2
 	{
@@ -48,7 +46,8 @@ h3 a, h3 {
 #title3 {
 	color: #2b51a6;
 	font-size: 130%;
-	margin-top: 0,5em;
+	margin-top: 1em;
+	margin-bottom: 0,5em;
 }
 
 #distro {
@@ -124,4 +123,3 @@ div#title_top {
 	text-align: right;
 	margin-bottom: 3em;
 }
-
