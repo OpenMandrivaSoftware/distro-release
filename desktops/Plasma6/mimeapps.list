@@ -6,6 +6,7 @@
 application/x-tar=org.kde.ark.desktop
 application/x-compressed-tar=org.kde.ark.desktop
 application/x-bzip-compressed-tar=org.kde.ark.desktop
+application/x-bzip2-compressed-tar=org.kde.ark.desktop
 application/x-tarz=org.kde.ark.desktop
 application/x-xz-compressed-tar=org.kde.ark.desktop
 application/x-lzma-compressed-tar=org.kde.ark.desktop
@@ -16,7 +17,7 @@ application/x-lz4-compressed-tar=org.kde.ark.desktop
 application/x-zstd-compressed-tar=org.kde.ark.desktop
 application/x-cd-image=org.kde.ark.desktop
 application/x-bcpio=org.kde.ark.desktop
-application/x-cpio=org.kde.ark.desktop
+application/x-cpio=org.kde.ark.desktop;peazip.desktop
 application/x-cpio-compressed=org.kde.ark.desktop
 application/x-sv4cpio=org.kde.ark.desktop
 application/x-sv4crc=org.kde.ark.desktop
@@ -27,6 +28,7 @@ application/x-iso9660-appimage=org.kde.ark.desktop
 application/x-archive=org.kde.ark.desktop
 application/vnd.rar=org.kde.ark.desktop
 application/x-rar=org.kde.ark.desktop
+application/x-rar-compressed=org.kde.ark.desktop
 application/x-7z-compressed=org.kde.ark.desktop
 application/zip=org.kde.ark.desktop
 application/x-compress=org.kde.ark.desktop
@@ -36,18 +38,48 @@ application/x-lzma=org.kde.ark.desktop
 application/x-xz=org.kde.ark.desktop
 application/zstd=org.kde.ark.desktop
 application/x-lha=org.kde.ark.desktop
+application/x-ar=org.kde.ark.desktop
+application/x-arj=org.kde.ark.desktop
+application/x-bzip-compressed-tar=org.kde.ark.desktop
+application/x-bzip=org.kde.ark.desktop
+application/x-lzma-compressed-tar=org.kde.ark.desktop
+application/x-lzma=org.kde.ark.desktop
+application/x-lzop=org.kde.ark.desktop
+application/x-cd-image=rosa-imagewriter.desktop;org.kde.ark.desktop;vlc.desktop;nautilus-cd-burner-open-iso.desktop;file-roller.desktop
+application/x-war=org.kde.ark.desktop
+application/x-zip-compressed=org.kde.ark.desktop
+application/x-zip=org.kde.ark.desktop
+application/x-zoo=org.kde.ark.desktop
+multipart/x-zip=org.kde.ark.desktop
+application/x-gzip=org.kde.ark.desktop;peazip.desktop
 
 # Browser
 x-scheme-handler/http=chromium-browser.desktop;org.kde.falkon.desktop;firefox.desktop
 x-scheme-handler/https=chromium-browser.desktop;org.kde.falkon.desktop;firefox.desktop
 text/html=chromium-browser.desktop;org.kde.falkon.desktop;firefox.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop
 application/xhtml+xml=chromium-browser.desktop;org.kde.falkon.desktop;firefox.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop
+text/xml=chromium-browser.desktop;firefox.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop
 
 # Email
 x-scheme-handler/mailto=org.kde.kmail2.desktop;org.kde.trojita.desktop;thunderbird.desktop
 
 # File Manager
-inode/directory=org.kde.dolphin.desktop;pcmanfm-qt.desktop
+inode/directory=org.kde.dolphin.desktop;pcmanfm-qt.desktop;nautilus-folder-handler.desktop
+x-directory/normal=org.kde.dolphin.desktop;pcmanfm-qt.desktop;nautilus-folder-handler.desktop
+
+# CD/DVD
+x-content/blank-cd=org.kde.k3b.desktop;brasero.desktop;nautilus-cd-burner.desktop
+x-content/blank-dvd=org.kde.k3b.desktop;brasero.desktop;nautilus-cd-burner.desktop
+x-content/blank-bd=org.kde.k3b.desktop;brasero.desktop;nautilus-cd-burner.desktop
+x-content/blank-hddvd=org.kde.k3b.desktop;brasero.desktop;nautilus-cd-burner.desktop
+x-content/video-dvd=smplayer.desktop;vlc.desktop;dragonplayer.desktop;kmplayer.desktop;kplayer.desktop;totem.desktop
+x-content/video-vcd=smplayer.desktop;vlc.desktop;dragonplayer.desktop;kmplayer.desktop;kplayer.desktop;totem.desktop
+x-content/video-svcd=smplayer.desktop;vlc.desktop;dragonplayer.desktop;kmplayer.desktop;kplayer.desktop;totem.desktop
+x-content/video-blueray=smplayer.desktop;vlc.desktop;dragonplayer.desktop;kmplayer.desktop;kplayer.desktop;totem.desktop
+x-content/video-hddvd=smplayer.desktop;vlc.desktop;dragonplayer.desktop;kmplayer.desktop;kplayer.desktop;totem.desktop
+x-content/audio-cdda=smplayer.desktop;vlc.desktop;dragonplayer.desktop;kmplayer.desktop;kplayer.desktop;juk.desktop;amarok.desktop;sound-juicer.desktop;rhythmbox.desktop
+x-content/audio-dvd=smplayer.desktop;juk.desktop;amarok.desktop;rhythmbox.desktop;totem.desktop
+x-content/audio-player=smplayer.desktop;vlc.desktop;dragonplayer.desktop;kmplayer.desktop;kplayer.desktop;juk.desktop;amarok.desktop;rhythmbox.desktop;banshee.desktop
 
 # Geo
 x-scheme-handler/geo=marble_geo.desktop
@@ -59,9 +91,12 @@ image/avif=org.kde.gwenview.desktop;org.kde.krita.desktop;org.kde.digikam.deskto
 image/gif=org.kde.gwenview.desktop;org.kde.krita.desktop
 image/heif=org.kde.gwenview.desktop;org.kde.krita.desktop;org.kde.digikam.desktop
 image/jpeg=org.kde.gwenview.desktop;org.kde.krita.desktop;org.kde.digikam.desktop
+image/pjpeg=org.kde.gwenview.desktop;org.kde.krita.desktop;org.kde.digikam.desktop
+image/jpg=org.kde.gwenview.desktop;org.kde.krita.desktop;org.kde.digikam.desktop
 image/jxl=org.kde.gwenview.desktop;org.kde.krita.desktop;org.kde.digikam.desktop
 image/png=org.kde.gwenview.desktop;org.kde.krita.desktop
 image/bmp=org.kde.gwenview.desktop;org.kde.krita.desktop
+image/x-bmp=org.kde.gwenview.desktop;org.kde.krita.desktop
 image/x-eps=org.kde.gwenview.desktop;org.kde.krita.desktop
 image/x-icns=org.kde.gwenview.desktop;org.kde.krita.desktop
 image/x-ico=org.kde.gwenview.desktop;org.kde.krita.desktop
@@ -87,25 +122,47 @@ audio/ogg=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
 audio/vnd.rn-realaudio=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
 audio/vorbis=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
 audio/x-flac=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+audio/x-m4a=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
 audio/x-mp3=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+audio/x-mp3-playlist=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+audio/x-mpeg=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
 audio/x-mpegurl=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+audio/x-ms-asf=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+audio/x-ms-asx=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+audio/x-ms-wax=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
 audio/x-ms-wma=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
 audio/x-musepack=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
 audio/x-oggflac=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+audio/x-pn-aiff=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+audio/x-pn-au=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
 audio/x-pn-realaudio=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+audio/x-pn-realaudio-plugin=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+audio/x-pn-wav=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+audio/x-pn-windows-acm=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+audio/x-real-audio=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
 audio/x-scpls=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
 audio/x-speex=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
 audio/x-vorbis=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
 audio/x-vorbis+ogg=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
 audio/x-wav=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+application/x-extension-m4a=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+application/x-extension-mp4=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+application/x-flac=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
+application/x-ogg=QMPlay2.desktop;org.kde.elisa.desktop;vlc.desktop
 
 # Packages
 x-scheme-handler/appstream=org.kde.discover.desktop
-application/x-rpm=org.kde.discover.desktop
+application/x-rpm=org.kde.discover.desktop;org.mageia.dnfdragora-localinstall.desktop
 application/vnd.debian.binary-package=org.kde.discover.desktop
 
-# PDF Viewer
-application/pdf=okularApplication_pdf.desktop;chromium-browser.desktop
+# PDF Viewer and similar
+application/pdf=okularApplication_pdf.desktop;chromium-browser.desktop;qpdfview.desktop;evince.desktop;xpdf.desktop
+application/x-gzpdf=okularApplication_pdf.desktop;chromium-browser.desktop;qpdfview.desktop;evince.desktop;xpdf.desktop
+application/x-bzpdf=okularApplication_pdf.desktop;chromium-browser.desktop;qpdfview.desktop;evince.desktop;xpdf.desktop
+application/x-wwf=okularApplication_pdf.desktop;chromium-browser.desktop;qpdfview.desktop;evince.desktop;xpdf.desktop
+application/postscript=org.kde.okular.desktop;qpdfview.desktop;evince.desktop
+application/x-gzpostscript=org.kde.okular.desktop;qpdfview.desktop;evince.desktop
+application/x-dvi=okularApplication_dvi.desktop
 
 # Tel
 x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop
@@ -117,6 +174,15 @@ text/markdown=org.kde.kate.desktop;org.kde.kwrite.desktop
 application/x-docbook+xml=org.kde.kate.desktop;org.kde.kwrite.desktop
 application/json=org.kde.kate.desktop;org.kde.kwrite.desktop
 application/x-yaml=org.kde.kate.desktop;org.kde.kwrite.desktop
+text/x-chdr=org.kde.kate.desktop;org.kde.kwrite.desktop;gedit.desktop
+text/x-csrc=org.kde.kate.desktop;org.kde.kwrite.desktop;gedit.desktop
+text/x-dtd=org.kde.kate.desktop;org.kde.kwrite.desktop;gedit.desktop
+text/x-java=org.kde.kate.desktop;org.kde.kwrite.desktop;eclipse.desktop;gedit.desktop
+text/x-python=org.kde.kate.desktop;org.kde.kwrite.desktop;gedit.desktop
+text/x-sql=org.kde.kate.desktop;org.kde.kwrite.desktop;gedit.desktop
+text/x-c++src=org.qt-project.qtcreator.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop
+text/x-c++hdr=org.qt-project.qtcreator.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop
+text/x-xsrc=org.qt-project.qtcreator.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop
 
 # Video Player
 video/3gp=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
@@ -126,6 +192,7 @@ video/avi=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
 video/divx=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
 video/dv=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
 video/fli=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/flc=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
 video/flv=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
 video/mp2t=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
 video/mp4=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
@@ -151,7 +218,75 @@ video/x-ogm=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
 video/x-ogm+ogg=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
 video/x-theora=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
 video/x-theora+ogg=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-anim=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-mpeg=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-msv=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+video/x-nsv=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+misc/ultravox=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+
+# Containers that can be either music or video files
+application/ogg=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
 application/x-matroska=QMPlay2.desktop;smplayer.desktop;vlc.desktop;org.kde.haruna.desktop
+
+# Office
+application/csv=libreoffice-calc.desktop;sheets.desktop;gnumeric.desktop;org.kde.kwrite.desktop
+text/comma-separated-values=libreoffice-calc.desktop;sheets.desktop;gnumeric.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop
+text/x-comma-separated-values=libreoffice-calc.desktop;sheets.desktop;gnumeric.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop
+text/csv=libreoffice-calc.desktop;sheets.desktop;gnumeric.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop
+text/tab-separated-values=libreoffice-calc.desktop;sheets.desktop;gnumeric.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop
+application/excel=libreoffice-calc.desktop;sheets.desktop;gnumeric.desktop
+application/msexcel=libreoffice-calc.desktop;sheets.desktop;gnumeric.desktop
+application/xls=libreoffice-calc.desktop;gnumeric.desktop
+application/x-xls=libreoffice-calc.desktop;gnumeric.desktop
+application/x-dos_ms_excel=libreoffice-calc.desktop;gnumeric.desktop
+application/x-excel=libreoffice-calc.desktop;sheets.desktop;gnumeric.desktop
+application/vnd.ms-excel=libreoffice-calc.desktop;gnumeric.desktop
+application/msword=libreoffice-writer.desktop;words.desktop;abiword.desktop
+application/rtf=libreoffice-writer.desktop;words.desktop
+text/richtext=libreoffice-writer.desktop;words.desktop;abiword.desktop
+text/rtf=libreoffice-writer.desktop
+application/tab-separated-values=libreoffice-calc.desktop;org.kde.kwrite.desktop
+application/vnd.lotus-1-2-3=libreoffice-calc.desktop;gnumeric.desktop
+application/vnd.ms-powerpoint=libreoffice-impress.desktop;stage.desktop
+application/vnd.ms-word=libreoffice-writer.desktop;words.desktop;abiword.desktop
+application/vnd.oasis.opendocument.presentation=libreoffice-impress.desktop;stage.desktop
+application/vnd.oasis.opendocument.presentation-template=libreoffice-impress.desktop;stage.desktop
+application/vnd.oasis.opendocument.spreadsheet=libreoffice-calc.desktop;sheets.desktop
+application/vnd.oasis.opendocument.spreadsheet-template=libreoffice-calc.desktop;sheets.desktop
+application/vnd.oasis.opendocument.text-master=libreoffice-writer.desktop;words.desktop;abiword.desktop
+application/vnd.oasis.opendocument.text-template=libreoffice-writer.desktop;words.desktop;abiword.desktop
+application/vnd.oasis.opendocument.text-web=libreoffice-writer.desktop;words.desktop;abiword.desktop
+application/vnd.oasis.opendocument.text=libreoffice-writer.desktop;words.desktop;abiword.desktop
+application/vnd.stardivision.calc=libreoffice-calc.desktop
+application/vnd.stardivision.draw=libreoffice-draw.desktop
+application/vnd.stardivision.impress=libreoffice-impress.desktop
+application/vnd.stardivision.writer=libreoffice-writer.desktop;abiword.desktop
+application/vnd.sun.xml.calc=libreoffice-calc.desktop
+application/vnd.sun.xml.calc.template=libreoffice-calc.desktop
+application/vnd.sun.xml.draw=libreoffice-draw.desktop
+application/vnd.sun.xml.draw.template=libreoffice-draw.desktop
+application/vnd.sun.xml.impress=libreoffice-impress.desktop
+application/vnd.sun.xml.impress.template=libreoffice-impress.desktop
+application/vnd.sun.xml.writer.global=libreoffice-writer.desktop;words.desktop;abiword.desktop
+application/vnd.sun.xml.writer=libreoffice-writer.desktop;words.desktop;abiword.desktop
+application/vnd.wordperfect=libreoffice-writer.desktop;words.desktop;abiword.desktop
+application/x-matroska=smplayer.desktop;vlc.desktop;dragonplayer.desktop;kmplayer.desktop;kplayer.desktop;totem.desktop
+application/x-mps=libreoffice-calc.desktop;sheets.desktop;gnumeric.desktop
+application/x-ms-excel=libreoffice-calc.desktop;sheets.desktop;gnumeric.desktop
+application/x-msexcel=libreoffice-calc.desktop;sheets.desktop;gnumeric.desktop
+application/x-oleo=gnumeric.desktop
+application/x-perl=org.kde.kate.desktop;org.kde.kwrite.desktop;gedit.desktop
+application/x-planperfect=libreoffice-calc.desktop;sheets.desktop;gnumeric.desktop
+application/x-quattropro=gnumeric.desktop
+application/x-sc=libreoffice-calc.desktop;sheets.desktop;gnumeric.desktop
+application/x-shockwave-flash=smplayer.desktop;vlc.desktop;dragonplayer.desktop;kmplayer.desktop;kplayer.desktop;totem.desktop
+application/x-sylk=smplayer.desktop;vlc.desktop;dragonplayer.desktop;kmplayer.desktop;kplayer.desktop;gnumeric.desktop
+text/calendar=org.kde.kontact.desktop;evolution.desktop
+text/mathml=org.kde.kate.desktop;org.kde.kwrite.desktop;gedit.desktop
+text/spreadsheet=libreoffice-calc.desktop;sheets.desktop;gnumeric.desktop
+text/x-vcalendar=org.kde.kontact.desktop;evolution.desktop
+text/x-vcard=org.kde.kontact.desktop;evolution.desktop
+zz-application/zz-winassoc-xls=libreoffice-calc.desktop;sheets.desktop;gnumeric.desktop
 
 [Removed Associations]
 image/svg+xml-compressed=org.kde.ark.desktop;
