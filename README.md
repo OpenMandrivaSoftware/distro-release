@@ -1,4 +1,4 @@
-*Master branch*
+*ROME/rolling branch*
 
 This repository contains basic OpenMandriva Lx setup:
 - versioning
@@ -34,4 +34,3 @@ Directory layout:
 - common-licenses
 
     a place for files related to licenses
-    
