@@ -492,34 +492,7 @@ Internationalization and locale data for %{?1:%{1}}%{?!1:%{name}}\
 %%files -n %{?1:%{1}}%{?!1:%{name}}-i18n %{?-f:%{-f}}%{?!-f:-f %{?1:%{1}}%{?!1:%{name}}.lang}\
 %{nil}
 
-
 #------------------------------------------------------------------------------
-# Redefine RPM sections to allow jumping over them using "--without <section>".
-# This an interesting alternative to --short-circuit.
-# The following are mostly equivalent:
-# % rpmbuild -bi --short-circuit foo.spec && rpmbuild -bb --short-circuit foo.spec
-# % rpmbuild -bb --without build foo.spec
-
-%prep %%prep \
-[ %{_with prep} -eq 1 ] || exit 0 \
-[ %{_with build} -eq 1 ] || exit 0 \
-[ %{_with install} -eq 1 ] || exit 0 \
-%{nil}
-
-%build %%build \
-[ %{_with install} -eq 1 ] || exit 0 \
-[ %{_with build} -eq 1 ] || exit 0 \
-%{nil}
-
-%install %{?_enable_debug_packages:%{?buildsubdir:%{debug_package}}} \
-%%install \
-[ %{_with install} -eq 1 ] || exit 0 \
-%{nil}
-
-%check %%check \
-[ %{_with check} -eq 1 ] || exit 0 \
-%{nil}
-
 # get dependencies from library that foo.so points to, very convenient if
 # one wants to ie. generate requires/suggests against libraries that are
 # dlopen()'ed.
