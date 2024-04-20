@@ -115,7 +115,7 @@ msgid ""
 "tips and updates about OpenMandriva."
 msgstr ""
 "Besuchen Sie auf jeden Fall <a target=\"_blank\" "
-"href=\"https://openmandriva.org/\">www.openmandriva.org</a>, um mehr Tipps "
+"href=\"https://openmandriva.org/\">www.openmandriva.org</a> um mehr Tipps "
 "und Updates über OpenMandriva zu erhalten."
 
 #: index.html.in.h:18
