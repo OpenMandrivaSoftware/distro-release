@@ -73,7 +73,7 @@ msgstr "Wiki"
 
 #: index.html.in.h:11
 msgid "Forum Resources guides"
-msgstr "Ressourcen im Forum"
+msgstr "Forum Ressourcen Guides"
 
 #: index.html.in.h:12
 msgid "Resources Index"
