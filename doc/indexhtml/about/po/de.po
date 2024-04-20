@@ -103,10 +103,10 @@ msgid ""
 "href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
 " Issue Tracker</a>"
 msgstr ""
-"Für technische Probleme und Paket- oder Featurewünsche fülle bitte einen Bug"
-" report im <a target=\"_blank\" "
+"Für schwerwiegende technische Probleme und Paket-/Feature-Anfragen senden "
+"Sie bitte einen Fehlerbericht an <a target=\"_blank\" "
 "href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
-" Issue Tracker</a> aus."
+" Issue Tracker</a>"
 
 #: index.html.in.h:17
 msgid ""
