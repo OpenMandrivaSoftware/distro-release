@@ -90,7 +90,7 @@ msgid ""
 msgstr ""
 "Im <a target=\"_blank\" "
 "href=\"https://wiki.openmandriva.org/en/team/chat\">OpenMandriva Chat</a> "
-"kannst Du direkt mit unseren Entwicklern sprechen."
+"können Sie gerne mit unseren Entwicklern sprechen "
 
 #: index.html.in.h:15
 msgid "Bug Tracker"
