@@ -65,7 +65,7 @@ msgid ""
 "descendant of Mandriva Linux."
 msgstr ""
 "OpenMandriva Lx ist eine einzigartige und unabhängige Distribution und ein "
-"direkter Nachkomme von Mandriva Linux."
+"direkter Abkömmling von Mandriva Linux."
 
 #: index.html.in.h:10
 msgid "Wiki"
