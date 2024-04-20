@@ -104,7 +104,7 @@ msgid ""
 " Issue Tracker</a>"
 msgstr ""
 "Für schwerwiegende technische Probleme und Paket-/Feature-Anfragen senden "
-"Sie bitte einen Fehlerbericht an <a target=\"_blank\" "
+"Sie bitte einen Bug-Bericht an <a target=\"_blank\" "
 "href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
 " Issue Tracker</a>"
 
