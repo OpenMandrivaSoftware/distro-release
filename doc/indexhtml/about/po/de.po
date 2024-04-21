@@ -50,10 +50,11 @@ msgid ""
 "Lx, a GNU/Linux operating system that is a free alternative to the wide "
 "world known Microsoft Windows and Apple MacOS."
 msgstr ""
-"Die OpenMandriva Association wurde am 12. Dezember 2012 als französische "
-"Association de Loi 1901 gegründet. Sie verwaltet einige Freie Software-"
-"Projekte wie z.B. OpenMandriva Lx, ein GNU/Linux-Betriebssystem - eine freie"
-" Alternative zu Microsoft Windows und Apple MacOS."
+"Die OpenMandriva Association wurde am 12. Dezember 2012 nach französischem "
+"Recht von 1901 gegründet. Sie verwaltet einige Freie-Software-Projekte, "
+"darunter OpenMandriva Lx, ein GNU/Linux-Betriebssystem, das eine freie "
+"Alternative zu den weltbekannten Microsoft Windows und Apple MacOS "
+"darstellt."
 
 #: index.html.in.h:8
 msgid "What is OpenMandriva Lx"
@@ -65,7 +66,7 @@ msgid ""
 "descendant of Mandriva Linux."
 msgstr ""
 "OpenMandriva Lx ist eine einzigartige und unabhängige Distribution und ein "
-"direkter Nachkomme von Mandriva Linux."
+"direkter Abkömmling von Mandriva Linux."
 
 #: index.html.in.h:10
 msgid "Wiki"
@@ -73,7 +74,7 @@ msgstr "Wiki"
 
 #: index.html.in.h:11
 msgid "Forum Resources guides"
-msgstr "Ressourcen im Forum"
+msgstr "Forum Ressourcen Guides"
 
 #: index.html.in.h:12
 msgid "Resources Index"
@@ -90,7 +91,7 @@ msgid ""
 msgstr ""
 "Im <a target=\"_blank\" "
 "href=\"https://wiki.openmandriva.org/en/team/chat\">OpenMandriva Chat</a> "
-"kannst Du direkt mit unseren Entwicklern sprechen."
+"können Sie gerne mit unseren Entwicklern sprechen "
 
 #: index.html.in.h:15
 msgid "Bug Tracker"
@@ -103,10 +104,10 @@ msgid ""
 "href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
 " Issue Tracker</a>"
 msgstr ""
-"Für technische Probleme und Paket- oder Featurewünsche fülle bitte einen Bug"
-" report im <a target=\"_blank\" "
+"Für schwerwiegende technische Probleme und Paket-/Feature-Anfragen senden "
+"Sie bitte einen Bug-Bericht an <a target=\"_blank\" "
 "href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
-" Issue Tracker</a> aus."
+" Issue Tracker</a>"
 
 #: index.html.in.h:17
 msgid ""
@@ -115,8 +116,8 @@ msgid ""
 "tips and updates about OpenMandriva."
 msgstr ""
 "Besuchen Sie auf jeden Fall <a target=\"_blank\" "
-"href=\"https://openmandriva.org/\">openmandriva.org</a>, um mehr Tipps und "
-"Updates über OpenMandriva zu erhalten."
+"href=\"http://www.openmandriva.org/\">www.openmandriva.org</a>, um mehr "
+"Tipps und Updates über OpenMandriva zu erhalten."
 
 #: index.html.in.h:18
 msgid "Have fun!"
