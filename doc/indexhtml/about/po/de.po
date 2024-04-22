@@ -51,10 +51,9 @@ msgid ""
 "world known Microsoft Windows and Apple MacOS."
 msgstr ""
 "Die OpenMandriva Association wurde am 12. Dezember 2012 nach französischem "
-"Recht von 1901 gegründet. Sie verwaltet einige Freie-Software-Projekte, "
-"darunter OpenMandriva Lx, ein GNU/Linux-Betriebssystem, das eine freie "
-"Alternative zu den weltbekannten Microsoft Windows und Apple MacOS "
-"darstellt."
+"Recht 1901 gegründet. Sie verwaltet einige Freie-Software-Projekte, darunter"
+" OpenMandriva Lx, ein GNU/Linux-Betriebssystem, das eine freie Alternative "
+"zu den weltbekannten Microsoft Windows und Apple MacOS darstellt."
 
 #: index.html.in.h:8
 msgid "What is OpenMandriva Lx"
