@@ -398,9 +398,6 @@ GCONF_CONFIG_SOURCE=`%{_gconftool_bin} --get-default-source` %{_gconftool_bin} -
   %before_configure ; \\\
   %{?_enable_libtoolize:%{?__libtoolize_configure:%{__libtoolize_configure};}} \\\
   [ -f $CONFIGURE_TOP/configure.in -o -f $CONFIGURE_TOP/configure.ac ] && \
-%if ! %{cross_compiling} \
-  CC=gcc CXX=g++ \\\
-%endif \
   CFLAGS="`echo $CFLAGS |sed -e 's, -m64,,g;s, -mx32,,g;s, -flto,,g'` -m32" \\\
   CXXFLAGS="`echo $CFLAGS |sed -e 's, -m64,,g;s, -mx32,,g;s, -flto,,g'` -m32" \\\
   LDFLAGS="`echo $LDFLAGS |sed -e 's, -m64,,g;s, -mx32,,g;s, -flto,,g'` -m32" \\\
