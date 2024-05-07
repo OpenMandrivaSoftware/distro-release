@@ -1,0 +1,61 @@
+%buildsystem_autotools_conf() \
+	CONFIGURE_TOP=$(pwd) \
+	mkdir _OMV_rpm_build \
+	cd _OMV_rpm_build \
+	if [ -z "$LIBTOOL" ]; then \
+		if echo %* |grep -q -- '--enable-static'; then \
+			echo LIBTOOL=slibtool >.vars \
+		elif echo %* |grep -q -- '--disable-shared'; then \
+			echo LIBTOOL=slibtool-static >.vars \
+		fi \
+		[ -e .vars ] && source ./.vars \
+	fi \
+	%configure %* \
+	cd ..
+%buildsystem_autotools_build() \
+	[ -e _OMV_rpm_build/.vars ] && source _OMV_rpm_build/.vars \
+	%make_build %* -C _OMV_rpm_build LIBTOOL=${LIBTOOL:-slibtool-shared}
+%buildsystem_autotools_install() \
+	[ -e _OMV_rpm_build/.vars ] && source _OMV_rpm_build/.vars \
+	%make_install %* -C _OMV_rpm_build LIBTOOL=${LIBTOOL:-slibtool-shared}
+
+%buildsystem_autotoolswith32_conf() \
+	CONFIGURE_TOP=$(pwd) \
+	mkdir _OMV_rpm_build \
+	cd _OMV_rpm_build \
+	if [ -z "$LIBTOOL" ]; then \
+		if echo %* |grep -q -- '--enable-static'; then \
+			echo LIBTOOL=slibtool >.vars \
+		elif echo %* |grep -q -- '--disable-shared'; then \
+			echo LIBTOOL=slibtool-static >.vars \
+		fi \
+	fi \
+	%configure %* \
+	cd .. \
+%if %{with compat32} \
+	mkdir _OMV_rpm_build32 \
+	cd _OMV_rpm_build32 \
+	if [ -z "$LIBTOOL" ]; then \
+		if echo %* |grep -q -- '--enable-static'; then \
+			echo LIBTOOL=slibtool >.vars \
+		elif echo %* |grep -q -- '--disable-shared'; then \
+			echo LIBTOOL=slibtool-static >.vars \
+		fi \
+	fi \
+	%configure32 %* \
+	cd .. \
+%endif
+%buildsystem_autotoolswith32_build() \
+%if %{with compat32} \
+	[ -e _OMV_rpm_build32/.vars ] && source _OMV_rpm_build32/.vars \
+	%make_build %* -C _OMV_rpm_build32 LIBTOOL=${LIBTOOL:-slibtool-shared} \
+%endif \
+	[ -e _OMV_rpm_build/.vars ] && source _OMV_rpm_build/.vars \
+	%make_build %* -C _OMV_rpm_build LIBTOOL=${LIBTOOL:-slibtool-shared}
+%buildsystem_autotoolswith32_install() \
+%if %{with compat32} \
+	[ -e _OMV_rpm_build32/.vars ] && source _OMV_rpm_build32/.vars \
+	%make_install %* -C _OMV_rpm_build32 LIBTOOL=${LIBTOOL:-slibtool-shared} \
+%endif \
+	[ -e _OMV_rpm_build/.vars ] && source _OMV_rpm_build/.vars \
+	%make_install %* -C _OMV_rpm_build LIBTOOL=${LIBTOOL:-slibtool-shared}
