@@ -297,18 +297,6 @@ GCONF_CONFIG_SOURCE=`%{_gconftool_bin} --get-default-source` %{_gconftool_bin} -
 %mdkversion		%(cat /etc/os-release|grep VERSION_ID= |sed -e 's,.*=,,;s,\",,g;s,\\.,0,g')
 
 
-#---------------------------------------------------------------------
-#       Expanded at beginning of %install scriptlet.
-#
-
-%__spec_install_pre \
-%{___build_pre}\
-if [ %{_with install} -eq 1 ]; then\
-    [ "$RPM_BUILD_ROOT" != "/" ] && rm -rf "${RPM_BUILD_ROOT}"\
-    mkdir -p `dirname "$RPM_BUILD_ROOT"`\
-    mkdir "$RPM_BUILD_ROOT"\
-fi
-
 #==============================================================================
 # ---- Build policy macros.
 #

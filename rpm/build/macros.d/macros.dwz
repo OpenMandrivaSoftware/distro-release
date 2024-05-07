@@ -1,11 +1,5 @@
 # Macros for creating debug info and reducing its size using dwz(1) utility.
 
-# This is ugly, but we need to make sure the debug_package macro is
-# called somewhere
-%install %{?_enable_debug_packages:%{?buildsubdir:%{debug_package}}}\
-%%install\
-%{nil}
-
 # The two default values below should result in dwz taking at most
 # 3GB of RAM or so on 64-bit hosts and 2.5GB on 32-bit hosts
 # on the largest *.debug files  (in mid 2012 those are
