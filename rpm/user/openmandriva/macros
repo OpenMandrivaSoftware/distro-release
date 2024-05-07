@@ -315,18 +315,6 @@ GCONF_CONFIG_SOURCE=`%{_gconftool_bin} --get-default-source` %{_gconftool_bin} -
 %{nil}
 
 
-#==============================================================================
-%perl_convert_version() %(perl -Mversion -le '
-	$x = "%{1}";
-	$y = $x;
-	$x =~ s/[[:alpha:]]*$//;
-	$y =~ s/^$x//;
-	$x =~ s/\D*$//;
-	$v = version->new($x)->normal;
-	$v =~ s/^v//;
-	print "$v$y";
-')
-
 #--------------------------------------------------------------------------------
 # Macro from conectiva
 

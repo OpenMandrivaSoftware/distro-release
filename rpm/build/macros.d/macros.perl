@@ -1,3 +1,15 @@
+%perl_convert_version() %(perl -Mversion -le '
+	$x = "%{1}";
+	$y = $x;
+	$x =~ s/[[:alpha:]]*$//;
+	$y =~ s/^$x//;
+	$x =~ s/\D*$//;
+	$v = version->new($x)->normal;
+	$v =~ s/^v//;
+	print "$v$y";
+')
+
+#==============================================================================
 # Useful macros for building *.rpm perl packages.
 # (from Artur Frysiak <wiget@t17.ds.pwr.wroc.pl>)
 
