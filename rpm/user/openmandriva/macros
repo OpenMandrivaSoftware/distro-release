@@ -113,7 +113,7 @@ Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
 # the corresponding variable names.
 %build_fflags %{optflags} -I%{_fmoddir}
 
-# When LTOing, it is useful to duplicate CFLAGS in LDFALGS
+# When LTOing, it is useful to duplicate CFLAGS in LDFLAGS
 # See https://github.com/OpenMandrivaSoftware/rpm-openmandriva-setup/pull/3
 %build_ldflags %{optflags} -Wl,-O2 %{?!_disable_ld_no_undefined: -Wl,--no-undefined} %{?!_disable_lto:-flto} %{?_hardened_flags}
 
@@ -314,139 +314,8 @@ GCONF_CONFIG_SOURCE=`%{_gconftool_bin} --get-default-source` %{_gconftool_bin} -
     %{?__spec_helper_stringbuf_post} \
 %{nil}
 
+
 #==============================================================================
-# ---- specfile macros.
-#	Macro(s) here can be used reliably for reproducible builds.
-#	(Note: Above is the goal, below are the macros under development)
-#
-
-%__libtoolize_configure %{?__libtoolize:(cd $CONFIGURE_TOP; [ ! -f configure.in -a ! -f configure.ac ] || %{__libtoolize} --copy --force)}
-
-# This fixes various easy resolved configure tests that are compromised by LTO.
-%_fix_broken_configure_for_lto \
-  for file in $(find . -type f -name configure -print); do \
-    %{__sed} -r --in-place=.backup 's/^char \\(\\*f\\) \\(\\) = /__attribute__ ((used)) char (*f) () = /g' $file; \
-    diff -u $file.backup $file && mv $file.backup $file \
-    %{__sed} -r --in-place=.backup 's/^char \\(\\*f\\) \\(\\);/__attribute__ ((used)) char (*f) ();/g' $file; \
-    diff -u $file.backup $file && mv $file.backup $file \
-    %{__sed} -r --in-place=.backup 's/^char \\$2 \\(\\);/__attribute__ ((used)) char \\$2 ();/g' $file; \
-    diff -u $file.backup $file && mv $file.backup $file \
-    %{__sed} --in-place=.backup '1{$!N;$!N};$!N;s/int x = 1;\\nint y = 0;\\nint z;\\nint nan;/volatile int x = 1; volatile int y = 0; volatile int z, nan;/;P;D' $file; \
-    diff -u $file.backup $file && mv $file.backup $file \
-    %{__sed} --in-place=.backup 's#^lt_cv_sys_global_symbol_to_cdecl=.*#lt_cv_sys_global_symbol_to_cdecl="sed -n -e '"'"'s/^T .* \\\\(.*\\\\)$/extern int \\\\1();/p'"'"' -e '"'"'s/^$symcode* .* \\\\(.*\\\\)$/extern char \\\\1;/p'"'"'"#' $file; \
-    diff -u $file.backup $file && mv $file.backup $file \
-  done;
-
-%config_update \
-  find . -name config.guess -o -name config.sub | while read i ; do \
-           [ -f /usr/share/libtool/config/"$(basename \"$i\")" ] && /bin/rm -f "$i" && /bin/cp -fv /usr/share/libtool/config/"$(basename \"$i\")" "$i" ; \
-  done ; \
-  %{!?_disable_rebuild_configure:if [ -e configure.ac -a -e Makefile.am ]; then \
-    find . -name configure.ac |xargs dirname |while read D; do \
-      pushd $D; \
-      if grep -qE '(LT_INIT|LIBTOOL)' configure.ac >/dev/null; then \
-        libtoolize --force ; \
-      fi ; \
-      aclocal $((find . -name "*.m4" 2>/dev/null |grep -vE 'ac(local|include).m4' | xargs dirname) | grep -v '^\.$' |sort |uniq |cut -d/ -f2- |while read R; do [ -e $R/configure.ac ] || echo -n "-I$R "; done) ; \
-      automake -a --foreign ; \
-      autoconf ; \
-      popd ; \
-    done ; \
-  fi ;} \
-  %{nil}
-
-%before_configure \
-  %config_update \
-  %set_build_flags \
-  %{?!_disable_lto:%{_fix_broken_configure_for_lto}} \
-  CONFIGURE_TOP="${CONFIGURE_TOP:-.}"
-
-# This is an improved version of %configure (from PLD team).
-%configure \
-  %before_configure ; \
-  %{?_enable_libtoolize:%{?__libtoolize_configure:%{__libtoolize_configure};}} \
-  [ -f $CONFIGURE_TOP/configure.in -o -f $CONFIGURE_TOP/configure.ac ] && \
-  CONFIGURE_XPATH="--x-includes=%{_prefix}/include --x-libraries=%{_prefix}/%{_lib}" \
-  $CONFIGURE_TOP/configure $CROSSCOMPILE \\\
-	--disable-static \\\
-	--disable-silent-rules \\\
-	--disable-dependency-tracking \\\
-	--disable-rpath \\\
-	--program-prefix=%{?_program_prefix} \\\
-	--prefix=%{_prefix} \\\
-	--exec-prefix=%{_exec_prefix} \\\
-	--bindir=%{_bindir} \\\
-	--sbindir=%{_sbindir} \\\
-	--sysconfdir=%{_sysconfdir} \\\
-	--datadir=%{_datadir} \\\
-	--includedir=%{_includedir} \\\
-	--libdir=%{_libdir} \\\
-	--libexecdir=%{_libexecdir} \\\
-	--localstatedir=%{_localstatedir} \\\
-	--sharedstatedir=%{_sharedstatedir} \\\
-	--mandir=%{_mandir} \\\
-	--infodir=%{_infodir} \\\
-	$CONFIGURE_XPATH
-
-# Configure in 32-bit mode (-m32) on applicable platforms
-# FIXME CC=gcc CXX=g++ hardcode is because of a clang bug with -m32
-# handling. We apply the workaround here so we can undo it for all
-# packages in one run. Stripping -flto is because our packages assume
-# shared libraries can be built with LTO, but clang does a much better
-# job at that than gcc.
-%configure32 \
-  %before_configure ; \\\
-  %{?_enable_libtoolize:%{?__libtoolize_configure:%{__libtoolize_configure};}} \\\
-  [ -f $CONFIGURE_TOP/configure.in -o -f $CONFIGURE_TOP/configure.ac ] && \
-  CFLAGS="`echo $CFLAGS |sed -e 's, -m64,,g;s, -mx32,,g;s, -flto,,g'` -m32" \\\
-  CXXFLAGS="`echo $CFLAGS |sed -e 's, -m64,,g;s, -mx32,,g;s, -flto,,g'` -m32" \\\
-  LDFLAGS="`echo $LDFLAGS |sed -e 's, -m64,,g;s, -mx32,,g;s, -flto,,g'` -m32" \\\
-  PKG_CONFIG_LIBDIR="%{_prefix}/lib/pkgconfig:%{_datadir}/pkgconfig:$PKG_CONFIG32_LIBDIR" \\\
-  PKG_CONFIG_PATH="%{_prefix}/lib/pkgconfig:%{_datadir}/pkgconfig:$PKG_CONFIG32_PATH" \\\
-  CONFIGURE_XPATH="--x-includes=%{_prefix}/include --x-libraries=%{_prefix}/lib" \\\
-  $CONFIGURE_TOP/configure $CROSSCOMPILE \\\
-	--disable-static \\\
-	--disable-silent-rules \\\
-	--disable-dependency-tracking \\\
-	--disable-rpath \\\
-	--program-prefix=%{?_program_prefix} \\\
-	--prefix=%{_prefix} \\\
-	--exec-prefix=%{_exec_prefix} \\\
-	--bindir=%{_bindir} \\\
-	--sbindir=%{_sbindir} \\\
-	--sysconfdir=%{_sysconfdir} \\\
-	--datadir=%{_datadir} \\\
-	--includedir=%{_includedir} \\\
-	--libdir=%{_prefix}/lib \\\
-	--libexecdir=%{_libexecdir} \\\
-	--localstatedir=%{_localstatedir} \\\
-	--sharedstatedir=%{_sharedstatedir} \\\
-	--mandir=%{_mandir} \\\
-	--infodir=%{_infodir} \\\
-	$CONFIGURE_XPATH
-
-%configure2_5x \
-  echo "%%configure2_5x is deprecated, please update the spec to use %%configure instead" >&2; \
-  %configure
-
-%old_makeinstall \
-    make \\\
-	prefix=%{?buildroot:%{buildroot}}%{_prefix} \\\
-	exec_prefix=%{?buildroot:%{buildroot}}%{_exec_prefix} \\\
-	bindir=%{?buildroot:%{buildroot}}%{_bindir} \\\
-	sbindir=%{?buildroot:%{buildroot}}%{_sbindir} \\\
-	sysconfdir=%{?buildroot:%{buildroot}}%{_sysconfdir} \\\
-	datadir=%{?buildroot:%{buildroot}}%{_datadir} \\\
-	includedir=%{?buildroot:%{buildroot}}%{_includedir} \\\
-	libdir=%{?buildroot:%{buildroot}}%{_libdir} \\\
-	libexecdir=%{?buildroot:%{buildroot}}%{_libexecdir} \\\
-	localstatedir=%{?buildroot:%{buildroot}}%{_localstatedir} \\\
-	sharedstatedir=%{?buildroot:%{buildroot}}%{_sharedstatedir} \\\
-	mandir=%{?buildroot:%{buildroot}}%{_mandir} \\\
-	infodir=%{?buildroot:%{buildroot}}%{_infodir} \\\
-	install
-
-
 %perl_convert_version() %(perl -Mversion -le '
 	$x = "%{1}";
 	$y = $x;
