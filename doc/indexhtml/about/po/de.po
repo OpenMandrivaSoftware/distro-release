@@ -124,9 +124,8 @@ msgid ""
 "involved\">getting involved</a>"
 msgstr ""
 "Sie können dem Entwicklungsteam beitreten oder dazu beitragen, dass "
-"OpenMandriva wächst und besser wird, <a target=\"_blank\" "
-"href=\"https://www.openmandriva.org/get-involved\">indem Sie sich "
-"engagieren</a>"
+"OpenMandriva wächst und besser wird, indem <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/get-involved\">Sie sich engagieren</a>"
 
 #: index.html.in.h:19
 msgid "Donate"
