@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-13 16:00+0100\n"
+"POT-Creation-Date: 2024-05-29 14:18+0200\n"
 "PO-Revision-Date: 2024-02-13 20:26+0000\n"
 "Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>, 2024\n"
 "Language-Team: Finnish (https://app.transifex.com/openmandriva/teams/1818/fi/)\n"
@@ -33,32 +33,32 @@ msgstr "Mikä on OpenMandriva?"
 msgid "Browse resources"
 msgstr "Selaa sisältöä"
 
-#: index.html.in.h:5
+#: index.html.in.h:4
 msgid "Welcome to OpenMandriva"
 msgstr "OpenMandriva tervetuloa"
 
-#: index.html.in.h:6
+#: index.html.in.h:5
 msgid "What is OpenMandriva"
 msgstr "Mikä on OpenMandriva"
 
-#: index.html.in.h:7
+#: index.html.in.h:6
 msgid ""
 "OpenMandriva Association was established on December 12, 2012 under 1901 "
 "French law. It manages some Free Software projects including OpenMandriva "
-"Lx, a GNU/Linux operating system that is a free alternative to the wide "
-"world known Microsoft Windows and Apple MacOS."
+"Lx, a GNU/Linux operating system that is a free alternative to the widely "
+"known Microsoft Windows and Apple MacOS."
 msgstr ""
 "OpenMandriva Association perustettiin Ranskassa 12.12 2012 yhdistyslain  "
-"vuodelta 1901 mukaisesti. Hallitsemme muutamia vapaiden ohjelmistojen "
-"projekteja, mukaan lukien OpenMandriva Lx, GNU/Linux käyttöjärjestelmä, joka"
-" ovat ilmainen vaihtoehto tunnetuille Microsoft Windows ja Apple MacOS "
-"käyttöjärjestelmille."
+"sääntöjen vuodelta 1901 mukaisesti. Hallitsemme muutamia vapaiden "
+"ohjelmistojen projekteja, mukaan lukien OpenMandriva Lx, GNU/Linux "
+"käyttöjärjestelmä, joka on ilmainen vaihtoehto Microsoft Windowsille ja "
+"Apple MacOS:lle."
 
-#: index.html.in.h:8
+#: index.html.in.h:7
 msgid "What is OpenMandriva Lx"
 msgstr "Mikä on OpenMandriva Lx"
 
-#: index.html.in.h:9
+#: index.html.in.h:8
 msgid ""
 "OpenMandriva Lx is a unique and independent distribution and direct "
 "descendant of Mandriva Linux."
@@ -66,9 +66,13 @@ msgstr ""
 "OpenMandriva Lx on ainutlaatuinen itsenäinen jakelu ja Mandriva Linux "
 "pohjalta suora jälkeläinen."
 
-#: index.html.in.h:10
+#: index.html.in.h:9
 msgid "Wiki"
 msgstr "Wiki"
+
+#: index.html.in.h:10
+msgid "Forum"
+msgstr "Foorumi"
 
 #: index.html.in.h:11
 msgid "Forum Resources guides"
@@ -108,19 +112,47 @@ msgstr ""
 " Issue Tracker</a>"
 
 #: index.html.in.h:17
-msgid ""
-"Make sure to visit <a target=\"_blank\" "
-"href=\"http://www.openmandriva.org/\">www.openmandriva.org</a> to get more "
-"tips and updates about OpenMandriva."
-msgstr ""
-"Käy osoitteessa <a target=\"_blank\" "
-"href=\"http://www.openmandriva.org/\">www.openmandriva.org</a> ja saat lisää"
-" vinkkejä ja päivityksiä OpenMandrivasta."
+msgid "Join/Contribute"
+msgstr "Liity/osallistu"
 
 #: index.html.in.h:18
+msgid ""
+"You can join the development team or contribute to make OpenMandriva grow "
+"and improve by <a target=\"_blank\" href=\"https://www.openmandriva.org/get-"
+"involved\">getting involved</a>"
+msgstr ""
+"Voit liittyä kehitystiimiin tai osallistua muuten OpenMandrivan kasvuun ja "
+"kehittymiseen <a target=\"_blank\" href=\"https://www.openmandriva.org/get-"
+"involved\">liity mukaan</a>"
+
+#: index.html.in.h:19
+msgid "Donate"
+msgstr "Lahjoita"
+
+#: index.html.in.h:20
+msgid ""
+"Please consider making a <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/donate\">donation</a> to keep the lights"
+" on"
+msgstr ""
+"Harkitse <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/donate\">lahjoitusta</a>, jotta valot "
+"pysyvät päällä"
+
+#: index.html.in.h:21
+msgid ""
+"Make sure to visit <a target=\"_blank\" "
+"href=\"https://openmandriva.org/\">openmandriva.org</a> to get more tips and"
+" updates about OpenMandriva."
+msgstr ""
+"Käy osoitteessa <a target=\"_blank\" "
+"href=\"https://openmandriva.org/\">openmandriva.org</a> , saat vinkkejä ja "
+"päivityksiä OpenMandriva:sta."
+
+#: index.html.in.h:22
 msgid "Have fun!"
 msgstr "Pidetään hauskaa!"
 
-#: index.html.in.h:19
+#: index.html.in.h:23
 msgid "top of this page"
 msgstr "tämän sivun alkuun"
