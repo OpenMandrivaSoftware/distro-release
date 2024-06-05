@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ -n "$(command -v kreadconfig5)" ]; then # Check if Plasma is installed, otherwise do nothing
-    FIRSTRUN=$(kreadconfig5 --group "OpenMandriva" --key "FirstRun" --default "true")
+if [ -n "$(command -v kreadconfig6)" ]; then # Check if Plasma is installed, otherwise do nothing
+    FIRSTRUN=$(kreadconfig6 --group "OpenMandriva" --key "FirstRun" --default "true")
 
     if [ "$FIRSTRUN" = 'true' ]; then
 # (tpg) add special icons on DESKTOP
@@ -13,7 +13,7 @@ if [ -n "$(command -v kreadconfig5)" ]; then # Check if Plasma is installed, oth
 	    fi
 	done
 
-	kwriteconfig5 --group "OpenMandriva" --key "FirstRun" --type "bool" "false"
+	kwriteconfig6 --group "OpenMandriva" --key "FirstRun" --type "bool" "false"
 	fi
 
 fi
