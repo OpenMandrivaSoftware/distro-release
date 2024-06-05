@@ -37,7 +37,7 @@ if [ -z "$TERMINAL" ]; then
 
     #using KDE
     if [ -n "$KDE_FULL_SESSION" ]; then
-	TERMINAL=$(kreadconfig5 --file kdeglobals --group General --key TerminalApplication --default "konsole")
+	TERMINAL=$(kreadconfig$KDE_SESSION_VERSION --file kdeglobals --group General --key TerminalApplication --default "konsole")
     fi
 
     if [ -n "$_LXSESSION_PID" ]; then
