@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=About OpenMandriva Lx
+Comment=More about OpenMandriva Lx
+Icon=openmandriva
+Exec=about-openmandriva-lx
+Type=Application
+Categories=Documentation;System;
+Terminal=false
+NoDisplay=true
