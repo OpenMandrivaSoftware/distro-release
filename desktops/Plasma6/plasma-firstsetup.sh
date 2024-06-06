@@ -6,7 +6,7 @@ if [ -n "$(command -v kreadconfig6)" ]; then # Check if Plasma is installed, oth
     if [ "$FIRSTRUN" = 'true' ]; then
 # (tpg) add special icons on DESKTOP
 	USER_DESKTOP="$(xdg-user-dir DESKTOP)"
-	for i in om-welcome calamares; do
+	for i in om-welcome about-openmandriva-lx calamares; do
 	    if [ ! -e "$USER_DESKTOP"/$i.desktop ] && [ -e /usr/share/applications/$i.desktop ]; then
 		cp -f /usr/share/applications/$i.desktop "$USER_DESKTOP"/$i.desktop 2> /dev/null
 		chmod +x "$USER_DESKTOP"/$i.desktop ||:
