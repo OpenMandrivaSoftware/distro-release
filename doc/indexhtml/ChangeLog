@@ -1,3 +1,6 @@
+2024-02-13 OpenMandriva Team
+	remake
+
 2007-07-15 17:49  Adam Williamson <awilliamson at mandriva.com>
 
 	* Makefile, indexhtml.spec: - update Makefile for new buildsystem
