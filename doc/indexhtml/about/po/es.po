@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-13 16:00+0100\n"
+"POT-Creation-Date: 2024-05-29 14:18+0200\n"
 "PO-Revision-Date: 2024-02-13 20:26+0000\n"
 "Last-Translator: rugyada, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/openmandriva/teams/1818/es/)\n"
@@ -33,32 +33,32 @@ msgstr "¿Qué es OpenMandriva?"
 msgid "Browse resources"
 msgstr "Explorar recursos"
 
-#: index.html.in.h:5
+#: index.html.in.h:4
 msgid "Welcome to OpenMandriva"
 msgstr "Bienvenidos a OpenMandriva"
 
-#: index.html.in.h:6
+#: index.html.in.h:5
 msgid "What is OpenMandriva"
 msgstr "Qué es OpenMandriva"
 
-#: index.html.in.h:7
+#: index.html.in.h:6
 msgid ""
 "OpenMandriva Association was established on December 12, 2012 under 1901 "
 "French law. It manages some Free Software projects including OpenMandriva "
-"Lx, a GNU/Linux operating system that is a free alternative to the wide "
-"world known Microsoft Windows and Apple MacOS."
+"Lx, a GNU/Linux operating system that is a free alternative to the widely "
+"known Microsoft Windows and Apple MacOS."
 msgstr ""
-"La Asociación OpenMandriva se creó el 12 de diciembre de 2012 al amparo de "
-"la ley francesa de 1901. Gestiona algunos proyectos de software libre "
-"incluido OpenMandriva Lx, un sistema operativo GNU/Linux que es una "
-"alternativa libre al amplio mundo conocido de Microsoft Windows y Apple "
-"MacOS."
+"La Asociación OpenMandriva se creó el 12 de diciembre de 2012 bajo la ley "
+"francesa de 1901, para representar la comunidad OpenMandriva.​ Administra "
+"proyectos de software libre, incluido OpenMandriva Lx, un sistema operativo "
+"GNU/Linux que es una alternativa libre a los ampliamente conocidos Microsoft"
+" Windows y Apple MacOS."
 
-#: index.html.in.h:8
+#: index.html.in.h:7
 msgid "What is OpenMandriva Lx"
 msgstr "Qué es OpenMandriva Lx"
 
-#: index.html.in.h:9
+#: index.html.in.h:8
 msgid ""
 "OpenMandriva Lx is a unique and independent distribution and direct "
 "descendant of Mandriva Linux."
@@ -66,9 +66,13 @@ msgstr ""
 "OpenMandriva Lx es una distribución única e independiente y descendiente "
 "directa de Mandriva Linux."
 
-#: index.html.in.h:10
+#: index.html.in.h:9
 msgid "Wiki"
 msgstr "Wiki"
+
+#: index.html.in.h:10
+msgid "Forum"
+msgstr "Foro"
 
 #: index.html.in.h:11
 msgid "Forum Resources guides"
@@ -107,19 +111,47 @@ msgstr ""
 " Issue Tracker</a>"
 
 #: index.html.in.h:17
-msgid ""
-"Make sure to visit <a target=\"_blank\" "
-"href=\"http://www.openmandriva.org/\">www.openmandriva.org</a> to get more "
-"tips and updates about OpenMandriva."
-msgstr ""
-"No deje de visitar <a target=\"_blank\" "
-"href=\"http://www.openmandriva.org/\">www.openmandriva.org</a> para obtener "
-"más consejos y actualizaciones sobre OpenMandriva."
+msgid "Join/Contribute"
+msgstr "Participar/Contribuir"
 
 #: index.html.in.h:18
+msgid ""
+"You can join the development team or contribute to make OpenMandriva grow "
+"and improve by <a target=\"_blank\" href=\"https://www.openmandriva.org/get-"
+"involved\">getting involved</a>"
+msgstr ""
+"Puedes unirte al equipo de desarrollo o contribuir a que OpenMandriva "
+"progrese y mejore <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/get-involved\">participando</a>"
+
+#: index.html.in.h:19
+msgid "Donate"
+msgstr "Donación"
+
+#: index.html.in.h:20
+msgid ""
+"Please consider making a <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/donate\">donation</a> to keep the lights"
+" on"
+msgstr ""
+"Por favor, considere hacer una <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/donate\">donación</a> para mantener las "
+"luces encendidas"
+
+#: index.html.in.h:21
+msgid ""
+"Make sure to visit <a target=\"_blank\" "
+"href=\"https://openmandriva.org/\">openmandriva.org</a> to get more tips and"
+" updates about OpenMandriva."
+msgstr ""
+"No deje de visitar <a target=\"_blank\" "
+"href=\"https://openmandriva.org/\">openmandriva.org</a> para obtener más "
+"consejos y actualizaciones sobre OpenMandriva."
+
+#: index.html.in.h:22
 msgid "Have fun!"
 msgstr "¡Diviértete!"
 
-#: index.html.in.h:19
+#: index.html.in.h:23
 msgid "top of this page"
 msgstr "inicio de la página"
