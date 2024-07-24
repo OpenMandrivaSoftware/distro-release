@@ -16,7 +16,7 @@ if [ -n "$BROWSER" ] && ! command -v $BROWSER &>/dev/null; then
 fi
 
 if [ -z "$BROWSER" ]; then
-    for i in falkon firefox chromium-browser-stable chromium-browser-beta chromium-browser-dev otter-browser arora; do
+    for i in falkon firefox chromium otter-browser arora; do
 	BROWSER="$(command -v $i 2>/dev/null)"
 	[ -n "$BROWSER" ] && break
     done
