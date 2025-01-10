@@ -137,8 +137,9 @@ msgid ""
 "href=\"https://www.openmandriva.org/donate\">donation</a> to keep the lights"
 " on"
 msgstr ""
-"Пожалуйста, подумайте о том, чтобы сделать пожертвование, чтобы проект "
-"существовал"
+"Пожалуйста, подумайте о том, чтобы сделать <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/donate\">пожертвование</a>, чтобы проект"
+" существовал"
 
 #: index.html.in.h:21
 msgid ""
