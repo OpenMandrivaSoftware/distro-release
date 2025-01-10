@@ -129,7 +129,7 @@ msgstr ""
 
 #: index.html.in.h:19
 msgid "Donate"
-msgstr "Донат"
+msgstr "Пожертвования"
 
 #: index.html.in.h:20
 msgid ""
