@@ -148,8 +148,8 @@ msgid ""
 " updates about OpenMandriva."
 msgstr ""
 "Обязательно посетите <a target=\"_blank\" "
-"href=\"http://www.openmandriva.org/\">www.openmandriva.org</a>, чтобы "
-"получить больше советов и обновлений об OpenMandriva."
+"href=\"https://openmandriva.org/\">openmandriva.org</a>, чтобы получить "
+"больше советов и новостей об OpenMandriva."
 
 #: index.html.in.h:22
 msgid "Have fun!"
