@@ -157,4 +157,4 @@ msgstr "Наслаждайтесь!"
 
 #: index.html.in.h:23
 msgid "top of this page"
-msgstr "верх этой страницы"
+msgstr "к верху этой страницы"
