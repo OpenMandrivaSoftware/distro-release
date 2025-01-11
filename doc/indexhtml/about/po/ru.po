@@ -6,6 +6,7 @@
 # Translators:
 # Igor Kungurtsev, 2024
 # Veneris Asgard, 2025
+# Oleg Iakunin, 2025
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-29 14:18+0200\n"
 "PO-Revision-Date: 2024-02-13 20:26+0000\n"
-"Last-Translator: Veneris Asgard, 2025\n"
+"Last-Translator: Oleg Iakunin, 2025\n"
 "Language-Team: Russian (https://app.transifex.com/openmandriva/teams/1818/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -106,8 +107,9 @@ msgid ""
 "href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
 " Issue Tracker</a>"
 msgstr ""
-"Для серьезных технических проблемах и запросов пакетов/функций, пожалуйста, "
-"отправляйте отчет об ошибке на <a target=\"_blank\" "
+"Чтобы сообщить о серьезных технических проблемах или запросить новые "
+"пакеты/функции, пожалуйста, отправляйте отчет об ошибке на <a "
+"target=\"_blank\" "
 "href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
 " Issue Tracker</a>"
 
@@ -121,12 +123,13 @@ msgid ""
 "and improve by <a target=\"_blank\" href=\"https://www.openmandriva.org/get-"
 "involved\">getting involved</a>"
 msgstr ""
-"Вы можете присоединиться к команде разработки или внести вклад, чтобы "
-"вовлекаясь в процесс, сделать OpenMandriva лучше"
+"Вы можете <a target=\"_blank\" href=\"https://www.openmandriva.org/get-"
+"involved\">присоединиться к команде разработки или внести вклад</a>, чтобы "
+"сделать OpenMandriva лучше"
 
 #: index.html.in.h:19
 msgid "Donate"
-msgstr "Донат"
+msgstr "Пожертвования"
 
 #: index.html.in.h:20
 msgid ""
@@ -134,8 +137,9 @@ msgid ""
 "href=\"https://www.openmandriva.org/donate\">donation</a> to keep the lights"
 " on"
 msgstr ""
-"Пожалуйста, подумайте о том, чтобы сделать пожертвование, чтобы проект "
-"существовал"
+"Пожалуйста, подумайте о том, чтобы сделать <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/donate\">пожертвование</a>, чтобы проект"
+" существовал"
 
 #: index.html.in.h:21
 msgid ""
@@ -144,13 +148,13 @@ msgid ""
 " updates about OpenMandriva."
 msgstr ""
 "Обязательно посетите <a target=\"_blank\" "
-"href=\"http://www.openmandriva.org/\">www.openmandriva.org</a>, чтобы "
-"получить больше советов и обновлений об OpenMandriva."
+"href=\"https://openmandriva.org/\">openmandriva.org</a>, чтобы получить "
+"больше советов и новостей об OpenMandriva."
 
 #: index.html.in.h:22
 msgid "Have fun!"
-msgstr "Веселись!"
+msgstr "Наслаждайтесь!"
 
 #: index.html.in.h:23
 msgid "top of this page"
-msgstr "верх этой страницы"
+msgstr "к верху этой страницы"
