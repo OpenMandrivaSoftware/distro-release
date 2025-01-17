@@ -1,4 +1,4 @@
-*Master branch*
+# 6.0 branch
 
 This repository contains basic OpenMandriva Lx setup:
 - versioning
