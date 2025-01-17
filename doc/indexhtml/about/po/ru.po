@@ -5,15 +5,17 @@
 # 
 # Translators:
 # Igor Kungurtsev, 2024
+# Veneris Asgard, 2025
+# Oleg Iakunin, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-13 16:00+0100\n"
+"POT-Creation-Date: 2024-05-29 14:18+0200\n"
 "PO-Revision-Date: 2024-02-13 20:26+0000\n"
-"Last-Translator: Igor Kungurtsev, 2024\n"
+"Last-Translator: Oleg Iakunin, 2025\n"
 "Language-Team: Russian (https://app.transifex.com/openmandriva/teams/1818/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,20 +35,20 @@ msgstr "Что такое OpenMandriva?"
 msgid "Browse resources"
 msgstr "Посмотреть ресурсы"
 
-#: index.html.in.h:5
+#: index.html.in.h:4
 msgid "Welcome to OpenMandriva"
 msgstr "Добро пожаловать в OpenMandriva"
 
-#: index.html.in.h:6
+#: index.html.in.h:5
 msgid "What is OpenMandriva"
 msgstr "Что такое OpenMandriva "
 
-#: index.html.in.h:7
+#: index.html.in.h:6
 msgid ""
 "OpenMandriva Association was established on December 12, 2012 under 1901 "
 "French law. It manages some Free Software projects including OpenMandriva "
-"Lx, a GNU/Linux operating system that is a free alternative to the wide "
-"world known Microsoft Windows and Apple MacOS."
+"Lx, a GNU/Linux operating system that is a free alternative to the widely "
+"known Microsoft Windows and Apple MacOS."
 msgstr ""
 "Ассоциация OpenMandriva была создана 12 декабря 2012 года в соответствии с "
 "французским законодательством 1901 года. Она управляет некоторыми проектами "
@@ -54,11 +56,11 @@ msgstr ""
 "систему GNU/Linux, которая является бесплатной альтернативой широко "
 "известным во всем мире Microsoft Windows и Apple macOS."
 
-#: index.html.in.h:8
+#: index.html.in.h:7
 msgid "What is OpenMandriva Lx"
 msgstr "Что такое OpenMandriva Lx"
 
-#: index.html.in.h:9
+#: index.html.in.h:8
 msgid ""
 "OpenMandriva Lx is a unique and independent distribution and direct "
 "descendant of Mandriva Linux."
@@ -66,9 +68,13 @@ msgstr ""
 "OpenMandriva Lx - это уникальный и независимый дистрибутив, прямой потомок "
 "Mandriva Linux."
 
-#: index.html.in.h:10
+#: index.html.in.h:9
 msgid "Wiki"
 msgstr "Вики"
+
+#: index.html.in.h:10
+msgid "Forum"
+msgstr "Форум"
 
 #: index.html.in.h:11
 msgid "Forum Resources guides"
@@ -101,25 +107,54 @@ msgid ""
 "href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
 " Issue Tracker</a>"
 msgstr ""
-"Для серьезных технических проблемах и запросов пакетов/функций, пожалуйста, "
-"отправляйте отчет об ошибке на <a target=\"_blank\" "
+"Чтобы сообщить о серьезных технических проблемах или запросить новые "
+"пакеты/функции, пожалуйста, отправляйте отчет об ошибке на <a "
+"target=\"_blank\" "
 "href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
 " Issue Tracker</a>"
 
 #: index.html.in.h:17
-msgid ""
-"Make sure to visit <a target=\"_blank\" "
-"href=\"http://www.openmandriva.org/\">www.openmandriva.org</a> to get more "
-"tips and updates about OpenMandriva."
-msgstr ""
-"Обязательно посетите <a target=\"_blank\" "
-"href=\"http://www.openmandriva.org/\">www.openmandriva.org</a>, чтобы "
-"получить больше советов и обновлений об OpenMandriva."
+msgid "Join/Contribute"
+msgstr "Присоединиться / Внести вклад"
 
 #: index.html.in.h:18
-msgid "Have fun!"
-msgstr "Веселись!"
+msgid ""
+"You can join the development team or contribute to make OpenMandriva grow "
+"and improve by <a target=\"_blank\" href=\"https://www.openmandriva.org/get-"
+"involved\">getting involved</a>"
+msgstr ""
+"Вы можете <a target=\"_blank\" href=\"https://www.openmandriva.org/get-"
+"involved\">присоединиться к команде разработки или внести вклад</a>, чтобы "
+"сделать OpenMandriva лучше"
 
 #: index.html.in.h:19
+msgid "Donate"
+msgstr "Пожертвования"
+
+#: index.html.in.h:20
+msgid ""
+"Please consider making a <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/donate\">donation</a> to keep the lights"
+" on"
+msgstr ""
+"Пожалуйста, подумайте о том, чтобы сделать <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/donate\">пожертвование</a>, чтобы проект"
+" существовал"
+
+#: index.html.in.h:21
+msgid ""
+"Make sure to visit <a target=\"_blank\" "
+"href=\"https://openmandriva.org/\">openmandriva.org</a> to get more tips and"
+" updates about OpenMandriva."
+msgstr ""
+"Обязательно посетите <a target=\"_blank\" "
+"href=\"https://openmandriva.org/\">openmandriva.org</a>, чтобы получить "
+"больше советов и новостей об OpenMandriva."
+
+#: index.html.in.h:22
+msgid "Have fun!"
+msgstr "Наслаждайтесь!"
+
+#: index.html.in.h:23
 msgid "top of this page"
-msgstr "верх этой страницы"
+msgstr "к верху этой страницы"
