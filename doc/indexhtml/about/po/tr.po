@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Buğra Karabulut, 2025
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-29 14:18+0200\n"
+"PO-Revision-Date: 2024-02-13 20:26+0000\n"
+"Last-Translator: Buğra Karabulut, 2025\n"
+"Language-Team: Turkish (https://app.transifex.com/openmandriva/teams/1818/tr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: index.html.in.h:1
+msgid "About OpenMandriva"
+msgstr "OpenMandriva Hakkında"
+
+#: index.html.in.h:2
+msgid "What is OpenMandriva?"
+msgstr "OpenMandriva Nedir?"
+
+#: index.html.in.h:3
+msgid "Browse resources"
+msgstr "Kaynaklara Göz Atın"
+
+#: index.html.in.h:4
+msgid "Welcome to OpenMandriva"
+msgstr "OpenMandriva'ya Hoş Geldiniz"
+
+#: index.html.in.h:5
+msgid "What is OpenMandriva"
+msgstr "OpenMandriva Nedir"
+
+#: index.html.in.h:6
+msgid ""
+"OpenMandriva Association was established on December 12, 2012 under 1901 "
+"French law. It manages some Free Software projects including OpenMandriva "
+"Lx, a GNU/Linux operating system that is a free alternative to the widely "
+"known Microsoft Windows and Apple MacOS."
+msgstr ""
+"OpenMandriva Derneği 12 Aralık 2012 yılında, 1901 sayılı Fransız kanunu "
+"hükümlerine göre kurulmuştur. Vakfımız, Microsoft Windows ve Apple MacOS'e "
+"ücretsiz bir alternatif olan OpenMandriva Lx dahil çeşitli özgür yazılımı "
+"yönetmektedir."
+
+#: index.html.in.h:7
+msgid "What is OpenMandriva Lx"
+msgstr "OpenMandriva Lx Nedir"
+
+#: index.html.in.h:8
+msgid ""
+"OpenMandriva Lx is a unique and independent distribution and direct "
+"descendant of Mandriva Linux."
+msgstr ""
+"OpenMandriva Lx, özgün ve bağımsız bir işletim sistemidir. Ayrıca Mandriva "
+"Linux'un devamı niteliğindedir."
+
+#: index.html.in.h:9
+msgid "Wiki"
+msgstr "Wiki"
+
+#: index.html.in.h:10
+msgid "Forum"
+msgstr "Forum"
+
+#: index.html.in.h:11
+msgid "Forum Resources guides"
+msgstr "Forum Kaynakları Rehberi"
+
+#: index.html.in.h:12
+msgid "Resources Index"
+msgstr "Kaynaklar Kılavuzu"
+
+#: index.html.in.h:13
+msgid "Chat"
+msgstr "Sohbet"
+
+#: index.html.in.h:14
+msgid ""
+"You are welcome to talk to our developers at <a target=\"_blank\" "
+"href=\"https://wiki.openmandriva.org/en/team/chat\">OpenMandriva Chat</a>"
+msgstr ""
+"Geliştiricilerimizle <a target=\"_blank\" "
+"href=\"https://wiki.openmandriva.org/en/team/chat\">OpenMandriva Sohbet</a> "
+"adresinde iletişime geçmenizden memnuniyet duyarız. "
+
+#: index.html.in.h:15
+msgid "Bug Tracker"
+msgstr "Hata Takibi"
+
+#: index.html.in.h:16
+msgid ""
+"For serious technical issues and package/feature requests please file a bug "
+"report at <a target=\"_blank\" "
+"href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
+" Issue Tracker</a>"
+msgstr ""
+"Ciddi teknik sorunlarınız veya yeni paket/özellik talpeleriniz için lütfen "
+"<a target=\"_blank\" "
+"href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
+" Sorun İzleme Sistemi</a>'nde bir bilet oluşturunuz"
+
+#: index.html.in.h:17
+msgid "Join/Contribute"
+msgstr "Katıl/Destek Ol"
+
+#: index.html.in.h:18
+msgid ""
+"You can join the development team or contribute to make OpenMandriva grow "
+"and improve by <a target=\"_blank\" href=\"https://www.openmandriva.org/get-"
+"involved\">getting involved</a>"
+msgstr ""
+"Yazılımcı ekibimize katılabilir veya OpenMandriva'nın büyümesi ve gelişmesi "
+"için <a target=\"_blank\" href=\"https://www.openmandriva.org/get-"
+"involved\">katkıda bulunabilirsin</a>"
+
+#: index.html.in.h:19
+msgid "Donate"
+msgstr "Bağış Yap"
+
+#: index.html.in.h:20
+msgid ""
+"Please consider making a <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/donate\">donation</a> to keep the lights"
+" on"
+msgstr ""
+"Faaliyetlerimize devam edebilmemiz için lüften <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/donate\">bağış yapmayı</a>gözden "
+"geçirin. "
+
+#: index.html.in.h:21
+msgid ""
+"Make sure to visit <a target=\"_blank\" "
+"href=\"https://openmandriva.org/\">openmandriva.org</a> to get more tips and"
+" updates about OpenMandriva."
+msgstr ""
+"OpenMandriva hakkıda ipuçları almak ve yeniliklerden haberdar olmak için <a "
+"target=\"_blank\" href=\"https://openmandriva.org/\">openmandriva.org</a>'u "
+"ziyaret etmeyi unutmayın."
+
+#: index.html.in.h:22
+msgid "Have fun!"
+msgstr "İyi eğlenceler!"
+
+#: index.html.in.h:23
+msgid "top of this page"
+msgstr "sayfanın başına dönün"
