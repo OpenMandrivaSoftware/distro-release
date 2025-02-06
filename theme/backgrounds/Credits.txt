@@ -20,6 +20,7 @@ flavor-of-freedom-mythen.jpg | Bero | https://gallery.openmandriva.org/index.php
 flavor-of-freedom-pastures.jpg | jclv | https://gallery.openmandriva.org/index.php?/category/8
 flavor-of-freedom-reflection2.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/8
 hotzenwald-sunrise.jpg | Hotzenwald Sunrise by Stephan Dämgen | https://gallery.openmandriva.org/index.php?/category/41
+om-feelsgood.png | UnkleBonehead | https://forum.openmandriva.org/t/5891
 rome-background-contest-01.jpg | D.R.L. DeVita | https://gallery.openmandriva.org/index.php?/category/41
 rome-background-contest-05.jpg | D.R.L. DeVita | https://gallery.openmandriva.org/index.php?/category/41
 rome-background-contest-06.jpg | SteJo | https://gallery.openmandriva.org/index.php?/category/41
