@@ -5,6 +5,7 @@ alte-rheinbrucke.jpg | Alte Rheinbrücke by André Kaiser | https://gallery.open
 american-basin.jpg | cwshell Cody Shell | https://forum.openmandriva.org/t/6213
 arches4nerds.jpg | Raphael | https://gallery.openmandriva.org/index.php?/category/41
 beautiful-lake-night.jpeg | ruchern | https://store.kde.org/p/2242203
+blackrock-dark.jpg | Lee Talbert | https://forum.openmandriva.org/t/6213
 bright-and-shiny-1939mercurycoupe.png | jimmyc | https://gallery.openmandriva.org/index.php?/category/34
 crab-walking-on-the-beach.jpeg | bunion | https://forum.openmandriva.org/t/6213
 day-moon.png | Rtx9 | https://forum.openmandriva.org/t/6213
@@ -25,6 +26,10 @@ flavor-of-freedom-pastures.jpg | jclv | https://gallery.openmandriva.org/index.p
 flavor-of-freedom-reflection2.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/8
 hotzenwald-sunrise.jpg | Hotzenwald Sunrise by Stephan Dämgen | https://gallery.openmandriva.org/index.php?/category/41
 om-feelsgood.png | UnkleBonehead | https://forum.openmandriva.org/t/5891
+omlx-denim-dark.jpg | Lee Talbert | https://forum.openmandriva.org/t/6213
+omlx-denim-light.jpg | Lee Talbert | https://forum.openmandriva.org/t/6213
+omlx-fabric-center-dark.jpg | Lee Talbert | https://forum.openmandriva.org/t/6213
+omlx-fabric-center-light.jpg | Lee Talbert | https://forum.openmandriva.org/t/6213
 penguinai.png | angry-penguin | https://forum.openmandriva.org/t/6213
 rome-background-contest-01.jpg | D.R.L. DeVita | https://gallery.openmandriva.org/index.php?/category/41
 rome-background-contest-05.jpg | D.R.L. DeVita | https://gallery.openmandriva.org/index.php?/category/41
@@ -49,4 +54,5 @@ urnersee-04.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
 urnersee-05.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
 urnersee-06.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
 urnersee-07.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/41
+whiterock-light.jpg | Lee Talbert | https://forum.openmandriva.org/t/6213
 wintery-rowan-tree.png | Rtx9 | https://forum.openmandriva.org/t/6213
