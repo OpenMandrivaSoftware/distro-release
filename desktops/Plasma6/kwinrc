@@ -12,6 +12,7 @@ WindowsBlockCompositing=true
 
 [org.kde.kdecoration2]
 library=org.kde.breeze
+theme=Breeze
 
 [Effect-Cube]
 BorderActivate=9
@@ -62,7 +63,7 @@ BorderAlternativeActivate=9
 ElectricBorderCooldown=350
 ElectricBorderCornerRatio=0.25
 ElectricBorderDelay=150
-ElectricBorderMaximize=true
+ElectricBorderMaximize=false
 ElectricBorderTiling=true
 ElectricBorders=0
 
