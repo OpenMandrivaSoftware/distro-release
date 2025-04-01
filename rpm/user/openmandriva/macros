@@ -34,7 +34,7 @@
 Obsoletes:	%{1} < %{?2}%{!?2:%{EVRD}} \
 Provides:	%{1} = %{?2}%{!?2:%{EVRD}} \
 
-%_default_patch_flags -U
+%_default_patch_flags --reject-format=unified
 %_default_patch_fuzz 0
 
 %make \
