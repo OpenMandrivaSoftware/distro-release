@@ -35,7 +35,7 @@ immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][2][Applets][15][Configuration][General]
-launchers=applications:om-update.desktop,applications:chromium-browser.desktop,applications:systemsettings.desktop,applications:org.kde.dolphin.desktop,applications:org.kde.konsole.desktop
+launchers=applications:chromium-browser.desktop,applications:systemsettings.desktop,applications:org.kde.dolphin.desktop,applications:org.kde.konsole.desktop
 
 [Containments][2][Applets][16]
 immutability=1
