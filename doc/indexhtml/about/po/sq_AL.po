@@ -1,0 +1,156 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# klejdi Janora, 2025
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-29 14:18+0200\n"
+"PO-Revision-Date: 2024-02-13 20:26+0000\n"
+"Last-Translator: klejdi Janora, 2025\n"
+"Language-Team: Albanian (Albania) (https://app.transifex.com/openmandriva/teams/1818/sq_AL/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sq_AL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: index.html.in.h:1
+msgid "About OpenMandriva"
+msgstr "Rreth OpenMandriva"
+
+#: index.html.in.h:2
+msgid "What is OpenMandriva?"
+msgstr "Çfarë është OpenMandriva?"
+
+#: index.html.in.h:3
+msgid "Browse resources"
+msgstr "Shfletoni burimet"
+
+#: index.html.in.h:4
+msgid "Welcome to OpenMandriva"
+msgstr "Mirësevini në OpenMandriva"
+
+#: index.html.in.h:5
+msgid "What is OpenMandriva"
+msgstr "Çfarë është OpenMandriva"
+
+#: index.html.in.h:6
+msgid ""
+"OpenMandriva Association was established on December 12, 2012 under 1901 "
+"French law. It manages some Free Software projects including OpenMandriva "
+"Lx, a GNU/Linux operating system that is a free alternative to the widely "
+"known Microsoft Windows and Apple MacOS."
+msgstr ""
+"Shoqata OpenMandriva u themelua më 12 dhjetor 2012 nën ligjin francez të "
+"vitit 1901. Ajo menaxhon disa projekte të Software-it të Lirë, përfshirë "
+"OpenMandriva Lx, një sistem operativ GNU/Linux që është një alternativë "
+"falas ndaj Microsoft Windows dhe Apple MacOS."
+
+#: index.html.in.h:7
+msgid "What is OpenMandriva Lx"
+msgstr "Çfarë është OpenMandriva Lx"
+
+#: index.html.in.h:8
+msgid ""
+"OpenMandriva Lx is a unique and independent distribution and direct "
+"descendant of Mandriva Linux."
+msgstr ""
+"OpenMandriva Lx është një distribucion unik dhe i pavarur dhe pasardhës i "
+"drejtpërdrejtë i Mandriva Linux."
+
+#: index.html.in.h:9
+msgid "Wiki"
+msgstr "Wiki"
+
+#: index.html.in.h:10
+msgid "Forum"
+msgstr "Forumi"
+
+#: index.html.in.h:11
+msgid "Forum Resources guides"
+msgstr "Udhëzues të Burimeve të Forumit"
+
+#: index.html.in.h:12
+msgid "Resources Index"
+msgstr "Indeksi i Burimeve"
+
+#: index.html.in.h:13
+msgid "Chat"
+msgstr "Chat-i"
+
+#: index.html.in.h:14
+msgid ""
+"You are welcome to talk to our developers at <a target=\"_blank\" "
+"href=\"https://wiki.openmandriva.org/en/team/chat\">OpenMandriva Chat</a>"
+msgstr ""
+"Jeni të mirëpritur të bisedoni me zhvilluesit tanë në <a target=\"_blank\" "
+"href=\"https://wiki.openmandriva.org/en/team/chat\">OpenMandriva Chat.</a>"
+
+#: index.html.in.h:15
+msgid "Bug Tracker"
+msgstr "Gjurmuesi i Gabimeve "
+
+#: index.html.in.h:16
+msgid ""
+"For serious technical issues and package/feature requests please file a bug "
+"report at <a target=\"_blank\" "
+"href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
+" Issue Tracker</a>"
+msgstr ""
+"Për çështje serioze teknike dhe kërkesa për paketa/funksione, ju lutemi "
+"dorëzoni një raport gabimi në <a target=\"_blank\" "
+"href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
+" Issue Tracker.</a>"
+
+#: index.html.in.h:17
+msgid "Join/Contribute"
+msgstr "Bashkohuni/Kontributoni"
+
+#: index.html.in.h:18
+msgid ""
+"You can join the development team or contribute to make OpenMandriva grow "
+"and improve by <a target=\"_blank\" href=\"https://www.openmandriva.org/get-"
+"involved\">getting involved</a>"
+msgstr ""
+"Mund t’i bashkoheni ekipit të zhvillimit ose të kontribuoni për ta ndihmuar "
+"OpenMandriva të rritet dhe të përmirësohet <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/get-involved\">duke u angazhuar.</a>"
+
+#: index.html.in.h:19
+msgid "Donate"
+msgstr "Donatoni"
+
+#: index.html.in.h:20
+msgid ""
+"Please consider making a <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/donate\">donation</a> to keep the lights"
+" on"
+msgstr ""
+"Ju lutemi merrni parasysh të bëni një <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/donate\">donacion</a> për të na ndihmuar"
+" të vazhdojmë punën."
+
+#: index.html.in.h:21
+msgid ""
+"Make sure to visit <a target=\"_blank\" "
+"href=\"https://openmandriva.org/\">openmandriva.org</a> to get more tips and"
+" updates about OpenMandriva."
+msgstr ""
+"Sigurohuni të vizitoni <a target=\"_blank\" "
+"href=\"https://openmandriva.org/\">openmandriva.org</a> për të marrë më "
+"shumë këshilla dhe përditësime rreth OpenMandriva."
+
+#: index.html.in.h:22
+msgid "Have fun!"
+msgstr "Kënaquni!"
+
+#: index.html.in.h:23
+msgid "top of this page"
+msgstr "kreu i kësaj faqeje"
