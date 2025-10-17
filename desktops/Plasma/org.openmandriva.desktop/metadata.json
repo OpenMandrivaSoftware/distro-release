@@ -9,9 +9,9 @@
             }
         ],
         "Category": "",
-        "Description": "OpenMandriva default style",
-        "Description[x-test]": "xxOpenMandriva default stylexx",
-        "Id": "org.openmandriva5.desktop",
+        "Description": "OpenMandriva Plasma style",
+        "Description[x-test]": "xxOpenMandriva Plasma stylexx",
+        "Id": "org.openmandriva.desktop",
         "License": "GPLv2+",
         "Name": "OpenMandriva",
         "Name[x-test]": "xxOpenMandrivaxx",
@@ -24,4 +24,3 @@
     "X-Plasma-APIVersion": "2",
     "X-Plasma-MainScript": "defaults"
 }
-

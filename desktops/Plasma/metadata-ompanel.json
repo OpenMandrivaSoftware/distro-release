@@ -1,0 +1,28 @@
+{
+    "KPackageStructure": "Plasma/LayoutTemplate",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "openmandriva.org",
+                "Name": "OpenMandriva",
+                "Name[en_GB]": "OpenMandriva",
+                "Name[x-test]": "xxOpenMandrivaxx"
+            }
+        ],
+        "Category": "",
+        "Description": "OpenMandriva Plasma Panel featuring application launcher, task manager and system tray",
+        "Description[en_GB]": "OpenMandriva Plasma Panel featuring application launcher, task manager and system tray",
+        "Description[x-test]": "xxOpenMandriva Plasma Panel featuring application launcher, task manager and system trayxx",
+        "EnabledByDefault": true,
+        "Id": "org.om.plasma.desktop.defaultPanel",
+        "License": "LGPLv2+",
+        "Name": "OpenMandriva Plasma Panel",
+        "Name[en_GB]": "OpenMandriva Plasma Panel",
+        "Name[x-test]": "xxOpenMandriva Plasma Panelxx",
+        "Website": "https://www.openmandriva.org"
+    },
+    "X-Plasma-ContainmentCategories": [
+        "panel"
+    ],
+    "X-Plasma-Shell": "plasmashell"
+}

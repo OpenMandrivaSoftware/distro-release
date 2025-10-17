@@ -1,0 +1,1 @@
+Plasma OpenMandriva config

@@ -1,12 +1,12 @@
 [Desktop Entry]
-Comment=OpenMandriva default style
+Comment=OpenMandriva Plasma style
 Name=OpenMandriva
 X-KDE-PluginInfo-Author=OpenMandriva
 X-KDE-PluginInfo-Category=Plasma Look And Feel
 X-KDE-PluginInfo-Email=openmandriva.org
 X-KDE-PluginInfo-EnabledByDefault=true
 X-KDE-PluginInfo-License=LGPL 2.1+
-X-KDE-PluginInfo-Name=org.openmandriva5.desktop
-X-KDE-PluginInfo-Version=0.5
+X-KDE-PluginInfo-Name=org.openmandriva.desktop
+X-KDE-PluginInfo-Version=0.6
 X-KDE-PluginInfo-Website=openmandriva.org
 X-KDE-ServiceTypes=Plasma/LookAndFeel

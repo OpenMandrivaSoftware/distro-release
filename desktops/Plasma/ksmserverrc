@@ -1,6 +1,6 @@
 [General]
 confirmLogout=true
 excludeApps=hp-systray:firewall-applet:pam-panel-icon
-loginMode=default
+loginMode=emptySession
 offerShutdown=true
 shutdownType=0
