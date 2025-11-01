@@ -14,6 +14,7 @@ energy-grid.jpg | Nathalie Encinas | https://gallery.openmandriva.org/index.php?
 energy-rays-at-sunset.jpg | Sirius | https://gallery.openmandriva.org/index.php?/category/11
 energy-the-sunset.jpg | Thanasis | https://gallery.openmandriva.org/index.php?/category/11
 energy-whiterays.jpg | SteJo | https://gallery.openmandriva.org/index.php?/category/11
+feuilles-20250801.png | Piaf_Jaune | https://forum.openmandriva.org/t/7905
 flavor-of-freedom-cantaloupe-island.jpg | Kekek | https://gallery.openmandriva.org/index.php?/category/8
 flavor-of-freedom-dantes-skyline.jpg | Monty | https://gallery.openmandriva.org/index.php?/category/8
 flavor-of-freedom-descartes-awakening.jpg | Monty | https://gallery.openmandriva.org/index.php?/category/8
@@ -24,6 +25,7 @@ flavor-of-freedom-misty-mountains.png | Caig | https://gallery.openmandriva.org/
 flavor-of-freedom-mythen.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/8
 flavor-of-freedom-pastures.jpg | jclv | https://gallery.openmandriva.org/index.php?/category/8
 flavor-of-freedom-reflection2.jpg | Bero | https://gallery.openmandriva.org/index.php?/category/8
+fleurs-20250801.png | Piaf_Jaune | https://forum.openmandriva.org/t/7905
 hotzenwald-sunrise.jpg | Hotzenwald Sunrise by Stephan Dämgen | https://gallery.openmandriva.org/index.php?/category/41
 om-feelsgood.png | UnkleBonehead | https://forum.openmandriva.org/t/5891
 omlx-denim-dark.jpg | Lee Talbert | https://forum.openmandriva.org/t/6213
