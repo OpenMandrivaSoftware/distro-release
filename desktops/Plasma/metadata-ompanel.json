@@ -14,11 +14,11 @@
         "Description[en_GB]": "OpenMandriva Plasma6 Panel featuring application launcher, task manager and system tray",
         "Description[x-test]": "xxOpenMandriva Plasma6 Panel featuring application launcher, task manager and system trayxx",
         "EnabledByDefault": true,
-        "Id": "org.om.plasma6.desktop.defaultPanel",
+        "Id": "org.om.plasma.desktop.defaultPanel",
         "License": "LGPLv2+",
-        "Name": "OpenMandriva Plasma6 Panel",
-        "Name[en_GB]": "OpenMandriva Plasma6 Panel",
-        "Name[x-test]": "xxOpenMandriva Plasma6 Panelxx",
+        "Name": "OpenMandriva Plasma Panel",
+        "Name[en_GB]": "OpenMandriva Plasma Panel",
+        "Name[x-test]": "xxOpenMandriva Plasma Panelxx",
         "Website": "https://www.openmandriva.org"
     },
     "X-Plasma-ContainmentCategories": [

@@ -3,7 +3,7 @@
 // Licensed under GPL
 
 print("Starting OpenMandriva Plasma configuration")
-loadTemplate("org.openmandriva.plasma.desktop.defaultPanel")
+loadTemplate("org.om.plasma.desktop.defaultPanel")
 
 var desktopsArray = desktopsForActivity(currentActivity());
 for( var j = 0; j < desktopsArray.length; j++) {

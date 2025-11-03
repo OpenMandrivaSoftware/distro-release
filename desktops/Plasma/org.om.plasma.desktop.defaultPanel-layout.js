@@ -31,7 +31,7 @@ launcher.currentConfigGroup = ["Shortcuts"]
 launcher.writeConfig("global", "Alt+F1")
 launcher.writeConfig("favoriteSystemActions", "logout")
 launcher.currentConfigGroup = ["General"]
-launcher.writeConfig("favoriteApps", "applications:om-update.desktop,applications:chromium-browser.desktop,applications:systemsettings.desktop,applications:org.kde.dolphin.desktop,applications:org.kde.konsole.desktop")
+launcher.writeConfig("favoriteApps", "applications:om-update.desktop,applications:helium.desktop,applications:systemsettings.desktop,applications:org.kde.dolphin.desktop,applications:org.kde.konsole.desktop")
 launcher.writeConfig("limitDepth", "false")
 launcher.writeConfig("useExtraRunners", "true")
 
