@@ -31,7 +31,7 @@ if [ -z "$TERMINAL" ]; then
     fi
 
     # using MATE
-    if [ -n "$MATE_DESKTOP_SESSION_ID" || x"$XDG_CURRENT_DESKTOP" = x"MATE" ]; then
+    if [ -n "$MATE_DESKTOP_SESSION_ID" -o x"$XDG_CURRENT_DESKTOP" = x"MATE" ]; then
 	TERMINAL=$(gsettings get org.mate.applications-terminal exec | tr -d \')
     fi
 
@@ -58,6 +58,7 @@ if [ -z "$TERMINAL" ]; then
 
     [ -z "$TERMINAL" ] && TERMINAL=$(command -v konsole 2> /dev/null)
     [ -z "$TERMINAL" ] && TERMINAL=$(command -v qterminal 2> /dev/null)
+    [ -z "$TERMINAL" ] && TERMINAL=$(command -v qmlkonsole 2> /dev/null)
     [ -z "$TERMINAL" ] && TERMINAL=$(command -v gnome-terminal 2> /dev/null)
     [ -z "$TERMINAL" ] && TERMINAL=$(command -v mate-terminal 2> /dev/null)
     [ -z "$TERMINAL" ] && TERMINAL=$(command -v kterm 2> /dev/null)
