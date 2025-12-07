@@ -1,28 +1,97 @@
 # Python specific macro definitions.
-# To make use of these macros insert the following line into your spec file:
-# %{load:%{_rpmconfigdir}/macros.d/python}
+# Some of these macros are copied from Fedora for the sake of spec
+# file compatibility - other additions are our own.
+
+# Memorize a macro to avoid calling the same expensive code multiple times in
+# the specfile.
+# There is no error handling,
+# memorizing an undefined macro (or using such a key) has undefined behavior.
+# Options:
+#   -n - The name of the macro to wrap
+#   -k - The name of the macro to use as a cache key
+%_python_memorize(n:k:) %{lua:
+local name = opt.n
+-- NB: We use rpm.expand() here instead of the macros table to make sure errors
+-- are propogated properly.
+local cache_key = rpm.expand("%{" .. opt.k .. "}")
+if not _python_macro_cache then
+    -- This is intentionally a global lua table
+    _python_macro_cache = {}
+end
+if not _python_macro_cache[cache_key] then
+    _python_macro_cache[cache_key] = {}
+end
+if not _python_macro_cache[cache_key][name] then
+    _python_macro_cache[cache_key][name] = rpm.expand("%{" .. name .. "}")
+end
+print(_python_macro_cache[cache_key][name])
+}
+
+# Deprecation wrapper, warns only once per macro
+# Options:
+#   -n - The name of the macro that is deprecated
+%_python_deprecated(n:) %{lua:
+if not _python_deprecated_warned then
+    -- This is intentionally a global lua table
+    _python_deprecated_warned = {}
+end
+if not _python_deprecated_warned[opt.n] then
+    _python_deprecated_warned[opt.n] = true
+    local msg = "The %" .. opt.n .. " macro is deprecated and will likely stop working in a future release."
+    macros.warn({msg})
+end
+}
 
 %__python %{_bindir}/python
 
-%python_sitearch %(%{__python} -c "import os; from distutils.sysconfig import get_python_lib; lib=get_python_lib(1); print(os.path.islink(lib) and os.path.abspath(os.path.join(os.path.dirname(lib),os.readlink(lib))) or lib)")
-%python_sitelib %(%{__python} -c "import os; from distutils.sysconfig import get_python_lib; lib=get_python_lib(); print(os.path.islink(lib) and os.path.abspath(os.path.join(os.path.dirname(lib),os.readlink(lib))) or lib)")
-%python_version %(%{__python3} -Ic "import sys; sys.stdout.write(sys.version[:3])")
+# RPM_BUILD_ROOT needs to be set to prevent python from preferring /usr/local.
+# It is set up that way to make pip calls outside of rpm install to /usr/local
+# while rpm packages go to /usr.
 
-# python main version
-%py_ver %(%{__python} -c "import sys; v=sys.version_info[:2]; print('%%d.%%d'%%v)" 2>/dev/null || echo PYTHON-NOT-FOUND)
-%py_prefix %(%{__python} -c "import sys; print(sys.prefix)" 2>/dev/null || echo PYTHON-NOT-FOUND)
-%py_platlibdir %(%{__python} -c 'import distutils.sysconfig; print(distutils.sysconfig.get_python_lib(standard_lib=1,plat_specific=1))' 2>/dev/null || echo PYTHON-LIBDIR-NOT-FOUND)
-%py_purelibdir %(%{__python} -c 'import distutils.sysconfig; print(distutils.sysconfig.get_python_lib(standard_lib=1,plat_specific=0))' 2>/dev/null || echo PYTHON-LIBDIR-NOT-FOUND)
+%__python_sitelib %(RPM_BUILD_ROOT= %{__python} -Esc "import sysconfig; print(sysconfig.get_path('purelib', vars={'platbase': '%{_prefix}', 'base': '%{_prefix}'}))")
+%python_sitelib %{_python_memorize -n __python_sitelib -k __python}
+
+%__python_sitearch %(RPM_BUILD_ROOT= %{__python} -Esc "import sysconfig; print(sysconfig.get_path('platlib', vars={'platbase': '%{_prefix}', 'base': '%{_prefix}'}))")
+%python_sitearch %{_python_memorize -n __python_sitearch -k __python}
+
+%__python_version %(RPM_BUILD_ROOT= %{__python} -Esc "import sys; sys.stdout.write('{0.major}.{0.minor}'.format(sys.version_info))")
+%python_version %{_python_memorize -n __python_version -k __python}
+%py_ver %{python_version}
+
+%__python_version_nodots %(RPM_BUILD_ROOT= %{__python} -Esc "import sys; sys.stdout.write('{0.major}{0.minor}'.format(sys.version_info))")
+%python_version_nodots %{_python_memorize -n __python_version_nodots -k __python}
+
+%__python_platform %(RPM_BUILD_ROOT= %{__python} -Esc "import sysconfig; print(sysconfig.get_platform())")
+%python_platform %{_python_memorize -n __python_platform -k __python}
+
+%__python_platform_triplet %(RPM_BUILD_ROOT= %{__python} -Esc "import sysconfig; print(sysconfig.get_config_var('MULTIARCH'))")
+%python_platform_triplet %{_python_memorize -n __python_platform_triplet -k __python}
+
+%__python_ext_suffix %(RPM_BUILD_ROOT= %{__python} -Esc "import sysconfig; print(sysconfig.get_config_var('EXT_SUFFIX'))")
+%python_ext_suffix %{_python_memorize -n __python_ext_suffix -k __python}
+
+%__python_cache_tag %(RPM_BUILD_ROOT= %{__python} -Esc "import sys; print(sys.implementation.cache_tag)")
+%python_cache_tag %{_python_memorize -n __python_cache_tag -k __python}
+
+%__py_prefix %(RPM_BUILD_ROOT= %{__python} -Esc "import sys; print(sys.prefix)")
+%py_prefix %{_python_memorize -n __py_prefix -k __python}
+
+%__py_platlibdir %(RPM_BUILD_ROOT= %{__python} -Esc 'import sysconfig; print(sysconfig.get_path("platstdlib"))')
+%py_platlibdir %{_python_memorize -n __py_platlibdir -k __python}
+
+%__py_purelibdir %(RPM_BUILD_ROOT= %{__python} -Esc 'import sysconfig; print(sysconfig.get_path("stdlib"))')
+%py_purelibdir %{_python_memorize -n __py_purelibdir -k __python}
+
+%__py_incdir %(RPM_BUILD_ROOT= %{__python} -Esc 'import sysconfig; print(sysconfig.get_path("include"))')
+%py_incdir %{_python_memorize -n __py_incdir -k __python}
+
 # backward compatibility
-%py_libdir %py_purelibdir
-
-%py_platsitedir %(%{__python} -c 'import distutils.sysconfig; print(distutils.sysconfig.get_python_lib(plat_specific=1))' 2>/dev/null || echo PYTHON-LIBDIR-NOT-FOUND)
-%py_puresitedir %(%{__python} -c 'import distutils.sysconfig; print(distutils.sysconfig.get_python_lib())' 2>/dev/null || echo PYTHON-LIBDIR-NOT-FOUND)
-%py_sitedir %py_puresitedir
+%py_libdir %{py_purelibdir}
+%py_platsitedir %{python_sitearch}
+%py_puresitedir %{python_sitelib}
+%py_sitedir %{py_puresitedir}
 
 %py_dyndir %{py_platlibdir}/lib-dynload
-
-%py_incdir %(%{__python} -c 'import distutils.sysconfig; print(distutils.sysconfig.get_python_inc())' 2>/dev/null || echo PYTHON-INCLUDEDIR-NOT-FOUND)
 
 %py_compile(O)  \
 find %1 -name '*.pyc' -exec rm -f {} \\; \
@@ -78,15 +147,6 @@ find %1 -name '*.pyo' -exec rm -f {} \\; \
 
 %py_install_wheel() %{expand:\\\
   pip install -I dist/%{1} --root %{buildroot} --strip-file-prefix %{buildroot} --no-deps
-}
-
-%py2_build() %{expand:\\\
-  CFLAGS="%{optflags}" %{__python2} %{py_setup} %{?py_setup_args} build --executable="%{__python2} %{py_shbang_opts}" %{?*}
-  sleep 1
-}
-
-%py2_install() %{expand:\\\
-  CFLAGS="%{optflags}" %{__python2} %{py_setup} %{?py_setup_args} install -O1 --skip-build --root %{buildroot} %{?*}
 }
 
 %py_requires(d) \
