@@ -1,0 +1,20 @@
+%buildsystem_meson_generate_buildrequires() \
+	echo 'meson'
+
+%buildsystem_meson_conf() \
+	%meson %* \
+%if %{with compat32} \
+	%meson32 %* \
+%endif
+
+%buildsystem_meson_build() \
+	%meson_build \
+%if %{with compat32} \
+	%meson32_build \
+%endif
+
+%buildsystem_meson_install() \
+	%meson_install \
+%if %{with compat32} \
+	%meson32_install \
+%endif
