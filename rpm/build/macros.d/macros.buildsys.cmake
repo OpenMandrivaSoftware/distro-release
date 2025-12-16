@@ -35,7 +35,7 @@
 		-DSYSCONF_INSTALL_DIR:PATH=%{_sysconfdir} \\\
 		-DCMAKE_BUILD_TYPE=%{_cmake_debug} \\\
 		-DOpenGL_GL_PREFERENCE=GLVND \\\
-		-DKDE_USE_QT_SYS_PATHS:BOOL=ON \\\
+		-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \\\
 %if "%{?_lib}" == "lib64" \
 		%{?_cmake_lib_suffix64} \\\
 %endif \
@@ -80,7 +80,7 @@
 		-DSYSCONF_INSTALL_DIR:PATH=%{_sysconfdir} \\\
 		-DCMAKE_BUILD_TYPE=%{_cmake_debug} \\\
 		-DOpenGL_GL_PREFERENCE=GLVND \\\
-		-DKDE_USE_QT_SYS_PATHS:BOOL=ON \\\
+		-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \\\
 		%{?_cmake_skip_rpath} \\\
 		%{?_cmake_verbose: -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON} \\\
 		-DBUILD_SHARED_LIBS:BOOL=ON \\\
