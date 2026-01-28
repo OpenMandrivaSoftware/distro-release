@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Nov Ember, 2026
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-29 14:18+0200\n"
+"PO-Revision-Date: 2024-02-13 20:26+0000\n"
+"Last-Translator: Nov Ember, 2026\n"
+"Language-Team: Greek (https://app.transifex.com/openmandriva/teams/1818/el/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: index.html.in.h:1
+msgid "About OpenMandriva"
+msgstr "Σχετικά με το OpenMandriva"
+
+#: index.html.in.h:2
+msgid "What is OpenMandriva?"
+msgstr "Τι είναι το OpenMandriva;"
+
+#: index.html.in.h:3
+msgid "Browse resources"
+msgstr "Περιήγηση πόρων"
+
+#: index.html.in.h:4
+msgid "Welcome to OpenMandriva"
+msgstr "Καλώς ήρθατε στο OpenMandriva"
+
+#: index.html.in.h:5
+msgid "What is OpenMandriva"
+msgstr "Τι είναι το OpenMandriva"
+
+#: index.html.in.h:6
+msgid ""
+"OpenMandriva Association was established on December 12, 2012 under 1901 "
+"French law. It manages some Free Software projects including OpenMandriva "
+"Lx, a GNU/Linux operating system that is a free alternative to the widely "
+"known Microsoft Windows and Apple MacOS."
+msgstr ""
+"Το OpenMandriva Association ιδρύθηκε στις 12 Δεκεμβρίου 2012 σύμφωνα με "
+"τοΓαλλικό νόμο 1901. Διαχειρίζεται ορισμένα έργα ελεύθερου "
+"λογισμικού,συμπεριλαμβανομένου του OpenMandriva Lx, ενός λειτουργικού "
+"συστήματοςGNU/Linux που είναι μια δωρεάν εναλλακτική λύση στα ευρέως γνωστά "
+"MicrosoftWindows και Apple MacOS."
+
+#: index.html.in.h:7
+msgid "What is OpenMandriva Lx"
+msgstr "Τι είναι το OpenMandriva Lx"
+
+#: index.html.in.h:8
+msgid ""
+"OpenMandriva Lx is a unique and independent distribution and direct "
+"descendant of Mandriva Linux."
+msgstr ""
+"Το OpenMandriva Lx είναι μια μοναδική και ανεξάρτητη διανομή και "
+"άμεσοςαπόγονος του Mandriva Linux."
+
+#: index.html.in.h:9
+msgid "Wiki"
+msgstr "Wiki"
+
+#: index.html.in.h:10
+msgid "Forum"
+msgstr "Φόρουμ"
+
+#: index.html.in.h:11
+msgid "Forum Resources guides"
+msgstr "Οδηγοί πόρων φόρουμ"
+
+#: index.html.in.h:12
+msgid "Resources Index"
+msgstr "Δείκτης πόρων"
+
+#: index.html.in.h:13
+msgid "Chat"
+msgstr "Chat"
+
+#: index.html.in.h:14
+msgid ""
+"You are welcome to talk to our developers at <a target=\"_blank\" "
+"href=\"https://wiki.openmandriva.org/en/team/chat\">OpenMandriva Chat</a>"
+msgstr ""
+"Καλώς ήρθατε να μιλήσετε με τους προγραμματιστές μας στο <a "
+"target=\"_blank\" "
+"href=\"https://wiki.openmandriva.org/en/team/chat\">OpenMandriva Chat</a>"
+
+#: index.html.in.h:15
+msgid "Bug Tracker"
+msgstr "Εντοπιστής σφαλμάτων"
+
+#: index.html.in.h:16
+msgid ""
+"For serious technical issues and package/feature requests please file a bug "
+"report at <a target=\"_blank\" "
+"href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
+" Issue Tracker</a>"
+msgstr ""
+"Για σοβαρά τεχνικά προβλήματα και αιτήματα πακέτων/δυνατοτήτων, παρακαλούμε "
+"υποβάλετε αναφορά σφάλματος στον <a target=\"_blank\" "
+"href=\"https://github.com/OpenMandrivaAssociation/distribution/issues\">OpenMandriva"
+" Εντοπιστή σφαλμάτων</a>"
+
+#: index.html.in.h:17
+msgid "Join/Contribute"
+msgstr "Συμμετοχή/Συνεισφορά"
+
+#: index.html.in.h:18
+msgid ""
+"You can join the development team or contribute to make OpenMandriva grow "
+"and improve by <a target=\"_blank\" href=\"https://www.openmandriva.org/get-"
+"involved\">getting involved</a>"
+msgstr ""
+"Μπορείτε να ενταχθείτε στην ομάδα ανάπτυξης ή να συνεισφέρετε για να "
+"βοηθήσετε  στην ανάπτυξη και τη βελτίωση του OpenMandriva <a "
+"target=\"_blank\" href=\"https://www.openmandriva.org/get-"
+"involved\">συμμετέχοντας</a>"
+
+#: index.html.in.h:19
+msgid "Donate"
+msgstr "Δωρεά"
+
+#: index.html.in.h:20
+msgid ""
+"Please consider making a <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/donate\">donation</a> to keep the lights"
+" on"
+msgstr ""
+"Παρακαλώ σκεφτείτε να κάνετε μια <a target=\"_blank\" "
+"href=\"https://www.openmandriva.org/donate\">δωρεά</a> για να κρατάμε τα "
+"φώτα ανοιχτά..."
+
+#: index.html.in.h:21
+msgid ""
+"Make sure to visit <a target=\"_blank\" "
+"href=\"https://openmandriva.org/\">openmandriva.org</a> to get more tips and"
+" updates about OpenMandriva."
+msgstr ""
+"Μην παραλείψετε να επισκεφθείτε το <a target=\"_blank\" "
+"href=\"https://openmandriva.org/\">openmandriva.org</a> για να λάβετε "
+"περισσότερες συμβουλές και ενημερώσεις σχετικά με το OpenMandriva."
+
+#: index.html.in.h:22
+msgid "Have fun!"
+msgstr "Διασκεδάστε!"
+
+#: index.html.in.h:23
+msgid "top of this page"
+msgstr "κορυφή αυτής της σελίδας"
