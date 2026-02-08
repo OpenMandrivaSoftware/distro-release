@@ -17,4 +17,5 @@
 	%meson_install \
 %if %{with compat32} \
 	%meson32_install \
-%endif
+%endif \
+	%find_lang %{name} --all-name --with-qt --with-html --with-man || :

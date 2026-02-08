@@ -21,13 +21,13 @@
 
 %config_update \
   find . -name config.guess -o -name config.sub | while read i ; do \
-           [ -f /usr/share/libtool/config/"$(basename \"$i\")" ] && /bin/rm -f "$i" && /bin/cp -fv /usr/share/libtool/config/"$(basename \"$i\")" "$i" ; \
+           [ -f /usr/bin/"$(basename \"$i\")" ] && /bin/rm -f "$i" && /bin/cp -fv /usr/bin/"$(basename \"$i\")" "$i" ; \
   done ; \
   %{!?_disable_rebuild_configure:if [ -e configure.ac -a -e Makefile.am ]; then \
     find . -name configure.ac |xargs dirname |while read D; do \
       pushd $D; \
       if grep -qE '(LT_INIT|LIBTOOL)' configure.ac >/dev/null; then \
-        libtoolize --force ; \
+        slibtoolize --force ; \
       fi ; \
       aclocal $((find . -name "*.m4" 2>/dev/null |grep -vE 'ac(local|include).m4' | xargs dirname) | grep -v '^\.$' |sort |uniq |cut -d/ -f2- |while read R; do [ -e $R/configure.ac ] || echo -n "-I$R "; done) ; \
       automake -a --foreign ; \
@@ -135,6 +135,7 @@
 %buildsystem_autotools_generate_buildrequires() \
 	echo 'autoconf' \
 	echo 'slibtool' \
+	echo 'gnu-config' \
 	echo 'make'
 
 %buildsystem_autotools_conf() \
@@ -178,4 +179,5 @@
 	%make_install %* -C _OMV_rpm_build32 LIBTOOL=${LIBTOOL:-slibtool-shared} \
 %endif \
 	[ -e _OMV_rpm_build/.vars ] && source _OMV_rpm_build/.vars \
-	%make_install %* -C _OMV_rpm_build LIBTOOL=${LIBTOOL:-slibtool-shared}
+	%make_install %* -C _OMV_rpm_build LIBTOOL=${LIBTOOL:-slibtool-shared} \
+	%find_lang %{name} --all-name --with-qt --with-html --with-man || :
