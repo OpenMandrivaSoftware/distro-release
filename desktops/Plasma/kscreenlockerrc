@@ -5,7 +5,7 @@ LockOnResume=false
 Timeout=5
 
 [Greeter]
-Theme=org.openmandriva5.desktop
+Theme=org.openmandriva.desktop
 WallpaperPlugin=org.kde.image
 
 [Greeter][Wallpaper][org.kde.image][General]
