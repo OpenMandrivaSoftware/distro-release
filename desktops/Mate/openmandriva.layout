@@ -1,0 +1,96 @@
+[Toplevel bottom]
+expand=true
+orientation=bottom
+size=24
+
+[Object menu]
+object-type=menu
+toplevel-id=bottom
+position=0
+locked=true
+
+[Object separator0]
+object-type=separator
+toplevel-id=bottom
+position=5
+locked=true
+
+[Object workspace-switcher]
+object-type=applet
+applet-iid=WnckletFactory::WorkspaceSwitcherApplet
+toplevel-id=bottom
+position=10
+locked=true
+
+[Object separator1]
+object-type=separator
+toplevel-id=bottom
+position=15
+locked=true
+
+[Object omcc]
+object-type=launcher
+launcher-location=/usr/share/applications/openmandriva-drakconf.desktop
+toplevel-id=bottom
+position=20
+locked=true
+
+[Object file-manager]
+object-type=launcher
+launcher-location=/usr/share/applications/caja.desktop
+toplevel-id=bottom
+position=21
+locked=true
+
+[Object terminal]
+object-type=launcher
+launcher-location=/usr/share/applications/mate-terminal.desktop
+toplevel-id=bottom
+position=22
+locked=true
+
+[Object web-browser]
+object-type=launcher
+launcher-location=/usr/share/applications/firefox.desktop
+toplevel-id=bottom
+position=23
+locked=true
+
+[Object window-list]
+object-type=applet
+applet-iid=WnckletFactory::WindowListApplet
+toplevel-id=bottom
+position=40
+locked=true
+
+[Object notification-area]
+object-type=applet
+applet-iid=NotificationAreaAppletFactory::NotificationArea
+toplevel-id=bottom
+position=50
+panel-right-stick=true
+locked=true
+
+[Object clock]
+object-type=applet
+applet-iid=ClockAppletFactory::ClockApplet
+toplevel-id=bottom
+panel-right-stick=true
+position=10
+locked=true
+
+[Object separator2]
+object-type=separator
+toplevel-id=bottom
+panel-right-stick=true
+position=5
+locked=true
+
+[Object show-desktop]
+object-type=applet
+applet-iid=WnckletFactory::ShowDesktopApplet
+toplevel-id=bottom
+panel-right-stick=true
+position=0
+locked=true
+
