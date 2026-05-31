@@ -111,7 +111,7 @@ find %1 -name '*.pyo' -exec rm -f {} \\; \
 
 %py_build() %{expand:\\\
   if [ -e pyproject.toml ]; then
-    mkdir ../RPMBUILD_wheels
+    mkdir -p ../RPMBUILD_wheels
     CFLAGS="%{optflags}" pip wheel --wheel-dir ../RPMBUILD_wheels --no-deps --no-build-isolation --verbose .
   else
     CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} build --executable="%{__python} %{py_shbang_opts}" %{?*}
