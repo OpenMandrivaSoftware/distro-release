@@ -1,0 +1,6 @@
+[org.gnome.desktop.background]
+picture-uri = 'file:///usr/share/mdk/backgrounds/default.png'
+
+[org.gnome.desktop.screensaver]
+picture-uri = 'file:///usr/share/mdk/backgrounds/default.png'
+
